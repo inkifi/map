@@ -3,5 +3,11 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'
 >
+	<update handle='inkifi_map'/>
 	<head><title>Create and order beautiful custom maps and posters</title></head>
+	<body>
+		<referenceContainer name='content'>
+			<block class='Magento\Framework\View\Element\Template' template='Inkifi_Map::index.phtml'/>
+		</referenceContainer>
+	</body>	
 </page>
