@@ -1,5 +1,5 @@
 <?php
-namespace Inkifi\Map\Controller\Index;
+namespace Inkifi\Map\Controller\Create;
 use Df\Framework\W\Result\Json;
 use Magento\Framework\App\Action\Action as _P;
 // 2019-06-17
