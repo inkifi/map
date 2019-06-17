@@ -6,6 +6,7 @@
 	<update handle='inkifi_map'/>
 	<head><title>Create and order beautiful custom maps and posters</title></head>
 	<body>
+		<referenceBlock name='page.main.title' remove='true'/>
 		<referenceContainer name='content'>
 			<block class='Magento\Framework\View\Element\Template' template='Inkifi_Map::index.phtml'/>
 		</referenceContainer>
