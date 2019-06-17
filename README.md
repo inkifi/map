@@ -3,6 +3,7 @@ A city map printing module for [inkifi.com](https://inkifi.com) (Magento 2).
 ## How to install
 ```
 bin/magento maintenance:enable
+rm -rf composer.lock
 composer clear-cache
 composer require inkifi/map:*
 bin/magento setup:upgrade
