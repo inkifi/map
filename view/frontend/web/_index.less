@@ -5,6 +5,11 @@
 	> section {
 		&:nth-child(1) {
 			background-color: yellow;
+			h1 {
+				font-size: 48px;
+				@media (min-width: 576px) {font-size: 68px;}
+				@media (min-width: 1025px) {font-size: 108px;}
+			}
 		}
 		&:nth-child(2) {background-color: rgba(230, 234, 238, 0.4);}
 		&:nth-child(3) {background-color: yellow;}
