@@ -1,2 +1,8 @@
 // 2019-06-18
-.inkifi-map {background: yellow;}
+.inkifi-map {
+	> section {
+		&:nth-child(1) {background-color: yellow;}
+		&:nth-child(2) {background-color: rgba(230, 234, 238, 0.4);}
+		&:nth-child(3) {background-color: yellow;}
+	}
+}
