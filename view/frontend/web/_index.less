@@ -1,5 +1,6 @@
 // 2019-06-18
 @import url('https://fonts.googleapis.com/css?family=Prompt:400,600,700&display=swap');
+.inkifi-map-index-index .column.main {width: 100% !important;}
 .inkifi-map {
 	* {color: black; font-family: Prompt, Helvetica, Arial, sans-serif;}
 	> section {
@@ -47,7 +48,30 @@
 			background-color: rgba(230, 234, 238, 0.4);
 			padding: 69px 0; @media (min-width: 1025px) {padding: 132px 0;}
 			ol.ikf-benefits {
-				li {font-size: 24px; font-weight: 600;}
+				display: flex;
+				flex-direction: row;
+				li {
+					display: block;
+					font-size: 24px;
+					font-weight: 600;
+					text-align: center;
+					width: 33.3333%;
+					&:nth-child(1) {
+						background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVkAAAEuCAMAAAATC5GQAAAC7lBMV…DGDfyxLKfrM/P3jmnx/NhDB8Y1qTXi8PzSR2f8qxpW8W9CmWSNBZuMqwAAAABJRU5ErkJggg==);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 75px; -webkit-background-size: 75px 75px;
+						margin-bottom: 26px;
+						position: relative;
+						@media (min-width: 1025px) {
+							background-position: bottom;
+							background-size: 173px; -webkit-background-size: 173px 173px;
+							padding-bottom: 25px;
+						}
+					}
+					&:nth-child(2) {background: #c0a16b;}
+					&:nth-child(3) {background:#2979FF;}
+				}
 			}
 		}
 		&:nth-child(3) {background-color: yellow;}
