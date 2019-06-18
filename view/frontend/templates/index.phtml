@@ -11,9 +11,18 @@
 	</section>
 	<section>
 		<ol class='ikf-benefits'>
-			<li>Fast shipping, worldwide</li>
-			<li>Premium Quality Prints</li>
-			<li>100% Satisfaction Guarantee</li>
+			<li>
+				<?= df_block_output(null, 'Inkifi_Map::i/shipping.phtml') ?>
+				<div>Fast shipping, worldwide</div>
+			</li>
+			<li>
+				<?= df_tag('img', ['src' => df_asset_url('Inkifi_Map::i/print.svg')]) ?>
+				<div>Premium Quality Prints</div>
+			</li>
+			<li>
+				<?= df_block_output(null, 'Inkifi_Map::i/guarantee.phtml') ?>
+				<div>100% Satisfaction Guarantee</div>
+			</li>
 		</ol>
 		<h2>Create Your Poster</h2>
 		<ol class='ikf-cities'>
