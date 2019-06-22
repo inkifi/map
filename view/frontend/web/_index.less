@@ -53,13 +53,13 @@
 					background-position: center;
 					background-repeat: no-repeat;
 					display: block;
-					font-size: 24px;
+					font-size: 20px;
 					font-weight: 600;
 					margin: 0 auto 26px auto;
 					position: relative;
 					text-align: center;
 					width: 210px;
-					@media (min-width: 1025px) {background-position: bottom; padding-bottom: 25px;}
+					@media (min-width: 1025px) {background-position: bottom; padding-bottom: 25px; font-size: 24px;}
 					&:nth-child(1) {
 						background-image: url('../Inkifi_Map/i/spot/blue.png');
 						background-size: 75px;
@@ -74,6 +74,11 @@
 						background-image: url('../Inkifi_Map/i/spot/green.png');
 						background-size: 75px;
 						@media (min-width: 1025px) {background-size: 151px;}
+					}
+					.ikf-figure {
+						font-size: 48px; font-weight: 400; height: 48px; margin-bottom: 5px;
+						@media (min-width: 1025px) {  font-size: 96px; height: 96px; margin-bottom: 10px;}
+						svg {max-height: 100%;}
 					}
 				}
 			}
