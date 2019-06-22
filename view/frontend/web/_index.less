@@ -55,7 +55,9 @@
 					font-size: 24px;
 					font-weight: 600;
 					text-align: center;
-					width: 33.3333%;
+					//width: 33.3333%;
+					width: 210px;
+					margin: 0 auto;
 					&:nth-child(1) {
 						background-image: url('../Inkifi_Map/i/spot/blue.png');
 						background-position: center;
@@ -69,8 +71,32 @@
 							padding-bottom: 25px;
 						}
 					}
-					&:nth-child(2) {background: #c0a16b;}
-					&:nth-child(3) {background:#2979FF;}
+					&:nth-child(2) {
+						background-image: url('../Inkifi_Map/i/spot/yellow.png');
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 80px;
+						margin-bottom: 26px;
+						position: relative;
+						@media (min-width: 1025px) {
+							background-position: bottom;
+							background-size: 160px;
+							padding-bottom: 25px;
+						}
+					}
+					&:nth-child(3) {
+						background-image: url('../Inkifi_Map/i/spot/green.png');
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 75px;
+						margin-bottom: 26px;
+						position: relative;
+						@media (min-width: 1025px) {
+							background-position: bottom;
+							background-size: 151px;
+							padding-bottom: 25px;
+						}
+					}
 				}
 			}
 		}
