@@ -48,54 +48,32 @@
 			background-color: rgba(230, 234, 238, 0.4);
 			padding: 69px 0; @media (min-width: 1025px) {padding: 132px 0;}
 			ol.ikf-benefits {
-				display: flex;
-				flex-direction: row;
+				display: flex; flex-direction: row;
 				li {
+					background-position: center;
+					background-repeat: no-repeat;
 					display: block;
 					font-size: 24px;
 					font-weight: 600;
+					margin: 0 auto 26px auto;
+					position: relative;
 					text-align: center;
-					//width: 33.3333%;
 					width: 210px;
-					margin: 0 auto;
+					@media (min-width: 1025px) {background-position: bottom; padding-bottom: 25px;}
 					&:nth-child(1) {
 						background-image: url('../Inkifi_Map/i/spot/blue.png');
-						background-position: center;
-						background-repeat: no-repeat;
 						background-size: 75px;
-						margin-bottom: 26px;
-						position: relative;
-						@media (min-width: 1025px) {
-							background-position: bottom;
-							background-size: 173px;
-							padding-bottom: 25px;
-						}
+						@media (min-width: 1025px) {background-size: 173px;}
 					}
 					&:nth-child(2) {
 						background-image: url('../Inkifi_Map/i/spot/yellow.png');
-						background-position: center;
-						background-repeat: no-repeat;
 						background-size: 80px;
-						margin-bottom: 26px;
-						position: relative;
-						@media (min-width: 1025px) {
-							background-position: bottom;
-							background-size: 160px;
-							padding-bottom: 25px;
-						}
+						@media (min-width: 1025px) {background-size: 160px;}
 					}
 					&:nth-child(3) {
 						background-image: url('../Inkifi_Map/i/spot/green.png');
-						background-position: center;
-						background-repeat: no-repeat;
 						background-size: 75px;
-						margin-bottom: 26px;
-						position: relative;
-						@media (min-width: 1025px) {
-							background-position: bottom;
-							background-size: 151px;
-							padding-bottom: 25px;
-						}
+						@media (min-width: 1025px) {background-size: 151px;}
 					}
 				}
 			}
