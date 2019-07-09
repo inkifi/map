@@ -7,6 +7,33 @@
 	> section {
 		@import 'index/_section-1';
 		@import 'index/_section-2';
+		a.ikf-create {
+			animation-duration: .4s;
+			animation-fill-mode: both;
+			animation-name: buttonAnimate;
+			background-color: #f7da5f;
+			border-radius: 0.6em;
+			display: inline-block;
+			font-size: 24px;
+			font-weight: 600;
+			line-height: 1;
+			padding: 24px 37px 22px;
+			text-decoration: none;
+			transition: all 0.4s ease;
+			&:hover {animation-name: buttonAnimateHover; color: black;}
+			@keyframes buttonAnimate {
+				0% {transform: rotate(-8deg) scale(1.05);}
+				50% {transform: rotate(0deg) scale(0.97);}
+				60% {transform: rotate(0deg) scale(0.99);}
+				to {transform: rotate(0deg) scale(1);}
+			}
+			@keyframes buttonAnimateHover {
+				0% {transform: rotate(0deg) scale(1);}
+				50% {transform: rotate(-8deg) scale(1.07);}
+				60% {transform: rotate(-8deg) scale(1.05);}
+				to {transform: rotate(-8deg) scale(1.05);}
+			}
+		}
 		&:nth-child(3) {background-color: yellow;}
 	}
 }
