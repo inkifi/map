@@ -29,9 +29,11 @@
 		<h2>Create Your Poster</h2>
 		<div class='ikf-cities'>
 			<?=
-				df_cc_n(df_map(function($c) {return df_tag('img', ['src' => df_asset_url(
-					"Inkifi_Map::i/index/map/$c.jpg"
-				)]);}, ['new-york', 'singapore', 'copenhagen', 'paris', 'lisbon', 'london', 'amsterdam']));
+				df_cc_n(df_map(function($c) {return
+					df_tag('a', ['href' => 'javascript:void(0)'],
+						df_tag('img', ['src' => df_asset_url("Inkifi_Map::i/index/map/$c.jpg")])
+					)
+				;}, ['new-york', 'singapore', 'copenhagen', 'paris', 'lisbon', 'london', 'amsterdam']));
 			?>
 		</div>
 		<a href='javascript:void(0)'>Create Poster</a>
