@@ -6,5 +6,9 @@ define(['jquery', 'domReady!', 'Inkifi_Map/carousel'], function($) {return (
  */
 function(c, e) {
 	var $e = $(e);
-	$('.ikf-cities', $e).slick();
+	$('.ikf-cities', $e).slick({
+		infinite: true,
+		slidesToScroll: 3,
+		slidesToShow: 3
+	});
 });});
