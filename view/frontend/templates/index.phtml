@@ -28,13 +28,11 @@
 		</ol>
 		<h2>Create Your Poster</h2>
 		<div class='ikf-cities'>
-			<div>New York</div>
-			<div>Singapore</div>
-			<div>Copenhagen</div>
-			<div>Paris</div>
-			<div>Lisbon</div>
-			<div>London</div>
-			<div>Amsterdam</div>
+			<?=
+				df_cc_n(df_map(function($c) {return df_tag('img', ['src' => df_asset_url(
+					"Inkifi_Map::i/index/map/$c.jpg"
+				)]);}, ['new-york', 'singapore', 'copenhagen', 'paris', 'lisbon', 'london', 'amsterdam']));
+			?>
 		</div>
 		<a href='javascript:void(0)'>Create Poster</a>
 	</section>
