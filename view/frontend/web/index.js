@@ -7,8 +7,8 @@ define(['jquery', 'domReady!', 'Inkifi_Map/carousel'], function($) {return (
 function(c, e) {
 	var $e = $(e);
 	$('.ikf-cities', $e).slick({
-		infinite: true,
-		slidesToScroll: 3,
-		slidesToShow: 3
+		infinite: true
+		,slidesToScroll: 3 // 2019-07-10 «# of slides to scroll at a time»
+		,slidesToShow: 4  // 2019-07-10 «# of slides to show at a time»
 	});
 });});
