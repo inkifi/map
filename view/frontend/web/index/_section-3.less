@@ -1,8 +1,21 @@
 &:nth-child(3) {
 	background-color: white;
+	overflow: hidden;
 	padding: 40px 0 75px; @media (min-width: 1025px) {padding: 93px 60px;}
-	h2 {
-		font-size: 36px; font-weight: 600; margin-bottom: 11px; text-align: center;
-		@media (min-width: 1025px) {margin-bottom: 28px;}
+	> .ikf-left {
+		float: left;
+		width: 50%;
+		h2 {
+			font-size: 36px; font-weight: 600; margin-bottom: 11px; text-align: center;
+			@media (min-width: 1025px) {margin-bottom: 28px;}
+		}
+		.ikf-content {
+			font-size: 24px;
+			font-style: italic;
+		}
+	}
+	> .ikf-right {
+		float: right;
+		width: 50%;
 	}
 }
