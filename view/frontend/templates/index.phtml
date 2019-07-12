@@ -52,7 +52,9 @@
 			<div class='ikf-images'>
 				<?=
 					df_cc_n(df_map(function($i) {return
-						df_tag('img', ['src' => df_asset_url("Inkifi_Map::i/index/inspiration/$i.png")])
+						df_tag('div', 'ikf-img-container',
+							df_tag('img', ['src' => df_asset_url("Inkifi_Map::i/index/inspiration/$i.png")])
+						)
 					;}, [1, 2, 3]));
 				?>
 			</div>

@@ -17,5 +17,38 @@
 	> .ikf-right {
 		float: right;
 		width: 50%;
+		> .ikf-images {
+			align-items: center;
+			display: flex;
+			margin: 20px 0 30px;
+			position: relative;
+			@media (min-width: 1025px) {margin: 20px 0 57px; padding-top: 105px;}
+			> .ikf-img-container {
+				&:nth-child(1) {
+					position: absolute;
+					margin: -18px 60% 0 -7%; @media (min-width: 1025px) {margin: -57px 49% 0 17px;}
+				}
+				&:nth-child(2) {
+					margin: 25px 14% 0 23%;	@media (min-width: 1025px) {margin: -103px 7% 0 33%;}
+				}
+				&:nth-child(3) {
+					position: absolute;
+					margin: 34px -14% 0 67%; @media (min-width: 1025px) {margin: 3% 0% 0px 56%;}
+				}
+			}
+			/*> img {
+				&:nth-child(1) {
+					position: absolute;
+					margin: -18px 60% 0 -7%; @media (min-width: 1025px) {margin: -57px 49% 0 17px;}
+				}
+				&:nth-child(2) {
+					margin: 25px 14% 0 23%;	@media (min-width: 1025px) {margin: -103px 7% 0 33%;}
+				}
+				&:nth-child(3) {
+					position: absolute;
+					margin: 34px -14% 0 67%; @media (min-width: 1025px) {margin: 58px 0% 0px 56%;}
+				}
+			}   */
+		}
 	}
 }
