@@ -11,9 +11,26 @@
 				font-size: 36px; font-weight: 600; margin-bottom: 11px; text-align: center;
 				@media (min-width: 1025px) {margin-bottom: 28px;}
 			}
-			.ikf-content {
-				font-size: 24px;
-				font-style: italic;
+			article {
+				&:after, &:before {
+					background-size: contain;
+					background: transparent url('../Inkifi_Map/i/index/quotes.svg') center no-repeat;
+					content: '';
+					display: block;
+					height: 25px;
+					margin: 0 auto;
+					width: 39px;
+				}
+				&:after {
+					margin-top: 15px;
+					transform: rotate(180deg);
+					@media (min-width: 1025px) {margin-top: 18px;}
+				}
+				&:before {margin-bottom: 15px;}
+				.ikf-content {
+					font-size: 24px;
+					font-style: italic;
+				}
 			}
 		}
 		&.ikf-right {
