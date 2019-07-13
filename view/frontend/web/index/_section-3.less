@@ -64,6 +64,34 @@
 					}
 				}
 			}
+			> a.ikf-more {
+				display: inline-block;
+				font-size: 24px;
+				font-weight: 600;
+				margin-left: 20px;
+				padding-right: 30px;
+				position: relative;
+				@media (min-width: 1025px) {margin-left: 10%;}
+				> img {
+					display: block;
+					height: 65px;
+					position: absolute;
+					right: 0;
+					top: 40%;
+					z-index: 0;
+					transform: translate(0, -50%);
+					transition: all 0.35s ease;
+					width: 73px;
+				}
+				> span.ikf-more {
+					font-size: 15px;
+					margin-left: 5px;
+					position: relative;
+					z-index: 1;
+					> svg {height: 15px; width: 13px;}
+				}
+				> span.ikf-text {position: relative; z-index: 1;}
+			}
 		}
 	}
 }
