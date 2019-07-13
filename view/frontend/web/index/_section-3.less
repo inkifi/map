@@ -72,16 +72,18 @@
 				padding-right: 30px;
 				position: relative;
 				@media (min-width: 1025px) {margin-left: 10%;}
-				> img {
+				&:hover > div.ikf-img {background-image: url('../Inkifi_Map/i/index/more/green.png');}
+				> div.ikf-img {
+					background: url('../Inkifi_Map/i/index/more/yellow.png') center no-repeat;
 					display: block;
 					height: 65px;
 					position: absolute;
 					right: 0;
 					top: 40%;
-					z-index: 0;
 					transform: translate(0, -50%);
 					transition: all 0.35s ease;
 					width: 73px;
+					z-index: 0;
 				}
 				> span.ikf-more {
 					font-size: 15px;
