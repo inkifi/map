@@ -12,18 +12,24 @@
 	<section>
 		<ol class='ikf-benefits'>
 			<li>
-				<div class='ikf-figure'><?= df_block_output(null, 'Inkifi_Map::i/shipping.phtml') ?></div>
-				<div>Fast shipping, worldwide</div>
-			</li>
-			<li>
-				<div class='ikf-figure'>
-					<?= df_tag('img', ['src' => df_asset_url('Inkifi_Map::i/index/print.svg')]) ?>
+				<div class='ikf-benefit'>
+					<div class='ikf-figure'><?= df_block_output(null, 'Inkifi_Map::i/shipping.phtml') ?></div>
+					<div>Fast shipping, worldwide</div>
 				</div>
-				<div>Premium Quality Prints</div>
 			</li>
 			<li>
-				<div class='ikf-figure'><?= df_block_output(null, 'Inkifi_Map::i/guarantee.phtml') ?></div>
-				<div>100% Satisfaction Guarantee</div>
+				<div class='ikf-benefit'>
+					<div class='ikf-figure'>
+						<?= df_tag('img', ['src' => df_asset_url('Inkifi_Map::i/index/print.svg')]) ?>
+					</div>
+					<div>Premium Quality Prints</div>
+				</div>
+			</li>
+			<li>
+				<div class='ikf-benefit'>
+					<div class='ikf-figure'><?= df_block_output(null, 'Inkifi_Map::i/guarantee.phtml') ?></div>
+					<div>100% Satisfaction Guarantee</div>
+				</div>
 			</li>
 		</ol>
 		<h2>Create Your Poster</h2>
@@ -60,7 +66,6 @@
 			</div>
 			<?=
 				df_tag('a', ['class' => 'ikf-more', 'href' => 'javascript:void(0)'], [
-					//df_tag('img', ['src' => df_asset_url('Inkifi_Map::i/index/more/yellow.png')])
 					df_tag('div', 'ikf-img')
 					,df_tag('span', 'ikf-text', 'More inspiration')
 					,df_block_output(null, 'Inkifi_Map::i/more.phtml')
