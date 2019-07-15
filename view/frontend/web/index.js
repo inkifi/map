@@ -9,6 +9,7 @@ function(c, e) {
 	$('.ikf-cities', $e).slick({
 		infinite: true
 		,slidesToScroll: 3 // 2019-07-10 «# of slides to scroll at a time»
-		,slidesToShow: 4  // 2019-07-10 «# of slides to show at a time»
+		,slidesToShow: 5.5  // 2019-07-10 «# of slides to show at a time»
+		,centerMode: true
 	});
 });});
