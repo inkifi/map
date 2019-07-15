@@ -13,8 +13,10 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		margin-bottom: 75px; @media (min-width: 1025px) {margin-bottom: 179px;}
 		li {
 			flex: 1 0 100%;	@media (min-width: 768px) {flex: 0 0 29.333%;}
+			margin-bottom: 0;
 			> div.ikf-benefit {
 				background-position: center;
 				background-repeat: no-repeat;
@@ -32,6 +34,7 @@
 					@media (min-width: 1025px) {  font-size: 96px; height: 96px; margin-bottom: 10px;}
 					svg {max-height: 100%;}
 				}
+				//> .ikf-title {line-height: normal;}
 			}
 			&:nth-child(1) {
 				> div.ikf-benefit {
