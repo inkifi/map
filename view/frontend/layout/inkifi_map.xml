@@ -4,6 +4,7 @@
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'
 >
 	<body>
+		<referenceBlock name='base-footer-container' remove='true'/>
 		<referenceBlock name='base-header-container' remove='true'/>
 		<referenceBlock name='page.main.title' remove='true'/>
 		<referenceContainer name='page.wrapper'>
