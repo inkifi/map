@@ -3,4 +3,18 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'
 >
+	<body>
+		<referenceBlock name='base-header-container' remove='true'/>
+		<referenceBlock name='page.main.title' remove='true'/>
+		<referenceContainer name='page.wrapper'>
+			<block
+				before='-'
+				class='Magento\Framework\View\Element\Template'
+				template='Inkifi_Map::header.phtml'
+			/>
+		</referenceContainer>
+		<referenceContainer name='base-main-top-container' remove='true'/>
+		<referenceContainer name='base-main-container.main' remove='true'/>
+		<referenceContainer name='base-main-bottom-container' remove='true'/>
+	</body>
 </page>

@@ -59,7 +59,11 @@
 					@media (min-width: 993px) {left: 100px; top: 500px;}
 					// 2019-07-16 https://stackoverflow.com/a/16869579
 					@media (min-width: 1025px) {left: inherit; right: calc(~'25% + 185px'); top: 438px;}
-					svg {height: 116px; width: 96px; @media (min-width: 576px) {height: 160px; width: 132px;}}
+					svg {
+						height: 116px; width: 96px;
+						@media (min-width: 576px) {height: 160px; width: 132px;}
+						@media (min-width: 993px) {height: 232px; width: 192px;}
+					}
 				}
 				&:nth-of-type(2) {
 					right: -101px; top: 196px;

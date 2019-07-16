@@ -5,4 +5,9 @@
 >
 	<update handle='inkifi_map'/>
 	<head><title>inkifi_map_create_index</title></head>
+	<body>
+		<referenceContainer name='base-main-container'>
+			<block class='Magento\Framework\View\Element\Template' template='Inkifi_Map::create.phtml'/>
+		</referenceContainer>
+	</body>
 </page>
