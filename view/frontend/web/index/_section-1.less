@@ -9,21 +9,28 @@
 		figure {position: absolute;}
 		&:nth-child(1) {
 			> figure {
-				&:nth-child(1) {
+				&:nth-of-type(1) {
 					left: 12px; max-width: 100%; top: 0;
 					@media (min-width: 1025px) {left: inherit; right: 25%; top: -22px;}
 				}
-				&:nth-child(2) {
+				&:nth-of-type(2) {
 					left: 189px; max-width: 100%; top: 85px;
 					@media (min-width: 576px) {left: 275px; top: 125px;}
 					@media (min-width: 993px) {left: 400px; top: 190px;}
 					@media (min-width: 1025px) {left: inherit; right: 24.5%; top: 142px;}
+					svg {
+						height: 88px; width: 48px;
+						@media (min-width: 576px) {height: 130px; width: 71px;}
+						@media (min-width: 993px) {height: 200px; width: 109px;}
+						@media (min-width: 1025px) {height: 176px; width: 96px;}
+					}
 				}
-				&:nth-child(3) {
+				&:nth-of-type(3) {
 					right: -1px; top: 45px;
 					@media (min-width: 576px) {top: 55px;}
 					@media (min-width: 993px) {top: 75px;}
 					@media (min-width: 1025px) {right: 4.6%; top: 63px;}
+					svg {height: 106px; width: 96px; @media (min-width: 576px) {height: 190px; width: 172px;}}
 				}
 			}
 		}
@@ -58,7 +65,12 @@
 					@media (min-width: 576px) {top: 300px;}
 					@media (min-width: 993px) {top: 430px;}
 					@media (min-width: 1025px) {right: -139px; top: 360px;}
-					svg {height: 160px; width: 280px; @media (min-width: 576px) {height: 200px; width: 350px;}}
+					svg {
+						height: 160px; width: 280px;
+						@media (min-width: 576px) {height: 200px; width: 350px;}
+						@media (min-width: 993px) {height: 280px; width: 490px;}
+						@media (min-width: 1025px) {height: 320px; width: 560px;}
+					}
 				}
 			}
 		}
