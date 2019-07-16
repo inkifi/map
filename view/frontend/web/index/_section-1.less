@@ -49,17 +49,16 @@
 					top: 240px; left: 50px;
 					@media (min-width: 576px) {left: 65px; top: 340px;}
 					@media (min-width: 993px) {left: 100px; top: 500px;}
-					@media (min-width: 1025px) {
-						left: inherit;
-						right: calc(~'25% + 185px'); // 2019-07-16 https://stackoverflow.com/a/16869579
-						top: 438px;
-					}
+					// 2019-07-16 https://stackoverflow.com/a/16869579
+					@media (min-width: 1025px) {left: inherit; right: calc(~'25% + 185px'); top: 438px;}
+					svg {height: 116px; width: 96px; @media (min-width: 576px) {height: 160px; width: 132px;}}
 				}
 				&:nth-of-type(2) {
 					right: -101px; top: 196px;
 					@media (min-width: 576px) {top: 300px;}
 					@media (min-width: 993px) {top: 430px;}
 					@media (min-width: 1025px) {right: -139px; top: 360px;}
+					svg {height: 160px; width: 280px; @media (min-width: 576px) {height: 200px; width: 350px;}}
 				}
 			}
 		}
