@@ -5,19 +5,21 @@
 	padding: 8px;
 	position: relative;
 	z-index: 5;
-	> .ikf-logo {
-		padding-right: 12px;
-		position: relative;
-		z-index: 15;
+	.ikf-animation {
+		@keyframes headerAnimation {
+			0% {opacity: 0; transform: translate(0, -100%);}
+			100% {opacity: 1; transform: translate(0, 0);}
+		}
 		@media (min-width: 1025px) {
 			animation-duration: 1s;
 			animation-fill-mode: both;
 			animation-name: headerAnimation;
-			@keyframes headerAnimation {
-				0% {opacity: 0; transform: translate(0, -100%);}
-				100% {opacity: 1; transform: translate(0, 0);}
-			}
 		}
+	}
+	> .ikf-logo {
+		padding-right: 12px;
+		position: relative;
+		z-index: 15;
 		> a {
 			align-items: center;
 			color: #000000;
@@ -34,6 +36,29 @@
 			}
 		}
 	}
-	> .ikf-menu {}
+	> .ikf-menu {
+		padding-left: 12px;
+		padding-right: 12px;
+		> div {
+			display: flex;
+			flex-direction: column;
+			flex-shrink: 0;
+			position: relative;
+			z-index: 15;
+			@media (min-width: 1025px) {  align-items: center; flex-direction: row;}
+			> a {
+				font-size: 36px;
+				font-weight: 300;
+				margin-bottom: 23px;
+				margin-right: 0;
+				@media (min-width: 1025px) {
+					font-size: 14px;
+					font-weight: 400;
+					margin-bottom: 0;
+					margin-right: 25px;
+				}
+			}
+		}
+	}
 	> .ikf-right {}
 }
