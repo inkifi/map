@@ -1,7 +1,7 @@
-<div class='inkifi-map'>
+<div class='ikf-main'>
 	<?= df_cc_n(df_map(function($i) {return
 		df_tag('section', [], df_block_output(null, "Inkifi_Map::index/section/$i.phtml"))
 	;}, [1, 2])) ?>
 	<?= df_block_output(null, 'Inkifi_Map::common/section/reviews.phtml') ?>
 </div>
-<?= df_js_x('.inkifi-map', 'Inkifi_Map', 'index');
+<?= df_js_x('.ikf-main', 'Inkifi_Map', 'index');
