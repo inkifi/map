@@ -1,3 +1,25 @@
 .ikf-header {
+	align-items: center;
 	background: yellow;
+	display: flex;
+	flex-shrink: 0;
+	padding: 8px;
+	position: relative;
+	z-index: 5;
+	> .ikf-logo {
+		padding-right: 12px;
+		position: relative;
+		z-index: 15;
+		@media (min-width: 1025px) {
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			animation-name: headerAnimation;
+			@keyframes headerAnimation {
+				0% {opacity: 0; transform: translate(0, -100%);}
+				100% {opacity: 1; transform: translate(0, 0);}
+			}
+		}
+	}
+	> .ikf-menu {}
+	> .ikf-right {}
 }
