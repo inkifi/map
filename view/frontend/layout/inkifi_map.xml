@@ -11,7 +11,7 @@
 			<block
 				before='-'
 				class='Magento\Framework\View\Element\Template'
-				template='Inkifi_Map::header.phtml'
+				template='Inkifi_Map::common/header.phtml'
 			/>
 		</referenceContainer>
 		<referenceContainer name='base-main-top-container' remove='true'/>
