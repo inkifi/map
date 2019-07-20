@@ -1,0 +1,27 @@
+<section class='ikf-reviews'>
+	<div class='ikf-left'>
+		<h2>Customers Say</h2>
+		<article>
+			<div class='ikf-content'>How lovely is it to have art work around your home that evoke such good memories? Our new custom photo map print from @mappyplace_ makes me smile every time remembering good times we have spent there!</div>
+			<a class='ikf-author' href='https://www.instagram.com/p/BxNkPCgF_C5'>@raising_5 on Instagram</a>
+		</article>
+	</div>
+	<div class='ikf-right'>
+		<div class='ikf-images'>
+			<?=
+				df_cc_n(df_map(function($i) {return
+					df_tag('div', 'ikf-img-container',
+						df_tag('img', ['src' => df_asset_url("Inkifi_Map::common/i/inspiration/$i.png")])
+					)
+				;}, [1, 2, 3]));
+			?>
+		</div>
+		<?=
+			df_tag('a', ['class' => 'ikf-more', 'href' => 'javascript:void(0)'], [
+				df_tag('div', 'ikf-img')
+				,df_tag('span', 'ikf-text', 'More inspiration')
+				,df_block_output(null, 'Inkifi_Map::common/i/more.phtml')
+			])
+		?>
+	</div>
+</section>
