@@ -5,7 +5,70 @@
 	margin-left: auto;
 	padding-left: 12px;
 	position: relative;
-	> .ikf-burger {}
+	> .ikf-burger {
+		width: 48px;
+		> a {
+			align-items: center;
+			border-radius: 38px;
+			display: flex;
+			height: 72px;
+			justify-content: center;
+			position: absolute;
+			right: -20px;
+			top: -25px;
+			transition-delay: .3s;
+			transition: all 0.7s ease;
+			width: 72px;
+			&:after {
+				background-color: #ffffff;
+				border-radius: 50%;
+				bottom: 0;
+				content: '';
+				height: 0;
+				left: 0;
+				margin: auto;
+				position: absolute;
+				right: 0;
+				top: 0;
+				transform: scale(0);
+				transition: all 0.7s ease;
+				width: 0;
+				z-index: -1;
+			}
+			&:before {
+				background-color: #f7da5f;
+				border-radius: 50%;
+				content: '';
+				height: 100%;
+				position: absolute;
+				right: 0;
+				top: 0;
+				transition: all 0.7s cubic-bezier(0.405, 0, 0.165, 1);
+				width: 100%;
+				z-index: -1;
+			}
+			> span {
+				background-color: #000000;
+				height: 2px;
+				position: relative;
+				right: 4px;
+				top: 1px;
+				transition: all 0.7s ease;
+				width: 24px;
+				&:after, &:before {
+					background-color: #000000;
+					content: '';
+					display: block;
+					height: 2px;
+					position: absolute;
+					transition: all 0.3s ease;
+					width: 12px;
+				}
+				&:after {bottom: -8px; left: 0;}
+				&:before {right: 0; top: -8px;}
+			}
+		}
+	}
 	> a.ikf-cart {
 		position: relative;
 		font-size: 14px;
