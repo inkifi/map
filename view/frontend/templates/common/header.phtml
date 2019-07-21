@@ -1,7 +1,7 @@
 <div class='ikf-header'>
 	<div class='ikf-logo ikf-animation'>
 		<a href='javascript:void(0)'>
-			<figure><?= df_block_output(null, 'Inkifi_Map::common/i/logo.phtml') ?></figure>
+			<figure><?= df_block_output(null, 'Inkifi_Map::common/i/header/logo.phtml') ?></figure>
 			<span>mappy place</span>
 		</a>
 	</div>
@@ -14,5 +14,13 @@
 			<a href='javascript:void(0)'>Contact</a>
 		</div>
 	</div>
-	<div class='ikf-right'></div>
+	<div class='ikf-right'>
+		<a class='ikf-cart ikf-animation' href='javascript:void(0)'>
+			<figure><?= df_block_output(null, 'Inkifi_Map::common/i/header/cart.phtml') ?></figure>
+			<span class='ikf-amount'>£0</span>
+			<span class='ikf-qty'>0</span>
+		</a>
+		<div class='ikf-create'></div>
+		<div class='ikf-burger'></div>
+	</div>
 </div>

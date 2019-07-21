@@ -60,5 +60,46 @@
 			}
 		}
 	}
-	> .ikf-right {}
+	> .ikf-right {
+		align-items: center;
+		display: flex;
+		margin-left: auto;
+		padding-left: 12px;
+		position: relative;
+		> .ikf-burger {}
+		> a.ikf-cart {
+			position: relative;
+			font-size: 14px;
+			line-height: 1;
+			font-weight: 600;
+			margin-right: 24px;
+			> figure {
+				display: inline-block;
+				font-size: 21px;
+				height: 21px;
+				margin-right: 11px;
+			}
+			> span.ikf-amount {
+				display: inline-block;
+				vertical-align: super;
+			}
+			> span.ikf-qty {
+				align-items: center;
+				background-color: #623fc9;
+				border: 2px solid #ffffff;
+				color: #ffffff;
+				display: flex;
+				font-size: 10px;
+				height: 15px;
+				justify-content: center;
+				left: 11px;
+				min-width: 15px;
+				position: absolute;
+				top: -3px;
+				transition-delay: .1s;
+				transition: all 0.4s ease;
+			}
+		}
+		> .ikf-create {}
+	}
 }
