@@ -12,6 +12,11 @@
 		<referenceContainer name='base-main-top-container' remove='true'/>
 		<referenceContainer name='page.wrapper'>
 			<block
+				after='-'
+				class='Magento\Framework\View\Element\Template'
+				template='Inkifi_Map::common/footer.phtml'
+			/>
+			<block
 				before='-'
 				class='Magento\Framework\View\Element\Template'
 				template='Inkifi_Map::common/header.phtml'
