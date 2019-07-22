@@ -5,7 +5,12 @@
 	font-stretch: 100%;
 	font-weight: 400;
 	line-height: 1.4;
-	* {font-family: Prompt, Helvetica, Arial, sans-serif;}
+	::selection {background-color: #f7da5f; color: #fff; text-shadow: none;}
+	* {
+		box-sizing: border-box;
+		font-family: Prompt, Helvetica, Arial, sans-serif;
+		outline: none;
+	}
 	a {
 		text-decoration: none;
 		transition: all 0.4s ease;
