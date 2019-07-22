@@ -7,6 +7,9 @@
 		<referenceBlock name='base-footer-container' remove='true'/>
 		<referenceBlock name='base-header-container' remove='true'/>
 		<referenceBlock name='page.main.title' remove='true'/>
+		<referenceContainer name='base-main-bottom-container' remove='true'/>
+		<referenceContainer name='base-main-container.main' remove='true'/>
+		<referenceContainer name='base-main-top-container' remove='true'/>
 		<referenceContainer name='page.wrapper'>
 			<block
 				before='-'
@@ -14,8 +17,5 @@
 				template='Inkifi_Map::common/header.phtml'
 			/>
 		</referenceContainer>
-		<referenceContainer name='base-main-top-container' remove='true'/>
-		<referenceContainer name='base-main-container.main' remove='true'/>
-		<referenceContainer name='base-main-bottom-container' remove='true'/>
 	</body>
 </page>
