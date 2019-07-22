@@ -7,6 +7,7 @@
 	position: relative;
 	> .ikf-burger {
 		width: 48px;
+		@media (min-width: 1025px) {display: none;}
 		> a {
 			align-items: center;
 			border-radius: 38px;
@@ -46,6 +47,20 @@
 				transition: all 0.7s cubic-bezier(0.405, 0, 0.165, 1);
 				width: 100%;
 				z-index: -1;
+			}
+			&.ikf-active {
+				&:after {
+					height: 74px;
+					transform: scale(1);
+					transition-delay: .3s;
+					width: 74px;
+				}
+				&:before {
+					height: 100vh;
+					transform: scale(5);
+					transition-duration: .3s;
+					width: 100vh;
+				}
 			}
 			> span {
 				background-color: #000000;

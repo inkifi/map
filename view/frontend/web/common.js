@@ -10,6 +10,7 @@ function(c, e) {
 		var $menu = $('.ikf-menu');
 		var $page = $('.page-wrapper');
 		$('.ikf-burger > a', $e).click(function() {
+			$(this).toggleClass('ikf-active');
 			$menu.toggleClass('ikf-active');
 			$page.toggleClass('ikf-mobile-menu');
 		});
