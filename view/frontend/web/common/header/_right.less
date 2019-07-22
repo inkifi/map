@@ -61,6 +61,12 @@
 					transition-duration: .3s;
 					width: 100vh;
 				}
+				> span {
+					transform: rotate(-45deg); transition-delay: .3s;
+					&:after, &:before {transition-delay: .3s; width: 8px;}
+					&:after {left: 8px;}
+					&:before {right: 8px;}
+				}
 			}
 			> span {
 				background-color: #000000;
