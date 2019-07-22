@@ -1,0 +1,62 @@
+// 2019-07-22
+> .ikf-create {
+	display: none;
+	@keyframes bounceInDown {
+		0% {transform: translate3d(0, -10px, 0);}
+		60% {transform: translate3d(0, 0px, 0);}
+		75% {transform: translate3d(0, 0px, 0);}
+		90% {transform: translate3d(0, -2px, 0);}
+		to {transform: translate3d(0, -2px, 0);}
+	}
+	@keyframes bounceUp {
+		0% {transform: translate3d(0, 0px, 0);}
+		60% {transform: translate3d(0, -12px, 0);}
+		75% {transform: translate3d(0, -12px, 0);}
+		90% {transform: translate3d(0, -10px, 0);}
+		to {transform: translate3d(0, -10px, 0);}
+	}
+	@keyframes buttonCorner {
+		0% {opacity: 0; transform: translate(0, -100%);}
+		80% {opacity: 1; transform: translate(0, 2px);}
+		100% {transform: translate(0, 0%);}
+	}
+	@media (min-width: 1025px) {
+		animation-duration: .6s;
+		animation-fill-mode: both;
+		animation-name: buttonCorner;
+		display: block;
+		height: 40px;
+		margin-top: -9px;
+	}
+	> a {
+		animation-duration: .4s;
+		animation-fill-mode: both;
+		animation-name: bounceUp;
+		background-image: linear-gradient(
+			-45deg
+			,rgba(255, 255, 255, 0) 8px
+			,rgba(255, 255, 255, 0)
+			,#f7da5f 0
+		);
+		display: inline-block;
+		font-size: 14px;
+		font-weight: 600;
+		padding: 25px 17px 5px;
+		position: relative;
+		transition: all 0.4s ease;
+		&:focus, &:hover {color: #000000; animation-name: bounceInDown;}
+		&:before {
+			background:
+				transparent
+				url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMAMyAmEMbRhF4AAAAnSURBVHjaTcaxDQAgEAAhXt1/ZhsTjwrOnmc582/ner1er9fr9foLKOsAZAuAMFsAAAAASUVORK5CYII=)
+				center no-repeat
+			;
+			bottom: 0;
+			content: '';
+			height: 12px;
+			position: absolute;
+			right: 0;
+			width: 12px;
+		}
+	}
+}
