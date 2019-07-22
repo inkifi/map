@@ -4,8 +4,25 @@
 	flex: 0 0 auto;
 	margin: 0 20px;
 	padding: 38px 0;
-	@media screen and (min-width: 1025px) {
-		margin: 0 60px;
-		padding: 60px 0;
+	@media screen and (min-width: 1025px) {margin: 0 60px; padding: 60px 0;}
+	> .ikf-row {
+		&:nth-child(1) {
+			@media screen and (min-width: 1025px) {display: flex; flex-wrap: wrap;}
+			> .ikf-column {
+				> h4 {}
+			}
+		}
+		&:nth-child(2) {
+			border-top: 1px solid #e6eaee;
+			margin-top: 38px;
+			padding-top: 38px;
+			@media screen and (min-width: 1025px) {
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+				margin-top: 100px;
+				padding-top: 60px;
+			}
+		}
 	}
 }
