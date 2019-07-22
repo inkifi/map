@@ -70,7 +70,10 @@
 				padding-right: 30px;
 				position: relative;
 				@media (min-width: 1025px) {margin-left: 10%;}
-				&:hover > div.ikf-img {background-image: url('../Inkifi_Map/common/i/more/green.png');}
+				&:focus, &:hover {
+					color: black;
+					> div.ikf-img {background-image: url('../Inkifi_Map/common/i/more/green.png');}
+				}
 				> div.ikf-img {
 					background: url('../Inkifi_Map/common/i/more/yellow.png') center no-repeat;
 					display: block;
