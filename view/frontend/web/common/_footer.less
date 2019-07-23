@@ -18,6 +18,65 @@
 					margin-bottom: 27px;
 					> li {margin-bottom: 10px;}
 				}
+				> form {
+					display: flex;
+					flex-direction: column;
+					margin-bottom: 15px;
+					max-width: 560px;
+					position: relative;
+					@media screen and (min-width: 1025px) {flex-direction: row; max-width: 100%;}
+					> button {
+						background-color: #40ba87;
+						background-image: linear-gradient(
+							180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%
+						);
+						border-radius: 0 0 12px 12px;
+						color: #ffffff;
+						font-size: 18px;
+						font-weight: 700;
+						margin: -1px 0 0;
+						padding: 24px 17px 16px;
+						@media screen and (min-width: 1025px) {
+							border-radius: 0 12px 12px 0;
+							margin: 0 0 0 -1px;
+							padding: 23px 39px 17px;
+						}
+					}
+					> div {
+						position: relative; width: 100%;
+						> div {
+							background-color: #ffffff;
+							color: #262a2c;
+							font-size: 16px;
+							left: 11px;
+							line-height: 1;
+							opacity: .55;
+							padding-left: 2px;
+							padding-right: 2px;
+							position: absolute;
+							top: 50%;
+							transform: translate(0, -50%);
+							transition: all 0.3s ease;
+						}
+						> input {
+							background-color: transparent;
+							border-radius: 12px 12px 0 0;
+							border: 1px solid #e6eaee;
+							display: block;
+							font-size: 16px;
+							padding: 24px 17px 16px;
+							position: relative;
+							transition: all 0.4s ease;
+							width: 100%;
+							z-index: 1;
+							@media screen and (min-width: 1025px) {
+								border-radius: 12px 0 0 12px;
+								padding: 23px 15px 17px;
+							}
+						}
+					}
+				}
+				> p {font-size: 16px; margin-bottom: 15px; margin-top: 0;}
 			}
 		}
 		&:nth-child(2) {
