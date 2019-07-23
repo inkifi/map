@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Prompt:400,500,600,700&display=swap');
 .inkifi-map-index-index, .inkifi-map-create-index {
 	color: black;
+	font-size: 16px;
+	// 2019-07-23
+	// The latest Chrome still does not support `font-size-adjust`,
+	// so I apply `-webkit-text-size-adjust` to it.
+	font-size-adjust: auto; -ms-text-size-adjust: auto; -webkit-text-size-adjust: auto;
 	font-stretch: 100%;
 	font-weight: 400;
 	line-height: 1.4;
@@ -23,6 +28,12 @@
 		box-shadow: none;
 		cursor: pointer;
 		padding: 0;
+	}
+	input {
+		background-clip: border-box;
+		font-family: Arial;
+		height: auto;
+		line-height: normal;
 	}
 	@import 'common/_footer';
 	@import 'common/_header';
