@@ -31,7 +31,7 @@
 				width: 100%;
 				z-index: 10123;
 			}
-			> div > a {
+			> div.ikf-menu-internal > a {
 				animation: fadeIn 0.4s forwards;
 				opacity: 0;
 				transform: translatey(20px);
@@ -42,8 +42,60 @@
 				&:nth-child(4) {animation-delay: 0.6s;}
 			}
 		}
+		> div.ikf-create {
+			animation: createButtonMobile .7s .4s forwards;
+			margin: 100px -16px 0 -16px;
+			//opacity: 0;
+			text-align: left;
+			transform: translatey(20px);
+			> a {
+				display: inline-block;
+				font-size: 37px;
+				font-weight: 300;
+				padding: 9px 34px 36px 13px;
+				position: relative;
+				&:focus, &:hover {color: #000000; opacity: .8;}
+				&:after {
+					background-image: linear-gradient(
+						-135deg, rgba(255, 255, 255, 0) 17px, rgba(255, 255, 255, 0), #f7da5f 0
+					);
+					border-radius: 5px 5px 0 0;
+					bottom: 0px;
+					content: '';
+					left: 2px;
+					position: absolute;
+					right: 2px;
+					top: 2px;
+					z-index: -1;
+				}
+				> div {
+					&:nth-of-type(1) {
+						background-image: url('../Inkifi_Map/common/i/header/mobile-button-create.png');
+						background-position: 0px -3px;
+						background-repeat: no-repeat;
+						height: 23px;
+						position: absolute;
+						right: 2px;
+						top: 2px;
+						width: 23px;
+					}
+					&:nth-of-type(2) {
+						background-image: linear-gradient(
+							-135deg, rgba(255, 255, 255, 0) 18px, rgba(255, 255, 255, 0), #000000 0
+						);
+						border-radius: 8px 8px 0 0;
+						bottom: 0;
+						left: 0;
+						position: absolute;
+						right: 0;
+						top: 0;
+						z-index: -1;
+					}
+				}
+			}
+		}
 	}
-	> div {
+	> div.ikf-menu-internal {
 		display: flex;
 		flex-direction: column;
 		flex-shrink: 0;
