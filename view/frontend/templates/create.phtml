@@ -1,4 +1,32 @@
 <div class='ikf-main'>
+	<section class='ikf-editor'>
+		<article>
+			<div class='ikf-zoom'>
+				<div>
+					<button><?= df_block_output(null, 'Inkifi_Map::create/i/zoom/plus.phtml') ?></button>
+					<button><?= df_block_output(null, 'Inkifi_Map::create/i/zoom/minus.phtml') ?></button>
+				</div>
+			</div>
+		</article>
+		<form>
+			<div></div>
+			<div>
+				<div>
+					<div>
+						<a href='javascript:void(0)'>Location</a>
+						<a href='javascript:void(0)'>Labels</a>
+						<a href='javascript:void(0)'>Size</a>
+						<a href='javascript:void(0)'>Style</a>
+						<a href='javascript:void(0)'>Frame</a>
+					</div>
+				</div>
+				<button>
+					<div>Buy poster</div>
+					<div>£25</div>
+				</button>
+			</div>
+		</form>
+	</section>
+	<?= df_js_x('.ikf-editor', 'Inkifi_Map', 'create'); ?>
 	<?= df_block_output(null, 'Inkifi_Map::common/section/reviews.phtml') ?>
 </div>
-<?= df_js_x('.ikf-main', 'Inkifi_Map', 'create');
