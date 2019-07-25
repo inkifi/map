@@ -1,6 +1,10 @@
 // 2019-07-21
 > .ikf-menu {
 	padding: 0 12px;
+	// 2019-07-25
+	// It is my custom rule because
+	// I was unable to re-implement the required behaviour with the MappyPlace's rules.
+	> div.ikf-create {display: none;}
 	@media screen and (max-width: 1024px) {
 		display: flex;
 		flex-direction: column;
@@ -44,8 +48,11 @@
 		}
 		> div.ikf-create {
 			animation: createButtonMobile .7s .4s forwards;
+			// 2019-07-25
+			// It is my custom rule because
+			// I was unable to re-implement the required behaviour with the MappyPlace's rules.
+			display: block;
 			margin: 100px -16px 0 -16px;
-			//opacity: 0;
 			text-align: left;
 			transform: translatey(20px);
 			> a {
