@@ -1,5 +1,6 @@
 // 2019-08-04
 > .ikf-map-1 {
+	border: 10px solid transparent;
     background-color: #ffffff;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -11,36 +12,18 @@
     width: 240px;
 	@media (min-width: 576px) {width: 320px;}
 	@media (min-width: 1025px) {width: 480px;}
-	&.ikf-ratio-3x4 {
-		border: 10px solid transparent;
-		height: 104vw;
-		max-height: 640px;
-		max-width: 480px;
-		width: 78vw;
-	}
-	&.ikf-ratio-5x7 {
-		border: 10px solid transparent;
-		height: 112vw;
-		max-height: 672px;
-		max-width: 480px;
-		width: 80vw;
-	}
+	&.ikf-ratio-2x3 {height: 123vw; max-height: 720px; max-width: 480px; width: 82vw;}
+	&.ikf-ratio-3x4 {height: 104vw; max-height: 640px; max-width: 480px; width: 78vw;}
+	&.ikf-ratio-5x7 {height: 112vw; max-height: 672px; max-width: 480px; width: 80vw;}
+	&.ikf-ratio-7x10 {height: 120vw; max-height: 700px; max-width: 490px; width: 84vw;}
 	&.landscape {
 		width: 100%;
 		@media (min-width: 576px) {width: 480px;}
 		@media (min-width: 1025px) {max-width: 80%; width: 720px;}
-		&.ikf-ratio-3x4 {
-			height: 63vw;
-			max-height: 480px;
-			max-width: 640px;
-			width: 84vw;
-		}
-		&.ikf-ratio-5x7 {
-			height: 60vw;
-			max-height: 480px;
-			max-width: 672px;
-			width: 84vw;
-		}
+		&.ikf-ratio-2x3 {height: 63vw; max-height: 480px; max-width: 640px; width: 84vw;}
+		&.ikf-ratio-3x4 {height: 63vw; max-height: 480px; max-width: 640px; width: 84vw;}
+		&.ikf-ratio-5x7 {height: 60vw; max-height: 480px; max-width: 672px; width: 84vw;}
+		&.ikf-ratio-7x10 {height: 63vw; max-height: 490px; max-width: 700px; width: 90vw;}
 	}
 	> .ikf-pencil {
 		@media (min-width: 576px) {}
