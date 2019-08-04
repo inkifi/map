@@ -1,2 +1,21 @@
 // 2019-07-25
-> form {}
+> form {
+	@media screen and (min-width: 1025px) {}
+	@media screen and (min-width: 1280px) {}
+	@media screen and (max-width: 1024px) {
+		animation: fadeInSmall .4s forwards;
+		margin-top: auto;
+	}
+	> .ikf-sidebar-wide {}
+	> .ikf-sidebar-small {
+		> div {
+			> div {
+
+			}
+		}
+		> button {
+			> .ikf-label {}
+			> .ikf-price {}
+		}
+	}
+}
