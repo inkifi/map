@@ -1,25 +1,62 @@
 // 2019-08-04
-> .ikf-zoom {
-	display: none;
-	left: 20px;
-	position: absolute;
-	top: 20px;
-	@media (min-width: 1025px) {display: block;}
-	> div {
-		> button {
-			align-items: center;
-			background: transparent url('../Inkifi_Map/create/i/zoom.png') center no-repeat;
-			border-radius: 0.6em;
-			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-			color: #ffffff;
-			display: flex;
-			font-size: 30px;
-			height: 40px;
-			justify-content: center;
-			line-height: 0;
-			margin-bottom: 4px;
-			width: 40px;
-			&:last-of-type {margin-bottom: 0;}
+> .ikf-map-1 {
+    background-color: #ffffff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    width: 240px;
+	@media (min-width: 576px) {width: 320px;}
+	@media (min-width: 1025px) {width: 480px;}
+	&.ikf-ratio-3x4 {
+		border: 10px solid transparent;
+		height: 104vw;
+		max-height: 640px;
+		max-width: 480px;
+		width: 78vw;
+	}
+	&.landscape {
+		width: 100%;
+		@media (min-width: 576px) {width: 480px;}
+		@media (min-width: 1025px) {max-width: 80%; width: 720px;}
+		&.ikf-ratio-3x4 {
+			height: 63vw;
+			max-height: 480px;
+			max-width: 640px;
+			width: 84vw;
+		}
+	}
+	> .ikf-pencil {
+		@media (min-width: 576px) {}
+		@media (min-width: 1025px) {}
+		@media (min-width: 1280px) {}
+	}
+	> .ikf-map-2 {
+		@media (min-width: 576px) {}
+		@media (min-width: 1025px) {}
+		@media (min-width: 1280px) {}
+		> .ikf-map-3 {
+			@media (min-width: 576px) {}
+			@media (min-width: 1025px) {}
+			@media (min-width: 1280px) {}
+			> .ikf-map-4 {
+				@media (min-width: 576px) {}
+				@media (min-width: 1025px) {}
+				@media (min-width: 1280px) {}
+				> .ikf-map-5 {
+					@media (min-width: 576px) {}
+					@media (min-width: 1025px) {}
+					@media (min-width: 1280px) {}
+					> .ikf-map-6 {
+						@media (min-width: 576px) {}
+						@media (min-width: 1025px) {}
+						@media (min-width: 1280px) {}
+					}
+				}
+			}
 		}
 	}
 }
