@@ -7,4 +7,13 @@
 	position: absolute;
 	visibility: inherit;
 	width: 100%;
+	> .ikf-canary {background-color: salmon; visibility: hidden;}
+	> div > canvas {height: 620px; outline: none; position: absolute; width: 460px;}
+	> .ikf-controls > div {
+		pointer-events: none; position: absolute; z-index: 2;
+		&.ikf-bottom-left {bottom: 0; left: 0;}
+		&.ikf-bottom-right {bottom: 0; right: 0;}
+		&.ikf-top-left {left: 0; top: 0;}
+		&.ikf-top-right {right: 0; top: 0;}
+	}
 }
