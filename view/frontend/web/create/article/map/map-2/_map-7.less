@@ -11,9 +11,35 @@
 	> div > canvas {height: 620px; outline: none; position: absolute; width: 460px;}
 	> .ikf-controls > div {
 		pointer-events: none; position: absolute; z-index: 2;
-		&.ikf-bottom-left {bottom: 0; left: 0;}
-		&.ikf-bottom-right {bottom: 0; right: 0;}
+		&.ikf-bottom-left {
+			bottom: 0; left: 0;
+			> div.ikf-control {
+				display: none; float: left; margin: 0 0 10px 10px;
+				> a {
+					background: url('../Inkifi_Map/create/i/mapbox.png') no-repeat;
+					cursor: pointer;
+					display: block;
+					height: 21px;
+					margin: 0 0 -3px -3px;
+					width: 85px;
+				}
+			}
+		}
+		&.ikf-bottom-right {
+			bottom: 0; right: 0;
+			> div.ikf-control {
+				background-color: #fff;
+				border-radius: 3px 12px 12px 3px;
+				display: none;
+				float: right;
+				margin: 10px;
+				padding: 0 5px;
+				position: relative;
+				> div {display: none;}
+			}
+		}
 		&.ikf-top-left {left: 0; top: 0;}
 		&.ikf-top-right {right: 0; top: 0;}
+		> div.ikf-control {clear: both; pointer-events: auto;}
 	}
 }
