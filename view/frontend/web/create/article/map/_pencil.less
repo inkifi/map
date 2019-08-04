@@ -1,0 +1,28 @@
+// 2019-08-05
+> .ikf-pencil {
+	background: transparent url('../Inkifi_Map/create/i/pencil.png') center no-repeat;
+	// 2019-08-05
+	// `background-size` should be after the `background` property.
+	// It seems that the Oyejorge Less compiler does not support the `center / contain` syntax
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/background#Formal_syntax
+	// https://stackoverflow.com/a/17093530
+	background-size: contain;
+	display: none;
+	height: 206px;
+	left: calc(~'100% + 18px'); // 2019-08-05 https://stackoverflow.com/a/16869579
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 16px;
+	@media (min-width: 1025px) {display: block;}
+	&.ikf-ratio-2x3 {transform: matrix(0.96, 0, 0, 0.96, 0, -103);}
+	&.ikf-ratio-3x4 {transform: matrix(1.45, 0, 0, 1.45, 0, -103);}
+	&.ikf-ratio-5x7 {transform: matrix(0.85, 0, 0, 0.85, 0, -103);}
+	&.ikf-ratio-7x10 {transform: matrix(0.65, 0, 0, 0.65, 0, -103);}
+	&.landscape {
+		&.ikf-ratio-2x3 {transform: matrix(0, -0.96, 0.96, 0, 0, -103);}
+		&.ikf-ratio-3x4 {transform: matrix(0, -1.45, 1.45, 0, 0, -103);}
+		&.ikf-ratio-5x7 {transform: matrix(0, -0.85, 0.85, 0, 0, -103);}
+		&.ikf-ratio-7x10 {transform: matrix(0, -0.65, 0.65, 0, 0, -103);}
+	}
+}
