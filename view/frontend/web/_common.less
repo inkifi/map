@@ -15,6 +15,7 @@
 		box-sizing: border-box;
 		font-family: Prompt, Helvetica, Arial, sans-serif;
 		outline: none;
+		&:focus, &:hover {outline: none;}
 	}
 	a {
 		color: black;
@@ -31,10 +32,22 @@
 		padding: 0;
 	}
 	input {
-		background-clip: border-box;
-		font-family: Arial;
-		height: auto;
-		line-height: normal;
+		background-clip: border-box; // 2019-08-06 It is an implicit rule of the original
+		background-color: transparent;
+		border-radius: 6px;
+		border: 1px solid #e6eaee;
+		display: block;
+		font-family: Arial; // 2019-08-06 It is an implicit rule of the original
+		font-size: 16px;
+		height: auto; // 2019-08-06 It is an implicit rule of the original
+		line-height: normal; // 2019-08-06 It is an implicit rule of the original
+		padding: 8px 12px 8px;
+		position: relative;
+		transition: all 0.4s ease;
+		width: 100%;
+		z-index: 1;
+		@media screen and (min-width: 1025px) {padding: 10px 12px 10px;}
+		&:focus {border-color: #40ba87 !important;}
 	}
 	@import 'common/_footer';
 	@import 'common/_header';
