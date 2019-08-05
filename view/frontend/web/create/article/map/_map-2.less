@@ -37,6 +37,7 @@
 							z-index: -1;
 						}
 						animation: 1ms resizeanim; opacity: 0; visibility: hidden;
+						@keyframes resizeanim {from {opacity: 0;} to {opacity: 0;}}
 						> div {
 							background: #eee; overflow: auto;
 							&.ikf-expand > div {height: 621px; width: 461px;}
