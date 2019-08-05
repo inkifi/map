@@ -1,7 +1,7 @@
-// 2019-07-25
+// 2019-08-05
 > form {
-	@media screen and (min-width: 1025px) {}
-	@media screen and (min-width: 1280px) {}
+	@media screen and (min-width: 1025px) {flex: 0 0 37%; max-width: 37%;}
+	@media screen and (min-width: 1280px) {flex: 0 0 31%; max-width: 31%;}
 	@media screen and (max-width: 1024px) {
 		animation: fadeInSmall .4s forwards;
 		@keyframes fadeInSmall {
@@ -12,7 +12,22 @@
 		}
 		margin-top: auto;
 	}
-	> .ikf-sidebar-wide {}
+	> .ikf-sidebar-wide {
+		background-color: #ffffff; padding: 12px 12px 80px 12px; position: relative;
+		@media screen and (min-width: 1025px) {min-height: calc(~'100vh - 101px');}
+		@media screen and (max-width: 1024px) {
+			border-top-left-radius: 12px; border-top-right-radius: 12px; padding-bottom: 20px;
+			&:before {
+				border-bottom: 1px solid #e6eaee;
+				bottom: 20px;
+				content: '';
+				left: 0;
+				position: absolute;
+				right: 0;
+				width: 100%;
+			}
+		}
+	}
 	> .ikf-sidebar-small {
 		> div {
 			> div {
