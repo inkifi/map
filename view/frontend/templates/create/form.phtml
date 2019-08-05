@@ -35,55 +35,29 @@
 			<div> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
 				<div> <!-- 2019-08-06 Original: `div.b-radio-select` -->
 					<div> <!-- 2019-08-06 Original: `div.b-radio-select__list` -->
-						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
-							<label>
-								<input name='size' type='radio' value='12×16in'/>
-								<span>12×16in</span>
-								<div></div>
-							</label>
-						</div>
-						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
-							<label>
-								<input name='size' type='radio' value='18×24in'/>
-								<span>18×24in</span>
-								<div></div>
-							</label>
-						</div>
-						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
-							<label>
-								<input name='size' type='radio' value='20×28in'/>
-								<span>20×28in</span>
-								<div></div>
-							</label>
-						</div>
-						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
-							<label>
-								<input name='size' type='radio' value='24×36in'/>
-								<span>24×36in</span>
-								<div></div>
-							</label>
-						</div>
-						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
-							<label>
-								<input name='size' type='radio' value='28×40in'/>
-								<span>28×40in</span>
-								<div></div>
-							</label>
-						</div>
+						<?= df_cc_n(df_map(function($v) {return
+							df_tag('div', [],
+								df_tag('label', [], [
+									df_tag('input', ['name' => 'size', 'type' => 'radio', 'value' => $v])
+									,df_tag('span', [], $v)
+									,df_tag('div')
+								])
+							)
+						;}, ['12×16in', '18×24in', '20×28in', '24×36in', '28×40in'])) ?>
 					</div>
 				</div>
 			</div>
 			<div> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
 				<div> <!-- 2019-08-06 Original: `div.b-radio-select` -->
 					<div> <!-- 2019-08-06 Original: `div.b-radio-select__list` -->
-						<div> <!-- 2019-08-06 Original: `div.STUB` -->
+						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
 							<label>
 								<input name='orientation' type='radio' value='Portrait'/>
 								<span>Portrait</span>
 								<div></div>
 							</label>
 						</div>
-						<div> <!-- 2019-08-06 Original: `div.STUB` -->
+						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
 							<label>
 								<input name='orientation' type='radio' value='Landscape'/>
 								<span>Landscape</span>
