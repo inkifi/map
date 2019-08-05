@@ -47,7 +47,23 @@
 		width: 100%;
 		z-index: 1;
 		@media screen and (min-width: 1025px) {padding: 10px 12px 10px;}
-		&:focus {border-color: #40ba87 !important;}
+		&:focus {
+			border-color: #40ba87 !important;
+			& ~  .ikf-placeholder {color: #40ba87; opacity: 1; top: 0; z-index: 1;}
+		}
+	}
+	.ikf-placeholder {
+		background-color: #ffffff;
+		color: #262a2c;
+		left: 11px;
+		line-height: 1;
+		opacity: .55;
+		padding-left: 2px;
+		padding-right: 2px;
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		transition: all 0.3s ease;
 	}
 	@import 'common/_footer';
 	@import 'common/_header';
