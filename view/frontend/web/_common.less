@@ -48,10 +48,8 @@
 		z-index: 1;
 		@media screen and (min-width: 1025px) {padding: 10px 12px 10px;}
 		&:focus {border-color: #40ba87 !important;}
+		&:focus, &.ikf-has-value {& ~ .ikf-placeholder {color: #40ba87; opacity: 1; top: 0; z-index: 1;}}
 	}
-	input:focus ~ .ikf-placeholder
-	// 2019-08-06 https://stackoverflow.com/a/17249001
-	,[value]:not([value='']) ~ .ikf-placeholder {color: #40ba87; opacity: 1; top: 0; z-index: 1;}
 	.ikf-placeholder {
 		background-color: #ffffff;
 		color: #262a2c;
