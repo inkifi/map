@@ -4,6 +4,12 @@
 	@media screen and (min-width: 1280px) {}
 	@media screen and (max-width: 1024px) {
 		animation: fadeInSmall .4s forwards;
+		@keyframes fadeInSmall {
+			0% {opacity: 0; transform: translatey(200%);}
+			50% {opacity: .5;}
+			75% {opacity: .5;}
+			100% {opacity: 1; transform: translatey(0%);}
+		}
 		margin-top: auto;
 	}
 	> .ikf-sidebar-wide {}
