@@ -4,21 +4,75 @@
 			<h3>Location</h3>
 			<div>
 				<div>
-					<input />
+					<input type='text'/>
 					<div>Enter city of place</div>
 				</div>
 				<button>
-					<div>
-						<?= df_block_output(null, 'Inkifi_Map::create/i/form/location.phtml') ?>
-					</div>
+					<div><?= df_block_output(null, 'Inkifi_Map::create/i/form/location.phtml') ?></div>
 				</button>
 			</div>
 		</section>
 		<section>
 			<h3>Labels</h3>
+			<div>
+				<input type='text' value='London'/>
+				<div>Header</div>
+			</div>
+			<div>
+				<input type='text' value='United Kingdom'/>
+				<div>Divider</div>
+			</div>
+			<div>
+				<input type='text' value='51.496°N/-0.077°E'/>
+				<div>Tag line</div>
+				<button>
+					<div><?= df_block_output(null, 'Inkifi_Map::create/i/form/location.phtml') ?></div>
+				</button>
+			</div>
 		</section>
 		<section>
 			<h3>Size</h3>
+			<div>
+				<div>
+					<div>
+						<div>
+							<label>
+								<input name='size' type='radio' value='12×16in'/>
+								<span>12×16in</span>
+								<div></div>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input name='size' type='radio' value='18×24in'/>
+								<span>18×24in</span>
+								<div></div>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input name='size' type='radio' value='20×28in'/>
+								<span>20×28in</span>
+								<div></div>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input name='size' type='radio' value='24×36in'/>
+								<span>24×36in</span>
+								<div></div>
+							</label>
+						</div>
+						<div>
+							<label>
+								<input name='size' type='radio' value='28×40in'/>
+								<span>28×40in</span>
+								<div></div>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 		<section>
 			<h3>Style</h3>
