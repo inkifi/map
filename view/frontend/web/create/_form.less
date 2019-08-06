@@ -57,7 +57,12 @@
 						@media screen and (max-width: 576px) {padding: 8px 10px;}
 						&:last-child {border: none;}
 						> label {
-							
+							font-size: 11px;
+							> input {
+								display: none;
+								&:checked + span {color: #24b779; font-weight: 600;}
+							}
+							> span {position: relative; z-index: 2;}
 						}
 					}
 				}
