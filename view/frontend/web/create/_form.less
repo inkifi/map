@@ -58,9 +58,22 @@
 						&:last-child {border: none;}
 						> label {
 							font-size: 11px;
+							> div {
+								background-color: #e6eaee;
+								bottom: 0;
+								left: 0;
+								opacity: .25;
+								position: absolute;
+								right: 0;
+								top: 0;
+								z-index: 1;
+							}
 							> input {
 								display: none;
-								&:checked + span {color: #24b779; font-weight: 600;}
+								&:checked {
+									& + span {color: #24b779; font-weight: 600;}
+									& ~ div {background-color: #ffffff;}
+								}
 							}
 							> span {position: relative; z-index: 2;}
 						}
