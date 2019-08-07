@@ -1,3 +1,4 @@
+<?php use Inkifi\Map\HTML; ?>
 <form> <!-- 2019-08-05 Original: `form.o-editor__sidebar` -->
 	<div class='ikf-sidebar-wide'> <!-- 2019-08-05 Original: `div.b-sidebar` -->
 		<section> <!-- 2019-08-06 Original: `div.b-input.b-input--hidden-mobile` -->
@@ -76,24 +77,7 @@
 			<div class='ikf-label'>Style</div>
 			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
 				<div class='ikf-tiles'> <!-- 2019-08-06 Original: `div.b-radio-tile-select` -->
-					<?=
-						df_cc_n(df_map(function($v) {$t = ucfirst($v); return
-							df_tag('div', [],
-								df_tag('label', [], [
-									df_tag('input', ['name' => 'style', 'type' => 'radio', 'value' => $v])
-									,df_tag('div', [], [
-										df_tag('div', [],
-											df_block_output(null, "Inkifi_Map::create/i/form/style/$v.phtml")
-										)
-										,df_tag('div', ['style' => sprintf("background-image: url('%s')",
-											df_asset_url("Inkifi_Map::create/i/form/style/$v.png")
-										)])
-									])
-									,df_tag('span', [], $t)
-								])
-							)
-						;}, ['contrast', 'twilight', 'bauhaus', 'sierra', 'spot']))
-					?>
+					<?= HTML::tiles('style', ['contrast', 'twilight', 'bauhaus', 'sierra', 'spot']) ?>
 				</div>
 			</div>
 		</section>
@@ -132,42 +116,7 @@
 		<section> <!-- 2019-08-06 Original: `div.b-input.b-input--hidden-mobile` -->
 			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
 				<div class='ikf-tiles'> <!-- 2019-08-06 Original: `div.b-radio-tile-select` -->
-					<div> <!-- 2019-08-06 Original: `div.b-radio-tile-select__item` -->
-						<label>
-							<input name='color' type='radio' value='Natural'/>
-							<div>
-								<div>
-									<?= df_block_output(null, 'Inkifi_Map::create/i/form/frame/natural.phtml') ?>
-								</div>
-								<div></div>
-							</div>
-							<span>Natural</span>
-						</label>
-					</div>
-					<div> <!-- 2019-08-06 Original: `div.b-radio-tile-select__item` -->
-						<label>
-							<input name='color' type='radio' value='Black'/>
-							<div>
-								<div>
-									<?= df_block_output(null, 'Inkifi_Map::create/i/form/frame/black.phtml') ?>
-								</div>
-								<div></div>
-							</div>
-							<span>Black</span>
-						</label>
-					</div>
-					<div> <!-- 2019-08-06 Original: `div.b-radio-tile-select__item` -->
-						<label>
-							<input name='color' type='radio' value='White'/>
-							<div>
-								<div>
-									<?= df_block_output(null, 'Inkifi_Map::create/i/form/frame/white.phtml') ?>
-								</div>
-								<div></div>
-							</div>
-							<span>White</span>
-						</label>
-					</div>
+					<?= HTML::tiles('frame', ['natural', 'black', 'white']) ?>
 				</div>
 			</div>
 		</section>
