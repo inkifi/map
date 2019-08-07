@@ -85,12 +85,14 @@
 										df_tag('div', [],
 											df_block_output(null, "Inkifi_Map::create/i/form/style/$v.phtml")
 										)
-										,df_tag('div')
+										,df_tag('div', ['style' => sprintf("background-image: url('%s')",
+											df_asset_url("Inkifi_Map::create/i/form/style/$v.png")
+										)])
 									])
 									,df_tag('span', [], $t)
 								])
 							)
-						;}, ['contrast', 'twilight', 'bauhaus', 'sierra', 'seaside']))
+						;}, ['contrast', 'twilight', 'bauhaus', 'sierra', 'spot']))
 					?>
 				</div>
 			</div>
