@@ -3,8 +3,14 @@
 	bottom: 0; position: sticky; z-index: 5;
 	@media (min-width: 768px) and (max-width: 1024px) {background-color: #fff;}
 	> div {
-		> div {
+		background-color: #ffffff; display: none;
+		@media screen and (max-width: 1024px) {
+			display: block;
+			padding: 0 18px 18px;
+			position: relative;
+			> div {
 
+			}
 		}
 	}
 	> button {
