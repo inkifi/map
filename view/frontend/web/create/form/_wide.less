@@ -76,9 +76,14 @@
 				> div {
 					flex: 1; text-align: center;
 					> label {
-						> input:checked {
-							~ div .stroke-opacity {stroke: #40ba87; stroke-opacity: 1;}
-							~ span {color: #24b779; font-weight: 600;}
+						> input {
+							> &:checked {
+								~ div .stroke-opacity {stroke: #40ba87; stroke-opacity: 1;}
+								~ span {color: #24b779; font-weight: 600;}
+							}
+							> &:disabled {
+								~ span {opacity: .4;}
+							}
 						}
 						> div {
 							height: 44px;
