@@ -32,10 +32,7 @@
 			.ikf-tabs, .ikf-tiles {
 				label {
 					font-size: 11px;
-					> input {
-						display: none;
-						&:checked ~ span {color: #24b779; font-weight: 600;}
-					}
+					> input {display: none;}
 				}
 			}
 			.ikf-tabs {
@@ -63,7 +60,13 @@
 							top: 0;
 							z-index: 1;
 						}
-						> input:checked ~ div {background-color: #ffffff;}
+						> input:checked {
+							~ div {background-color: #ffffff;}
+							// 2019-08-08
+							// It should be `+` here, not `~`,
+							// because «+£30» should not be green in the «Poster + frame +£30» string.
+							+ span {color: #24b779; font-weight: 600;}
+						}
 						> span {position: relative; z-index: 2;}
 					}
 				}
@@ -73,7 +76,10 @@
 				> div {
 					flex: 1; text-align: center;
 					> label {
-						> input:checked ~ div .stroke-opacity {stroke: #40ba87; stroke-opacity: 1;}
+						> input:checked {
+							~ div .stroke-opacity {stroke: #40ba87; stroke-opacity: 1;}
+							~ span {color: #24b779; font-weight: 600;}
+						}
 						> div {
 							height: 44px;
 							margin: 0 auto;
