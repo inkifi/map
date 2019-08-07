@@ -2,19 +2,6 @@
 > .ikf-sidebar-sticky {
 	bottom: 0; position: sticky; z-index: 5;
 	@media (min-width: 768px) and (max-width: 1024px) {background-color: #fff;}
-	> div {
-		background-color: #ffffff; display: none;
-		@media screen and (max-width: 1024px) {
-			display: block;
-			padding: 0 18px 18px;
-			position: relative;
-			> div {
-
-			}
-		}
-	}
-	> button {
-		> .ikf-label {}
-		> .ikf-price {}
-	}
+	@import 'sticky/_button';
+	@import 'sticky/_form';
 }
