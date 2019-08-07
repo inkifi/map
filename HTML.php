@@ -22,9 +22,12 @@ final class HTML {
 							'style' =>
 								'black' === $v
 								? 'background-color: rgb(44, 44, 44)'
-								: sprintf("background-image: url('%s')",
-									df_asset_url("Inkifi_Map::create/i/form/$type/$v.png")
-								)
+								: df_cc('; ', [
+									sprintf("background-image: url('%s')",
+										df_asset_url("Inkifi_Map::create/i/form/$type/$v.png")
+									)
+									,'natural' !== $v ? '' : 'background-color: rgb(136, 112, 85)'
+								])
 						])
 					])
 					,df_tag('span', [], $uc)
