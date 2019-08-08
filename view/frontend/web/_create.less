@@ -9,6 +9,12 @@
 		height: auto;
 		min-height: auto;
 	}
+	@keyframes fadeInSmall {
+		0% {opacity: 0; transform: translatey(200%);}
+		50% {opacity: .5;}
+		75% {opacity: .5;}
+		100% {opacity: 1; transform: translatey(0%);}
+	}
 	@import 'create/_article';
 	@import 'create/_form';
 }

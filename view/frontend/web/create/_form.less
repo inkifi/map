@@ -2,16 +2,7 @@
 > form {
 	@media screen and (min-width: 1025px) {flex: 0 0 37%; max-width: 37%;}
 	@media screen and (min-width: 1280px) {flex: 0 0 31%; max-width: 31%;}
-	@media screen and (max-width: 1024px) {
-		animation: fadeInSmall .4s forwards;
-		@keyframes fadeInSmall {
-			0% {opacity: 0; transform: translatey(200%);}
-			50% {opacity: .5;}
-			75% {opacity: .5;}
-			100% {opacity: 1; transform: translatey(0%);}
-		}
-		margin-top: auto;
-	}
+	@media screen and (max-width: 1024px) {  animation: fadeInSmall .4s forwards; margin-top: auto;}
 	@import 'form/_sticky';
 	@import 'form/_wide';
 }
