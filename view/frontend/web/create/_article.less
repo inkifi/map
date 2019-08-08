@@ -1,12 +1,14 @@
 // 2019-07-25
 > article {
 	padding: 12px 0;
-	@media screen and (min-width: 576px) {padding: 40px 0;}
-	@media screen and (min-width: 1025px) {flex: 0 0 63%; max-width: 63%;}
-	@media screen and (min-width: 1280px) {flex: 0 0 69%; max-width: 69%;}
-	@media screen and (max-width: 1024px) {
-		animation: fadeInSmall .4s forwards;
-		margin: auto;
+	@media screen {
+		@media (min-width: 576px) {padding: 40px 0;}
+		@media (min-width: 1025px) {flex: 0 0 63%; max-width: 63%;}
+		@media (min-width: 1280px) {flex: 0 0 69%; max-width: 69%;}
+		@media (max-width: 1024px) {
+			animation: fadeInSmall .4s forwards;
+			margin: auto;
+		}
 	}
 	@import 'article/_map';
 	@import 'article/_zoom';
