@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Prompt:300,400,500,600,700&display=swap');
 .inkifi-map-index-index, .inkifi-map-create-index {
 	color: black;
+	font-family: Prompt, Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	// 2019-07-23
 	// The latest Chrome still does not support `font-size-adjust`,
@@ -13,7 +14,6 @@
 	::selection {background-color: #f7da5f; color: #fff; text-shadow: none;}
 	* {
 		box-sizing: border-box;
-		font-family: Prompt, Helvetica, Arial, sans-serif;
 		outline: none;
 		&:focus, &:hover {outline: none;}
 	}
@@ -29,6 +29,7 @@
 		border: none;
 		box-shadow: none;
 		cursor: pointer;
+		font-family: Arial; // 2019-08-08 It is an implicit rule of the original
 		padding: 0;
 	}
 	input {
