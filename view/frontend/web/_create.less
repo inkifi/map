@@ -4,7 +4,10 @@
 	display: flex;
 	position: relative;
 	z-index: 9;
-	@media (min-width: 1025px) {align-items: center; height: auto; min-height: auto;}
+	@media screen {
+		@media (max-width: 1024px) {flex-direction: column; min-height: calc(~'100vh - 48px');}
+		@media (min-width: 1025px) {align-items: center; height: auto; min-height: auto;}
+	}
 	@keyframes fadeInSmall {
 		0% {opacity: 0; transform: translatey(200%);}
 		50% {opacity: .5;}
