@@ -16,10 +16,11 @@
 	}
 	> section {
 		margin-bottom: 20px;
-		@media screen and (max-width: 1024px) {
-			&:not(:first-of-type) {display: none;}
+		@media screen and (max-width: 1024px) {&:not(:first-of-type) {display: none;}}
+		> .ikf-label {
+			font-weight: 600; margin-bottom: 10px;
+			@media screen and (max-width: 1024px) {display: none;}
 		}
-		> .ikf-label {font-weight: 600; margin-bottom: 10px;}
 		> .ikf-row {
 			margin-bottom: 12px; position: relative;
 			&:last-child {margin-bottom: 0;}
