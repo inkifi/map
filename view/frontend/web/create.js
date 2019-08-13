@@ -1,11 +1,5 @@
 // 2019-08-08
-define(['jquery', 'domReady!'], function($) {return (
-/**
- * @param {Object} c
- * @param {HTMLDivElement} e
- */
-function(c, e) {
-	var $e = $(e);
+define(['jquery', 'domReady!'], function($) {return (function() {
 	(function() {
 		var $colors = $('input[name="color"]');
 		var $frames = $('input[name="frame"]');
@@ -27,4 +21,13 @@ function(c, e) {
 			}
 		});
 	})();
+	(function() {
+		$('button.ikf-location').click(function(e) {
+			e.preventDefault();
+			navigator.geolocation.getCurrentPosition(function(r) {
+				debugger;
+			});
+		});
+	})();
+
 });});
