@@ -13,4 +13,15 @@ function(c, e) {
 		$frames.change(function() {updateColors(this.value);});
 		updateColors($frames.filter(':checked').val());
 	})();
+	(function() {
+		var $sections = $('.ikf-sidebar-wide > section');
+		var $aa = $('.ikf-sidebar-sticky nav > a');
+		var c = 'ikf-active';
+		$aa.click(function() {
+			var $this = $(this);
+			$aa.removeClass(c);
+			$this.addClass(c);
+			$sections.removeClass(c).eq($this.index()).addClass(c);
+		});
+	})();
 });});
