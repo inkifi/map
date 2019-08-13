@@ -25,6 +25,9 @@ define(['jquery', 'domReady!'], function($) {return (function() {
 		$('button.ikf-location').click(function(e) {
 			e.preventDefault();
 			navigator.geolocation.getCurrentPosition(function(r) {
+				var lat = r.coords.latitude;
+				var lng = r.coords.longitude;
+				var tag = ''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E");
 				debugger;
 			});
 		});
