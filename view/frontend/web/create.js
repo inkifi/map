@@ -41,8 +41,8 @@ define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() 
 		$('button.ikf-location').click(function(e) {
 			e.preventDefault();
 			navigator.geolocation.getCurrentPosition(function(r) {
-				var lat = r.coords.latitude;
-				var lng = r.coords.longitude;
+				const lat = r.coords.latitude;
+				const lng = r.coords.longitude;
 				/**
 				 * 2019-08-14
 				 * Starting from Firefox 34 / Chrome 41 / Safari 9 / Microsoft Edge
