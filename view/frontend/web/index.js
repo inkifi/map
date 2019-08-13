@@ -8,7 +8,7 @@ function(c, e) {
 	var $e = $(e);
 	(function() {
 		var $e = $('.ikf-cities', $e);
-		var slidesToShow = function() {
+		const slidesToShow = function() {
 			var w = $(window).width();
 			return (w > 1739 ? 5.7 : (w > 1469 ? 4.7 : (w > 1024 ? 3.8 : (w > 640 ? 3.3 : 1.9))));
 		};
