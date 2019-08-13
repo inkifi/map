@@ -22,6 +22,9 @@ function(c, e) {
 			$aa.removeClass(c);
 			$this.addClass(c);
 			$sections.removeClass(c).eq($this.index()).addClass(c);
+			if (1 === $aa.length - $this.index()) {
+				$sections.last().addClass(c);
+			}
 		});
 	})();
 });});
