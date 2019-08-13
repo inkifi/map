@@ -21,7 +21,9 @@ define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() 
 			}
 		});
 	})();
-
+	const $iH1 = $('input[name=h1]');
+	const $iH2 = $('input[name=h2]');
+	const $iH3 = $('input[name=h3]');
 	(function() {
 		const KEY = '6b0d03206e1b4d9f812be0b8c1a4475c';
 		const URL = 'https://api.opencagedata.com/geocode/v1/json';
@@ -54,10 +56,10 @@ define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() 
 				 * 		var coord = ''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E");
 				 */
 				var coord = `${Number(lat).toFixed(3)}°N/${Number(lng).toFixed(3)}°E`;
-				$('input[name=tagLine]').val(coord);
+				$iH3.val(coord);
 				getGeocodeByCoords(lat, lng).then((r) => {
-					$('input[name=header]').val(r.city);
-					$('input[name=divider]').val(r.country);
+					$iH1.val(r.city);
+					$iH2.val(r.country);
 				});
 			});
 		});
