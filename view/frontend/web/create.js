@@ -27,8 +27,8 @@ define(['jquery', 'domReady!'], function($) {return (function() {
 			navigator.geolocation.getCurrentPosition(function(r) {
 				var lat = r.coords.latitude;
 				var lng = r.coords.longitude;
-				var tag = ''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E");
-				debugger;
+				var coord = ''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E");
+				$('input[name=coordinates]').val(coord);
 			});
 		});
 	})();
