@@ -1,5 +1,6 @@
 // 2019-08-08
 define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() {
+	const $editor = $('.ikf-editor');
 	(function() {
 		const $colors = $('input[name="color"]');
 		const $frames = $('input[name="frame"]');
@@ -24,6 +25,15 @@ define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() 
 	const $iH1 = $('input[name=h1]');
 	const $iH2 = $('input[name=h2]');
 	const $iH3 = $('input[name=h3]');
+	(function() {
+		const $label = $('article .ikf-label', $editor);
+		const $h1 = $('h1', $label);
+		const $h2 = $('h2', $label);
+		const $h3 = $('h3', $label);
+		$iH1.change(function() {$h1.html($(this).val());});
+		$iH2.change(function() {$h2.html($(this).val());});
+		$iH3.change(function() {$h3.html($(this).val());});
+	})();
 	(function() {
 		const KEY = '6b0d03206e1b4d9f812be0b8c1a4475c';
 		const URL = 'https://api.opencagedata.com/geocode/v1/json';
@@ -56,10 +66,11 @@ define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() 
 				 * 		var coord = ''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E");
 				 */
 				var coord = `${Number(lat).toFixed(3)}°N/${Number(lng).toFixed(3)}°E`;
-				$iH3.val(coord);
+				// 2019-08-14 `.val()` does not trigger `change`: https://stackoverflow.com/a/3179392
+				$iH3.val(coord).change();
 				getGeocodeByCoords(lat, lng).then((r) => {
-					$iH1.val(r.city);
-					$iH2.val(r.country);
+					$iH1.val(r.city).change();
+					$iH2.val(r.country).change();
 				});
 			});
 		});
