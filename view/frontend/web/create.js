@@ -1,5 +1,5 @@
 // 2019-08-08
-define(['jquery', 'domReady!'], function($) {return (function() {
+define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() {
 	(function() {
 		var $colors = $('input[name="color"]');
 		var $frames = $('input[name="frame"]');
@@ -22,6 +22,21 @@ define(['jquery', 'domReady!'], function($) {return (function() {
 		});
 	})();
 	(function() {
+		const KEY = '6b0d03206e1b4d9f812be0b8c1a4475c';
+		const URL = 'https://api.opencagedata.com/geocode/v1/json';
+		const formatCity = function(v) {return v !== 'Palma' ? v : 'Palma de Mallorca';};
+		const formatCountry = function(v) {return v !== 'PRC' ? v : 'China';};
+		const getGeocodeByCoords = async (lat, lng) => {return new Promise((resolve) => {return(
+			// 2019-08-14
+			// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+			// https://caniuse.com/#search=fetch
+			fetch(`${URL}?q=${lat}+${lng}&key=${KEY}&language=en`).then((r) => r.json()).then((r) => {
+				const c = _.get(r, 'results[0].components');
+				if (c) {
+					resolve({city: formatCity(c.city), country: formatCountry(c.country), state: c.state});
+				}
+			})
+		);});};
 		$('button.ikf-location').click(function(e) {
 			e.preventDefault();
 			navigator.geolocation.getCurrentPosition(function(r) {
@@ -38,7 +53,11 @@ define(['jquery', 'domReady!'], function($) {return (function() {
 				 * 		var coord = ''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E");
 				 */
 				var coord = `${Number(lat).toFixed(3)}°N/${Number(lng).toFixed(3)}°E`;
-				$('input[name=coordinates]').val(coord);
+				$('input[name=tagLine]').val(coord);
+				getGeocodeByCoords(lat, lng).then((r) => {
+					$('input[name=header]').val(r.city);
+					$('input[name=divider]').val(r.country);
+				});
 			});
 		});
 	})();
