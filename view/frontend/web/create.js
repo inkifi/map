@@ -63,7 +63,7 @@ define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() 
 				 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 				 * https://caniuse.com/#search=Template%20Literals
 				 * The plain JS code is:
-				 * 		var coord = ''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E");
+				 * 		''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E")
 				 */
 				var coord = `${Number(lat).toFixed(3)}°N/${Number(lng).toFixed(3)}°E`;
 				// 2019-08-14 `.val()` does not trigger `change`: https://stackoverflow.com/a/3179392
