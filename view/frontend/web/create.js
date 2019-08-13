@@ -27,7 +27,17 @@ define(['jquery', 'domReady!'], function($) {return (function() {
 			navigator.geolocation.getCurrentPosition(function(r) {
 				var lat = r.coords.latitude;
 				var lng = r.coords.longitude;
-				var coord = ''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E");
+				/**
+				 * 2019-08-14
+				 * Starting from Firefox 34 / Chrome 41 / Safari 9 / Microsoft Edge
+				 * you can use an ES2015 / ES6 feature called Template Literals:
+				 * https://stackoverflow.com/a/28088965
+				 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+				 * https://caniuse.com/#search=Template%20Literals
+				 * The plain JS code is:
+				 * 		var coord = ''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E");
+				 */
+				var coord = `${Number(lat).toFixed(3)}°N/${Number(lng).toFixed(3)}°E`;
 				$('input[name=coordinates]').val(coord);
 			});
 		});
