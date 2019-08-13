@@ -1,18 +1,18 @@
 // 2019-08-08
 define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() {
 	(function() {
-		var $colors = $('input[name="color"]');
-		var $frames = $('input[name="frame"]');
-		var updateColors = function(v) {$colors.prop('disabled', 'frame' !== v);};
+		const $colors = $('input[name="color"]');
+		const $frames = $('input[name="frame"]');
+		const updateColors = function(v) {$colors.prop('disabled', 'frame' !== v);};
 		$frames.change(function() {updateColors(this.value);});
 		updateColors($frames.filter(':checked').val());
 	})();
 	(function() {
-		var $sections = $('.ikf-sidebar-wide > section');
-		var $aa = $('.ikf-sidebar-sticky nav > a');
-		var c = 'ikf-active';
+		const $sections = $('.ikf-sidebar-wide > section');
+		const $aa = $('.ikf-sidebar-sticky nav > a');
+		const c = 'ikf-active';
 		$aa.click(function() {
-			var $this = $(this);
+			const $this = $(this);
 			$aa.removeClass(c);
 			$this.addClass(c);
 			$sections.removeClass(c).eq($this.index()).addClass(c);
@@ -21,6 +21,7 @@ define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() 
 			}
 		});
 	})();
+
 	(function() {
 		const KEY = '6b0d03206e1b4d9f812be0b8c1a4475c';
 		const URL = 'https://api.opencagedata.com/geocode/v1/json';
@@ -61,5 +62,4 @@ define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() 
 			});
 		});
 	})();
-
 });});
