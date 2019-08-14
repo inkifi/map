@@ -30,7 +30,8 @@ define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() 
 		const $h1 = $('h1', $label);
 		const $h2 = $('h2', $label);
 		const $h3 = $('h3', $label);
-		$iH1.change(function() {$h1.html($(this).val());});
+		$iH1.add($iH2).add($iH3).on('keyup paste', function() {$(this).change();});
+		$iH1.on('change', function() {$h1.html($(this).val());});
 		$iH2.change(function() {$h2.html($(this).val());});
 		$iH3.change(function() {$h3.html($(this).val());});
 	})();
