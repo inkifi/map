@@ -6,9 +6,9 @@ define([
 	// https://github.com/mapbox/mapbox-gl-js/tree/v0.53.1
 	,'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'
 	,'domReady!'
-], function(_, $, mapboxgl) {return (function() {
+], function(_, $, mapbox) {return (function() {
 	// 2019-08-23 https://docs.mapbox.com/mapbox-gl-js/overview/#quickstart
-	mapboxgl.accessToken = 'pk.eyJ1IjoiZG1pdHJ5LWZlZHl1ayIsImEiOiJjanpwM2xzMmQwODl0M2Rtc3pzN2xvcXE1In0.1WSzOsyJSEzIPxAI1s-Rug';
+	mapbox.accessToken = 'pk.eyJ1IjoiZG1pdHJ5LWZlZHl1ayIsImEiOiJjanpwM2xzMmQwODl0M2Rtc3pzN2xvcXE1In0.1WSzOsyJSEzIPxAI1s-Rug';
 	const $editor = $('.ikf-editor');
 	(function() {
 		const $colors = $('input[name="color"]');
