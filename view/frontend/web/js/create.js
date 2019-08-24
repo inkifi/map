@@ -6,7 +6,7 @@ define([
 	// https://github.com/mapbox/mapbox-gl-js/tree/v0.53.1
 	,'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'
 	,'domReady!'
-	,'Inkifi_Map/create/geocode'
+	,'Inkifi_Map/js/create/geocode'
 ], function(_, $, mapbox) {return (function() {
 	(function() {
 		const $colors = $('input[name="color"]');
