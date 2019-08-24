@@ -1,5 +1,11 @@
 // 2019-08-08
-define(['df-lodash', 'jquery', 'domReady!'], function(_, $) {return (function() {
+define([
+	'df-lodash', 'jquery', 'domReady!'
+	// 2019-08-23
+	// mappyplace.com uses the version 0.53.1 (2019-02-28) of the Mapbox GL JS library:
+	// https://github.com/mapbox/mapbox-gl-js/tree/v0.53.1
+	,'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'
+], function(_, $) {return (function() {
 	const $editor = $('.ikf-editor');
 	(function() {
 		const $colors = $('input[name="color"]');
