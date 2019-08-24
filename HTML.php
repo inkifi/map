@@ -16,7 +16,7 @@ final class HTML {
 					df_tag('input', ['name' => $type, 'type' => 'radio', 'value' => $v])
 					,df_tag('div', [], [
 						df_tag('div', [],
-							df_block_output(null, "Inkifi_Map::create/i/form/$type/$v.phtml")
+							df_block_output(null, "Inkifi_Map::i/create/form/$type/$v.phtml")
 						)
 						,df_tag('div', 'white' === $v ? [] : [
 							'style' =>
@@ -24,7 +24,7 @@ final class HTML {
 								? 'background-color: rgb(44, 44, 44)'
 								: df_cc('; ', [
 									sprintf("background-image: url('%s')",
-										df_asset_url("Inkifi_Map::create/i/form/$type/$v.png")
+										df_asset_url("Inkifi_Map::i/create/form/$type/$v.png")
 									)
 									,'natural' !== $v ? '' : 'background-color: rgb(136, 112, 85)'
 								])

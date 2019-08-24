@@ -11,7 +11,7 @@
 			<?=
 				df_cc_n(df_map(function($i) {return
 					df_tag('div', 'ikf-img-container',
-						df_tag('img', ['src' => df_asset_url("Inkifi_Map::common/i/inspiration/$i.png")])
+						df_tag('img', ['src' => df_asset_url("Inkifi_Map::i/common/inspiration/$i.png")])
 					)
 				;}, [1, 2, 3]));
 			?>
@@ -20,7 +20,7 @@
 			df_tag('a', ['class' => 'ikf-more', 'href' => 'javascript:void(0)'], [
 				df_tag('div', 'ikf-img')
 				,df_tag('span', 'ikf-text', 'More inspiration')
-				,df_block_output(null, 'Inkifi_Map::common/i/more.phtml')
+				,df_block_output(null, 'Inkifi_Map::i/common/more.phtml')
 			])
 		?>
 	</div>

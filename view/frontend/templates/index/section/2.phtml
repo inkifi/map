@@ -1,21 +1,21 @@
 <ol class='ikf-benefits'>
 	<li>
 		<div class='ikf-benefit'>
-			<div class='ikf-figure'><?= df_block_output(null, 'Inkifi_Map::index/i/shipping.phtml') ?></div>
+			<div class='ikf-figure'><?= df_block_output(null, 'Inkifi_Map::i/index/shipping.phtml') ?></div>
 			<div>Fast shipping, worldwide</div>
 		</div>
 	</li>
 	<li>
 		<div class='ikf-benefit'>
 			<div class='ikf-figure'>
-				<?= df_tag('img', ['src' => df_asset_url('Inkifi_Map::index/i/print.svg')]) ?>
+				<?= df_tag('img', ['src' => df_asset_url('Inkifi_Map::i/index/print.svg')]) ?>
 			</div>
 			<div class='ikf-title'>Premium Quality Prints</div>
 		</div>
 	</li>
 	<li>
 		<div class='ikf-benefit'>
-			<div class='ikf-figure'><?= df_block_output(null, 'Inkifi_Map::index/i/guarantee.phtml') ?></div>
+			<div class='ikf-figure'><?= df_block_output(null, 'Inkifi_Map::i/index/guarantee.phtml') ?></div>
 			<div>100% Satisfaction Guarantee</div>
 		</div>
 	</li>
@@ -25,7 +25,7 @@
 	<?=
 		df_cc_n(df_map(function($c) {return
 			df_tag('a', ['href' => 'javascript:void(0)'],
-				df_tag('img', ['src' => df_asset_url("Inkifi_Map::index/i/map/$c.jpg")])
+				df_tag('img', ['src' => df_asset_url("Inkifi_Map::i/index/map/$c.jpg")])
 			)
 		;}, ['new-york', 'singapore', 'copenhagen', 'paris', 'lisbon', 'london', 'amsterdam']));
 	?>

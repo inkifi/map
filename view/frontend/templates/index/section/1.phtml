@@ -1,9 +1,9 @@
 <div class='ikf-row'>
 	<figure>
-		<div><?= df_tag('img', ['src' => df_asset_url('Inkifi_Map::index/i/header/yellow.svg')]) ?></div>
+		<div><?= df_tag('img', ['src' => df_asset_url('Inkifi_Map::i/index/header/yellow.svg')]) ?></div>
 	</figure>
 	<?= df_cc_n(df_map(function($i) {return df_tag('figure', [], df_tag('div', [], df_block_output(null,
-		"Inkifi_Map::index/i/header/$i.phtml"
+		"Inkifi_Map::i/index/header/$i.phtml"
 	)));}, ['green', 'violet'])) ?>
 </div>
 <div class='ikf-row'>
@@ -15,12 +15,12 @@
 	</div>
 	<figure>
 		<div>
-			<?= df_block_output(null, 'Inkifi_Map::index/i/header/orange.phtml') ?>
+			<?= df_block_output(null, 'Inkifi_Map::i/index/header/orange.phtml') ?>
 		</div>
 	</figure>
 	<figure>
 		<div>
-			<?= df_block_output(null, 'Inkifi_Map::index/i/header/black.phtml') ?>
+			<?= df_block_output(null, 'Inkifi_Map::i/index/header/black.phtml') ?>
 		</div>
 	</figure>
 </div>
