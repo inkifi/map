@@ -38,9 +38,9 @@ define([
 		var map = new mapbox.Map({
 			container: $('.ikf-map-4').get(0)
 			// 2019-08-23
-			// https://gitlab.com/strsqr/mappyplace/blob/e2570bdc/src/config.example.json#L8
-			// https://gitlab.com/strsqr/mappyplace/blob/e2570bdc/src/components/pages/Editor.js#L35
-			// https://gitlab.com/strsqr/mappyplace/blob/e2570bdc/src/components/pages/Editor.js#L56
+			// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/config.example.json#L8
+			// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L34-L35
+			// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L56-L62
 			,style: 'https://tiles.mappyplace.com/styles/Contrast/style.json'
 		});
 	})();
