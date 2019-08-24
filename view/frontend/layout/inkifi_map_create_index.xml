@@ -4,7 +4,13 @@
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'
 >
 	<update handle='inkifi_map'/>
-	<head><title>inkifi_map_create_index</title></head>
+	<head>
+		<title>inkifi_map_create_index</title>
+<!-- 2019-08-23
+mappyplace.com uses the version 0.53.1 (2019-02-28) of the Mapbox GL JS library:
+https://github.com/mapbox/mapbox-gl-js/tree/v0.53.1 -->
+		<css src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' src_type='url'/>
+	</head>
 	<body>
 		<referenceContainer name='base-main-container'>
 			<block class='Magento\Framework\View\Element\Template' template='Inkifi_Map::create.phtml'/>
