@@ -1,0 +1,65 @@
+<div class='ikf-cities'>
+	<?=
+		df_cc_n(df_map_k(function($c, array $q) {return df_tag('a',
+			['href' => df_url(df_route('Inkifi_Map', 'create'), ['_query' => $q])]
+			,df_tag('img', ['src' => df_asset_url("Inkifi_Map::i/index/map/$c.jpg")])
+		);}, [
+			'new-york' => [
+				'divider' => 'USA'
+				,'header' => 'New York'
+				,'latitude' => 40.7127281
+				,'longitude' => -74.0060152
+				,'style' => 'Contrast'
+				,'zoom' => 10.7
+			]
+			,'singapore' => [
+				'divider' => 'Singapore'
+				,'header' => 'Singapore'
+				,'latitude' => 1.3201292618318443
+				,'longitude' => 103.85151551993842
+				,'style' => 'Sierra'
+				,'zoom' => 10.4
+			]
+			,'copenhagen' => [
+				'divider' => 'Denmark'
+				,'header' => 'Copenhagen'
+				,'latitude' => 55.6867243
+				,'longitude' => 12.5700724
+				,'style' => 'Bauhaus'
+				,'zoom' => 10.1
+			]
+			,'paris' => [
+				'divider' => 'France'
+				,'header' => 'Paris'
+				,'latitude' => 48.8566969
+				,'longitude' => 2.3514616
+				,'style' => 'Contrast'
+				,'zoom' => 10.4
+			]
+			,'lisbon' => [
+				'divider' => 'Portugal'
+				,'header' => 'Lisbon'
+				,'latitude' => 38.7077507
+				,'longitude' => -9.1365919
+				,'style' => 'Seaside'
+				,'zoom' => 10.1
+			]
+			,'london' => [
+				'divider' => 'United Kingdom'
+				,'header' => 'London'
+				,'latitude' => 51.48797126261674
+				,'longitude' => -0.07491848003348663
+				,'style' => 'Contrast'
+				,'zoom' => 9.8
+			]
+			,'amsterdam' => [
+				'divider' => 'Netherlands'
+				,'header' => 'Amsterdam'
+				,'latitude' => 52.3745403
+				,'longitude' => 4.8979755
+				,'style' => 'Sierra'
+				,'zoom' => 10.4
+			]
+		]));
+	?>
+</div>
