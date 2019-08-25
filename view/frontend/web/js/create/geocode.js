@@ -1,10 +1,9 @@
-// 2019-08-08
-define(['df-lodash', 'jquery'], function(_, $) {return (function() {
+// 2019-08-24
+define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/events'], function(_, $, EV) {return (function() {
 	const $editor = $('.ikf-editor');
 	const $iH1 = $('input[name=h1]');
 	const $iH2 = $('input[name=h2]');
 	const $iH3 = $('input[name=h3]');
-	const EVENT = {coordinatesChanged: 'inkifi.map.coordinatesChanged'};
 	(function() {
 		const $label = $('article .ikf-label', $editor);
 		const $h1 = $('h1', $label);
@@ -29,7 +28,7 @@ define(['df-lodash', 'jquery'], function(_, $) {return (function() {
 		$iH1.on('change', function() {$h1.html($(this).val());});
 		$iH2.change(function() {$h2.html($(this).val());});
 		$iH3.change(function() {$h3.html($(this).val());});
-		$(window).bind(EVENT.coordinatesChanged, function(e, lat, lng) {
+		$(window).bind(EV.coordinatesChanged, function(e, lat, lng) {
 			/**
 			 * 2019-08-14
 			 * 1) Starting from Firefox 34 / Chrome 41 / Safari 9 / Microsoft Edge
@@ -51,7 +50,7 @@ define(['df-lodash', 'jquery'], function(_, $) {return (function() {
 	$('button.ikf-location').click(function(e) {
 		e.preventDefault();
 		navigator.geolocation.getCurrentPosition(function(r) {
-			$(window).trigger(EVENT.coordinatesChanged, [r.coords.latitude, r.coords.longitude]);
+			$(window).trigger(EV.coordinatesChanged, [r.coords.latitude, r.coords.longitude]);
 		});
 	});
 })();});
