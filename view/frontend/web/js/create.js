@@ -1,10 +1,11 @@
 // 2019-08-08
 define([
 	'df-lodash', 'jquery'
+	,'Df_Core/thirdParty/URI/URI'
+	,'Inkifi_Map/js/create/module/geocode'
+	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
-	,'Inkifi_Map/js/create/geocode'
-	,'Inkifi_Map/js/create/mapbox'
-], function(_, $) {return (function() {
+], function(_, $, URI) {return (function() {
 	(function() {
 		const $colors = $('input[name="color"]');
 		const $frames = $('input[name="frame"]');
@@ -25,5 +26,17 @@ define([
 				$sections.last().addClass(c);
 			}
 		});
+	})();
+	(function() {
+		// 2019-08-25
+		// 1) `location.search`: https://developer.mozilla.org/en-US/docs/Web/API/HTMLHyperlinkElementUtils/search
+		// It is an empty string if the URL does not contain the `?...` part.
+		// 2) `URI.parseQuery`:
+		// https://github.com/mage2pro/core/blob/5.0.5/Core/view/base/web/thirdParty/URI/URI.js#L633-L668
+		// It returns an object hash. The hash is empty if the URL does not contain the `?...` part.
+		var q = URI.parseQuery(location.search);
+		if (q.latitude && q.longitude) {
+			//EV.coordinatesChangedT(parseFloat(q.latitude), parseFloat(q.longitude));
+		}
 	})();
 });});

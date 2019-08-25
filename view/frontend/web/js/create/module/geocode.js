@@ -1,9 +1,9 @@
 // 2019-08-24
-define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/events'], function(_, $, EV) {return (function() {
+define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/lib/model'], function(_, $, model) {return (function() {
 	$('button.ikf-location').click(function(e) {
 		e.preventDefault();
 		navigator.geolocation.getCurrentPosition(function(r) {
-			$(window).trigger(EV.coordinatesChanged, [r.coords.latitude, r.coords.longitude]);
+			model.pos({lat: r.coords.latitude, lng: r.coords.longitude});
 		});
 	});
 	(function() {
@@ -34,7 +34,7 @@ define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/events'], function(_, $, EV
 		$iH1.on('change', function() {$h1.html($(this).val());});
 		$iH2.change(function() {$h2.html($(this).val());});
 		$iH3.change(function() {$h3.html($(this).val());});
-		$(window).bind(EV.coordinatesChanged, function(e, lat, lng) {
+		model.pos.subscribe(function(v) {
 			/**
 			 * 2019-08-14
 			 * 1) Starting from Firefox 34 / Chrome 41 / Safari 9 / Microsoft Edge
@@ -46,11 +46,11 @@ define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/events'], function(_, $, EV
 			 * 		''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E")
 			 * 2) 2019-08-14 `.val()` does not trigger `change`: https://stackoverflow.com/a/3179392
 			 */
-			$iH3.val(`${Number(lat).toFixed(3)}°N/${Number(lng).toFixed(3)}°E`).change();
-			getGeocodeByCoords(lat, lng).then((r) => {
+			$iH3.val(`${Number(v.lat).toFixed(3)}°N/${Number(v.lng).toFixed(3)}°E`).change();
+			getGeocodeByCoords(v.lat, v.lng).then((r) => {
 				$iH1.val(r.city).change();
 				$iH2.val(r.country).change();
-			});			
+			});
 		});
 	})();
 })();});
