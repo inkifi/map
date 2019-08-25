@@ -25,8 +25,11 @@
 				<input name='h2' type='text' value='United Kingdom'/>
 				<div class='ikf-placeholder'>Divider</div>
 			</div>
-			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-				<input name='h3' type='text' value='51.496°N/-0.077°E'/>
+			<div class='ikf-row'>
+<!--
+2019-08-06 Original: `div.b-input__input-row`
+2019-08-26 The input is really read-only on mappyplace.com, but is not marked so. -->
+				<input name='h3' readonly type='text' value='51.496°N/-0.077°E'/>
 				<div class='ikf-placeholder'>Tag line</div>
 				<button class='ikf-location'>
 					<div><?= df_block_output(null, 'Inkifi_Map::i/create/form/location.phtml') ?></div>
