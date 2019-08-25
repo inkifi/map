@@ -1,13 +1,10 @@
 // 2019-08-08
 define([
 	'df-lodash', 'jquery'
-	// 2019-08-23
-	// mappyplace.com uses the version 0.53.1 (2019-02-28) of the Mapbox GL JS library:
-	// https://github.com/mapbox/mapbox-gl-js/tree/v0.53.1
-	,'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'
 	,'domReady!'
 	,'Inkifi_Map/js/create/geocode'
-], function(_, $, mapbox) {return (function() {
+	,'Inkifi_Map/js/create/mapbox'
+], function(_, $) {return (function() {
 	(function() {
 		const $colors = $('input[name="color"]');
 		const $frames = $('input[name="frame"]');
@@ -27,24 +24,6 @@ define([
 			if (1 === $aa.length - $this.index()) {
 				$sections.last().addClass(c);
 			}
-		});
-	})();
-	(function() {
-		// 2019-08-23
-		// https://docs.mapbox.com/mapbox-gl-js/overview/#quickstart
-		// https://docs.mapbox.com/mapbox-gl-js/api/#accesstoken
-		mapbox.accessToken = 'pk.eyJ1IjoiZG1pdHJ5LWZlZHl1ayIsImEiOiJjanpwM2xzMmQwODl0M2Rtc3pzN2xvcXE1In0.1WSzOsyJSEzIPxAI1s-Rug';
-		// 2019-08-23
-		// https://docs.mapbox.com/mapbox-gl-js/api/#map
-		// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L111-L129
-		// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L269-L271
-		var map = new mapbox.Map({
-			container: $('.ikf-map-4').get(0)
-			// 2019-08-23
-			// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/config.example.json#L8
-			// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L34-L35
-			// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L56-L62
-			,style: 'https://tiles.mappyplace.com/styles/Contrast/style.json'
 		});
 	})();
 });});

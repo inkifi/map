@@ -1,10 +1,16 @@
 // 2019-08-24
 define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/events'], function(_, $, EV) {return (function() {
-	const $editor = $('.ikf-editor');
-	const $iH1 = $('input[name=h1]');
-	const $iH2 = $('input[name=h2]');
-	const $iH3 = $('input[name=h3]');
+	$('button.ikf-location').click(function(e) {
+		e.preventDefault();
+		navigator.geolocation.getCurrentPosition(function(r) {
+			$(window).trigger(EV.coordinatesChanged, [r.coords.latitude, r.coords.longitude]);
+		});
+	});
 	(function() {
+		const $editor = $('.ikf-editor');
+		const $iH1 = $('input[name=h1]');
+		const $iH2 = $('input[name=h2]');
+		const $iH3 = $('input[name=h3]');
 		const $label = $('article .ikf-label', $editor);
 		const $h1 = $('h1', $label);
 		const $h2 = $('h2', $label);
@@ -47,10 +53,4 @@ define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/events'], function(_, $, EV
 			});			
 		});
 	})();
-	$('button.ikf-location').click(function(e) {
-		e.preventDefault();
-		navigator.geolocation.getCurrentPosition(function(r) {
-			$(window).trigger(EV.coordinatesChanged, [r.coords.latitude, r.coords.longitude]);
-		});
-	});
 })();});
