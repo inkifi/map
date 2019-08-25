@@ -46,7 +46,7 @@ define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/lib/model'], function(_, $,
 			 * 		''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E")
 			 * 2) 2019-08-14 `.val()` does not trigger `change`: https://stackoverflow.com/a/3179392
 			 */
-			$iH3.val(`${Number(v.lat).toFixed(3)}°N/${Number(v.lng).toFixed(3)}°E`).change();
+			$iH3.val(model.posS()).change();
 			getGeocodeByCoords(v.lat, v.lng).then((r) => {
 				$iH1.val(r.city).change();
 				$iH2.val(r.country).change();
