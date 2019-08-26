@@ -1,11 +1,8 @@
-<!-- 2019-08-26
-http://www.knockmeout.net/2012/05/quick-tip-skip-binding.html
-https://stackoverflow.com/a/15395962 -->
-<div class='ikf-main' data-bind="scope: 'Inkifi_Map/js/create'">
+<?= df_js_c($c = 'Inkifi_Map/js/create') ?>
+<div class='ikf-main' data-bind="scope: '<?= $c ?>'">
 	<section class='ikf-editor'>
 		<?= df_block_output(null, 'Inkifi_Map::create/article.phtml') ?>
 		<?= df_block_output(null, 'Inkifi_Map::create/form.phtml') ?>
 	</section>
 	<?= df_block_output(null, 'Inkifi_Map::common/section/reviews.phtml') ?>
 </div>
-<?= df_js_c('Inkifi_Map/js/create', ['a' => 'test']);
