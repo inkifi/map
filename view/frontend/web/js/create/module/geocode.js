@@ -1,5 +1,5 @@
 // 2019-08-24
-define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/lib/model'], function(_, $, model) {return (function() {
+define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/model'], function(_, $, model) {return (function() {
 	$('button.ikf-location').click(function(e) {
 		e.preventDefault();
 		navigator.geolocation.getCurrentPosition(function(r) {
@@ -46,7 +46,7 @@ define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/lib/model'], function(_, $,
 			 * 		''.concat(Number(lat).toFixed(3), "\xb0N/").concat(Number(lng).toFixed(3), "\xb0E")
 			 * 2) 2019-08-14 `.val()` does not trigger `change`: https://stackoverflow.com/a/3179392
 			 */
-			$iH3.val(model.posS()).change();
+			//$iH3.val(model.posS()).change();
 			getGeocodeByCoords(v.lat, v.lng).then((r) => {
 				$iH1.val(r.city).change();
 				$iH2.val(r.country).change();

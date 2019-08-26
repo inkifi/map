@@ -1,6 +1,6 @@
 // 2019-08-25
 define(['df-lodash', 'jquery'
-	,'Inkifi_Map/js/create/lib/model'
+	,'Inkifi_Map/js/create/model'
 	// 2019-08-23
 	// mappyplace.com uses the version 0.53.1 (2019-02-28) of the Mapbox GL JS library:
 	// https://github.com/mapbox/mapbox-gl-js/tree/v0.53.1

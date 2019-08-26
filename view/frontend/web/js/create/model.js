@@ -1,4 +1,4 @@
-// 2019-08-25
+// 2019-08-26
 define(['ko'], function(ko) {return {
 	_init: function() {
 		this.posS = ko.computed(function() {
