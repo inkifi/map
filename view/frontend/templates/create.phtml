@@ -2,19 +2,19 @@
 http://www.knockmeout.net/2012/05/quick-tip-skip-binding.html
 https://stackoverflow.com/a/15395962 -->
 <div class='ikf-main' data-bind="scope: 'inkifiMapCreate'">
-	<section class='ikf-editor' data-mage-init='{"Inkifi_Map/js/create":{}}'>
+	<section class='ikf-editor'>
 		<?= df_block_output(null, 'Inkifi_Map::create/article.phtml') ?>
 		<?= df_block_output(null, 'Inkifi_Map::create/form.phtml') ?>
 	</section>
 	<?= df_block_output(null, 'Inkifi_Map::common/section/reviews.phtml') ?>
 </div>
-<script type="text/x-magento-init">
+<script type='text/x-magento-init'>
 {
 	"*": {
 		"Magento_Ui/js/core/app": {
 			"components": {
 				"inkifiMapCreate": {
-					"component": "Inkifi_Map/js/create/view"
+					"component": "Inkifi_Map/js/create"
 				}
 			}
 		}
