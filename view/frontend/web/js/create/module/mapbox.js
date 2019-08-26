@@ -13,15 +13,15 @@ define(['df-lodash', 'jquery'
 	var pos = model.pos();
 	// 2019-08-23
 	// https://docs.mapbox.com/mapbox-gl-js/api/#map
-	// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L111-L129
-	// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L269-L271
+	// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L111-L129
+	// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L269-L271
 	var map = new mapbox.Map({
 		container: $('.ikf-map-4').get(0)
 		,center: [pos.lng, pos.lat]
 		// 2019-08-23
-		// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/config.example.json#L8
-		// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L34-L35
-		// https://github.com/inkifi/mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L56-L62
+		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/config.example.json#L8
+		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L34-L35
+		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L56-L62
 		,style: 'https://tiles.mappyplace.com/styles/Contrast/style.json'
 		,zoom: 10
 	});

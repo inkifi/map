@@ -7,6 +7,7 @@ define([
 	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
 ], function(_p, m, $, URI) {return _p.extend(m).extend({initialize: function() {this._super();
+console.log(this.a);
 (function() {
 	const $colors = $('input[name="color"]');
 	const $frames = $('input[name="frame"]');
