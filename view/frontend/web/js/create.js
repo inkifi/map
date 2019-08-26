@@ -6,7 +6,7 @@ define([
 	,'Inkifi_Map/js/create/module/geocode'
 	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
-], function(_p, m, $, URI) {return _p.extend(m).extend({initialize: function() {this._super();
+], function(_p, _m, $, URI) {return _p.extend(_m).extend({initialize: function() {this._super();
 (function() {
 	const $colors = $('input[name="color"]');
 	const $frames = $('input[name="frame"]');
@@ -37,7 +37,7 @@ define([
 	// It returns an object hash. The hash is empty if the URL does not contain the `?...` part.
 	var q = URI.parseQuery(location.search);
 	if (q.latitude && q.longitude) {
-		model.pos({lat: q.latitude, lng: q.longitude});
+		_m.pos({lat: q.latitude, lng: q.longitude});
 	}
 })();
 return this;}})});

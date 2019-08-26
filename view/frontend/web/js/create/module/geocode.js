@@ -1,9 +1,9 @@
 // 2019-08-24
-define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/model'], function(_, $, model) {return (function() {
+define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/model'], function(_, $, _m) {return (function() {
 	$('button.ikf-location').click(function(e) {
 		e.preventDefault();
 		navigator.geolocation.getCurrentPosition(function(r) {
-			model.pos({lat: r.coords.latitude, lng: r.coords.longitude});
+			_m.pos({lat: r.coords.latitude, lng: r.coords.longitude});
 		});
 	});
 	(function() {
@@ -34,7 +34,7 @@ define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/model'], function(_, $, mod
 		$iH1.on('change', function() {$h1.html($(this).val());});
 		$iH2.change(function() {$h2.html($(this).val());});
 		$iH3.change(function() {$h3.html($(this).val());});
-		model.pos.subscribe(function(v) {
+		_m.pos.subscribe(function(v) {
 			/**
 			 * 2019-08-14
 			 * 1) Starting from Firefox 34 / Chrome 41 / Safari 9 / Microsoft Edge
