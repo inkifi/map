@@ -2,7 +2,6 @@
 define([
 	'uiComponent', 'Inkifi_Map/js/create/model'
 	,'jquery'
-	,'Inkifi_Map/js/create/module/geocode'
 	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
 ], function(_p, _m, $) {return _p.extend(_m).extend({
