@@ -12,6 +12,8 @@ define(['df', 'df-lodash', 'ko', 'Df_Core/thirdParty/URI/URI'], function(df, _ ,
 			var v = this.pos();
 			return `${Number(v.lat).toFixed(3)}°N/${Number(v.lng).toFixed(3)}°E`;
 		}, this);
+		this.h1 = ko.observable();
+		this.h2 = ko.observable();
 		this.h3 = ko.observable();
 		this.updateH3();
 		return this;
