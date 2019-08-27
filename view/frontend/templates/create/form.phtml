@@ -16,17 +16,17 @@
 			<!-- 2019-08-06 Original: `div.b-input__label.b-input__label--hidden-mobile` -->
 			<div class='ikf-label'>Labels</div>
 			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-				<input data-bind='textInput: h1' name='h1' type='text'/>
+				<input data-bind='event: {change: inputChange}, textInput: h1' name='h1' type='text'/>
 				<div class='ikf-placeholder'>Header</div>
 			</div>
 			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-				<input data-bind='textInput: h2' name='h2' type='text'/>
+				<input data-bind='event: {change: inputChange}, textInput: h2' name='h2' type='text'/>
 				<div class='ikf-placeholder'>Divider</div>
 			</div>
 			<div class='ikf-row'>
 <!-- 2019-08-06 Original: `div.b-input__input-row`
 2019-08-27 https://knockoutjs.com/documentation/textinput-binding.html -->
-				<input data-bind='textInput: h3' name='h3' type='text'/>
+				<input data-bind='event: {change: inputChange}, textInput: h3' name='h3' type='text'/>
 				<div class='ikf-placeholder'>Tag line</div>
 				<?= df_block_output(null, 'Inkifi_Map::create/form/location.phtml') ?>
 			</div>

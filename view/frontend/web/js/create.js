@@ -2,23 +2,32 @@
 define([
 	'uiComponent', 'Inkifi_Map/js/create/model'
 	,'jquery'
+	,'Inkifi_Map/js/create/lib/updateInput'
 	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
-], (_p, _m, $) => _p.extend(_m).extend({
+], (_p, _m, $, updateInput) => _p.extend(_m).extend({
+	/** 2019-08-27 */
+	inputChange(v, ev) {updateInput(ev.currentTarget);},
 	initialize() {
 		this._super();
 		(() => {
 			const $colors = $('input[name="color"]');
 			const $frames = $('input[name="frame"]');
-			const updateColors = v => {$colors.prop('disabled', 'frame' !== v);};
-			$frames.change(() => {updateColors(this.value);});
-			updateColors($frames.filter(':checked').val());
+			const f = v => {$colors.prop('disabled', 'frame' !== v);};
+			// 2019-08-27
+			// The arrow function syntax breaks `this` in jQuery event handlers:
+			// https://stackoverflow.com/questions/27670401
+			$frames.change(function() {f(this.value);});
+			f($frames.filter(':checked').val());
 		})();
 		(() => {
 			const $sections = $('.ikf-sidebar-wide > section');
 			const $aa = $('.ikf-sidebar-sticky nav > a');
 			const c = 'ikf-active';
-			$aa.click(() => {
+			// 2019-08-27
+			// The arrow function syntax breaks `this` in jQuery event handlers:
+			// https://stackoverflow.com/questions/27670401
+			$aa.click(function() {
 				const $this = $(this);
 				$aa.removeClass(c);
 				$this.addClass(c);
