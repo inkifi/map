@@ -4,21 +4,21 @@ define([
 	,'jquery'
 	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
-], function(_p, _m, $) {return _p.extend(_m).extend({
-	initialize: function() {
+], (_p, _m, $) => _p.extend(_m).extend({
+	initialize() {
 		this._super();
-		(function() {
+		(() => {
 			const $colors = $('input[name="color"]');
 			const $frames = $('input[name="frame"]');
-			const updateColors = function(v) {$colors.prop('disabled', 'frame' !== v);};
-			$frames.change(function() {updateColors(this.value);});
+			const updateColors = v => {$colors.prop('disabled', 'frame' !== v);};
+			$frames.change(() => {updateColors(this.value);});
 			updateColors($frames.filter(':checked').val());
 		})();
-		(function() {
+		(() => {
 			const $sections = $('.ikf-sidebar-wide > section');
 			const $aa = $('.ikf-sidebar-sticky nav > a');
 			const c = 'ikf-active';
-			$aa.click(function() {
+			$aa.click(() => {
 				const $this = $(this);
 				$aa.removeClass(c);
 				$this.addClass(c);
@@ -34,10 +34,8 @@ define([
 	 * 2019-08-27
 	 * @used-by https://github.com/inkifi/map/blob/0.0.7/view/frontend/templates/create/form/location.phtml#L1
 	 */
-	locate: function() {
-		navigator.geolocation.getCurrentPosition(_.bind(function(r) {
-			this.pos({lat: r.coords.latitude, lng: r.coords.longitude});
-			this.updateH3();
-		}, this));
-	}
-})});
+	locate() {navigator.geolocation.getCurrentPosition(_.bind(r => {
+		this.pos({lat: r.coords.latitude, lng: r.coords.longitude});
+		this.updateH3();
+	}, this));}
+}));
