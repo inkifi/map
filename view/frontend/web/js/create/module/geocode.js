@@ -1,5 +1,5 @@
 // 2019-08-24
-define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/model'], function(_, $, _m) {return (function() {
+define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/model', 'domReady!'], function(_, $, _m) {return (function() {
 	$('button.ikf-location').click(function(e) {
 		e.preventDefault();
 		navigator.geolocation.getCurrentPosition(function(r) {
@@ -10,11 +10,11 @@ define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/model'], function(_, $, _m)
 		const $editor = $('.ikf-editor');
 		const $iH1 = $('input[name=h1]');
 		const $iH2 = $('input[name=h2]');
-		const $iH3 = $('input[name=h3]');
+		//const $iH3 = $('input[name=h3]');
 		const $label = $('article .ikf-label', $editor);
 		const $h1 = $('h1', $label);
 		const $h2 = $('h2', $label);
-		const $h3 = $('h3', $label);
+		//const $h3 = $('h3', $label);
 		const KEY = '6b0d03206e1b4d9f812be0b8c1a4475c';
 		const URL = 'https://api.opencagedata.com/geocode/v1/json';
 		const formatCity = function(v) {return v !== 'Palma' ? v : 'Palma de Mallorca';};
@@ -30,10 +30,10 @@ define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/model'], function(_, $, _m)
 				}
 			})
 		);});};
-		$iH1.add($iH2).add($iH3).on('keyup paste', function() {$(this).change();});
+		$iH1.add($iH2)/*.add($iH3)*/.on('keyup paste', function() {$(this).change();});
 		$iH1.on('change', function() {$h1.html($(this).val());});
 		$iH2.change(function() {$h2.html($(this).val());});
-		$iH3.change(function() {$h3.html($(this).val());});
+		//$iH3.change(function() {$h3.html($(this).val());});
 		_m.pos.subscribe(function(v) {
 			/**
 			 * 2019-08-14

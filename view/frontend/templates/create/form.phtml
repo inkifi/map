@@ -26,8 +26,9 @@
 				<div class='ikf-placeholder'>Divider</div>
 			</div>
 			<div class='ikf-row'>
-<!-- 2019-08-06 Original: `div.b-input__input-row` -->
-				<input name='h3' type='text' data-bind='attr: {value: posS}'/>
+<!-- 2019-08-06 Original: `div.b-input__input-row`
+2019-08-27 https://knockoutjs.com/documentation/textinput-binding.html -->
+				<input name='h3' type='text' data-bind='textInput: h3'/>
 				<div class='ikf-placeholder'>Tag line</div>
 				<button class='ikf-location'>
 					<div><?= df_block_output(null, 'Inkifi_Map::i/create/form/location.phtml') ?></div>
