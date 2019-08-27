@@ -1,11 +1,5 @@
 // 2019-08-24
 define(['df-lodash', 'jquery', 'Inkifi_Map/js/create/model', 'domReady!'], function(_, $, _m) {return (function() {
-	$('button.ikf-location').click(function(e) {
-		e.preventDefault();
-		navigator.geolocation.getCurrentPosition(function(r) {
-			_m.pos({lat: r.coords.latitude, lng: r.coords.longitude});
-		});
-	});
 	(function() {
 		const $editor = $('.ikf-editor');
 		const $iH1 = $('input[name=h1]');
