@@ -1,11 +1,10 @@
 // 2019-08-25
-define(['df-lodash', 'jquery'
-	,'Inkifi_Map/js/create/model'
+require(['jquery', 'Inkifi_Map/js/create/model'
 	// 2019-08-23
 	// mappyplace.com uses the version 0.53.1 (2019-02-28) of the Mapbox GL JS library:
 	// https://github.com/mapbox/mapbox-gl-js/tree/v0.53.1
 	,'https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'
-], function(_, $, _m, mapbox) {return (function() {
+], ($, _m, mapbox) => {
 	// 2019-08-23
 	// https://docs.mapbox.com/mapbox-gl-js/overview/#quickstart
 	// https://docs.mapbox.com/mapbox-gl-js/api/#accesstoken
@@ -25,10 +24,8 @@ define(['df-lodash', 'jquery'
 		,style: 'https://tiles.mappyplace.com/styles/Contrast/style.json'
 		,zoom: 10
 	});
-	_m.pos.subscribe(function(v) {
-		// 2019-08-25
-		// https://docs.mapbox.com/mapbox-gl-js/api/#map#setcenter
-		// https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike
-		map.setCenter([v.lng, v.lat]);
-	});
-})();});
+	// 2019-08-25
+	// https://docs.mapbox.com/mapbox-gl-js/api/#map#setcenter
+	// https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike
+	_m.pos.subscribe(v => map.setCenter([v.lng, v.lat]));
+});
