@@ -33,11 +33,12 @@ define([
 	}, 
     /**
 	 * 2019-08-27
-	 * @used-by vendor/inkifi/map/view/frontend/templates/create/form/location.phtml
+	 * @used-by https://github.com/inkifi/map/blob/0.0.7/view/frontend/templates/create/form/location.phtml#L1
 	 */
 	locate: function() {
 		navigator.geolocation.getCurrentPosition(_.bind(function(r) {
 			this.pos({lat: r.coords.latitude, lng: r.coords.longitude});
+			this.updateH3();
 		}, this));
 	}
 })});

@@ -12,7 +12,8 @@ define(['df', 'df-lodash', 'ko', 'Df_Core/thirdParty/URI/URI'], function(df, _ ,
 			var v = this.pos();
 			return `${Number(v.lat).toFixed(3)}°N/${Number(v.lng).toFixed(3)}°E`;
 		}, this);
-		this.h3 = ko.observable(this.posS());
+		this.h3 = ko.observable();
+		this.updateH3();
 		return this;
 	}
 	/**
@@ -25,4 +26,10 @@ define(['df', 'df-lodash', 'ko', 'Df_Core/thirdParty/URI/URI'], function(df, _ ,
 	 * @returns {Object}
 	 */
 	,q: _.once(function() {return URI.parseQuery(location.search);})
+	/**
+	 * 2019-08-27
+	 * @used-by _init()
+	 * @used-by Inkifi_Map/js/create::locate()
+	 */
+	,updateH3: function() {this.h3(this.posS());}
 }._init();}); // 2019-08-26 https://stackoverflow.com/a/4616273
