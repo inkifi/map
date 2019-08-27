@@ -2,12 +2,9 @@
 define([
 	'uiComponent', 'Inkifi_Map/js/create/model'
 	,'jquery'
-	,'Inkifi_Map/js/create/lib/updateInput'
 	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
-], (_p, _m, $, updateInput) => _p.extend(_m).extend({
-	/** 2019-08-27 */
-	inputChange(v, ev) {updateInput(ev.currentTarget);},
+], (_p, _m, $) => _p.extend(_m).extend({
 	initialize() {
 		this._super();
 		(() => {
