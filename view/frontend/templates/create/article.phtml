@@ -1,10 +1,9 @@
 <article>
 	<div class='ikf-zoom'>
 		<div>
-			<button data-bind='click: zoomChange'
-			><?= df_block_output(null, 'Inkifi_Map::i/create/zoom/plus.phtml') ?></button>
-			<button data-bind='click: zoomChange'
-			><?= df_block_output(null, 'Inkifi_Map::i/create/zoom/minus.phtml') ?></button>
+			<?= df_cc_n(df_map(['plus', 'minus'], function($v) {return df_tag('button',
+				['data-bind' => 'click: zoomChange'], df_block_output(null, "Inkifi_Map::i/create/zoom/$v.phtml")
+			);})) ?>
 		</div>
 	</div>
 	<div class='ikf-map-1 ikf-ratio-3x4'> <!-- 2019-08-04 Original: `div#preview` -->
