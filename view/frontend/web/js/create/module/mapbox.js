@@ -22,7 +22,7 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L34-L35
 		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L56-L62
 		,style: 'https://tiles.mappyplace.com/styles/Contrast/style.json'
-		,zoom: 10
+		,zoom: _m.zoom() // 2019-08-28 tiles.mappyplace.com supports zooms < 15
 	});
 	// 2019-08-25
 	// https://docs.mapbox.com/mapbox-gl-js/api/#map#setcenter

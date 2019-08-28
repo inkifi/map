@@ -20,6 +20,7 @@ define([
 				: {lat: 51.487971262617, lng: -0.074918480033487}
 			;
 		})());
+		this.zoom = ko.observable(this.q().zoom || 10); // 2019-08-28 tiles.mappyplace.com supports zooms < 15
 		return this;
 	},
 	/**
