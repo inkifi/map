@@ -7,6 +7,7 @@ require(['jquery', 'Inkifi_Map/lib/carousel/main', 'domReady!'], $ => {
 	};
 	// 2019-08-27 I added `style='display:none'` to prevent images flickering before the carousel's initialization.
 	$e.removeAttr('style');
+	// 2019-08-28 http://kenwheeler.github.io/slick
 	$e.slick({
 		// 2019-07-15
 		// «Enables centered view with partial prev/next slides.
