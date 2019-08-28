@@ -32,5 +32,5 @@ define([
 	 * It returns an object hash. The hash is empty if the URL does not contain the `?...` part.
 	 * @returns {Object}
 	 */
-	q: _.once(() => URI.parseQuery(location.search)),
+	q: _.once(() => URI.parseQuery(location.search))
 })._init()); // 2019-08-26 https://stackoverflow.com/a/4616273

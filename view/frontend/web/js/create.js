@@ -2,9 +2,10 @@
 define([
 	'uiComponent', 'Inkifi_Map/js/create/model'
 	,'jquery'
+	,'Df_Core/my/math'
 	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
-], (_p, _m, $) => _p.extend(_m).extend({
+], (_p, _m, $, math) => _p.extend(_m).extend({
 	initialize() {
 		this._super();
 		(() => {
@@ -42,5 +43,11 @@ define([
 	 */
 	locate() {navigator.geolocation.getCurrentPosition(_.bind(r => {
 		this.pos({lat: r.coords.latitude, lng: r.coords.longitude});
-	}, this));}
+	}, this));},
+    /**
+	 * 2019-08-28
+	 */
+	zoomChange(view, ev) {this.zoom(math.round(math.minmax(
+		this.zoom() - 0.3 * (2 * $(ev.currentTarget).index() - 1
+	), 1, 15), 3));}
 }));
