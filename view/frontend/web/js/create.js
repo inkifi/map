@@ -42,6 +42,5 @@ define([
 	 */
 	locate() {navigator.geolocation.getCurrentPosition(_.bind(r => {
 		this.pos({lat: r.coords.latitude, lng: r.coords.longitude});
-		this.updateH3();
 	}, this));}
 }));
