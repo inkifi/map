@@ -12,6 +12,8 @@ define([
 		this.pos.subscribe(v => {
 			_this.h3(`${v.lat.toFixed(3)}°N/${v.lng.toFixed(3)}°E`);
 			geocode(v.lat, v.lng).then(r => {_this.h1(r.city); _this.h2(r.country);});
+			// 2019-08-29 `_.round()` truncates trailing zeros in contrast to `toFixed()`
+			_this.updateURL({latitude: _.round(v.lat, 3), longitude: _.round(v.lng, 3)});
 		});
 		this.pos((() => {
 			const q = _this.q();
@@ -40,12 +42,13 @@ define([
 	 * 2019-08-29
 	 * @used-by _init()
 	 * @param {String|Object} k
-	 * @param {?String} v
+	 * @param {String?} v
 	 */
 	updateURL(k, v) {
 		const u = URI(location.href);
 		// 2019-08-29 http://medialize.github.io/URI.js/docs.html#search-remove
-		u.removeSearch(k).addSearch(k, v);
+		const f = (v, k) => u.removeSearch(k).addSearch(k, v);
+		!_.isObject(k) ? f(v, k) : _.map(k, f);
 		// 2019-08-29 https://stackoverflow.com/questions/12832317
 		history.replaceState({} , document.title, u.toString());
 	}
