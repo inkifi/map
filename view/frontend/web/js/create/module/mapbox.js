@@ -11,7 +11,7 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 	mapbox.accessToken = 'pk.eyJ1IjoiZG1pdHJ5LWZlZHl1ayIsImEiOiJjanpwM2xzMmQwODl0M2Rtc3pzN2xvcXE1In0.1WSzOsyJSEzIPxAI1s-Rug';
 	const pos = _m.pos();
 	// 2019-08-23
-	// https://docs.mapbox.com/mapbox-gl-js/api/#map
+	// https://docs.mapbox.com/mapbox-gl-js/api#map
 	// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L111-L129
 	// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L269-L271
 	const map = new mapbox.Map({
@@ -25,9 +25,9 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 		,zoom: _m.zoom() // 2019-08-28 tiles.mappyplace.com supports zooms < 15
 	});
 	// 2019-08-25
-	// https://docs.mapbox.com/mapbox-gl-js/api/#map#setcenter
-	// https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike
+	// https://docs.mapbox.com/mapbox-gl-js/api#setcenter
+	// https://docs.mapbox.com/mapbox-gl-js/api#lnglatlike
 	_m.pos.subscribe(v => map.setCenter([v.lng, v.lat]));
-	// 2019-08-28 https://docs.mapbox.com/mapbox-gl-js/api/#setzoom
+	// 2019-08-28 https://docs.mapbox.com/mapbox-gl-js/api#setzoom
 	_m.zoom.subscribe(v => map.setZoom(v));
 });
