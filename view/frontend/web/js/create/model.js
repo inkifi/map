@@ -16,9 +16,8 @@ define([
 		this.pos((() => {
 			var q = _this.q();
 			// 2019-08-29 `parseFloat` vs `Number`: https://stackoverflow.com/a/13676265
-			return q.latitude && q.longitude
-				? {lat: Number(q.latitude), lng: Number(q.longitude)}
-				: {lat: 51.488, lng: -0.0750}
+			return _.zipObject(['lat', 'lng'],
+				q.latitude && q.longitude ? [Number(q.latitude), Number(q.longitude)] : [51.488, -0.0750])
 			;
 		})());
 		this.zoom = ko.observable(this.q().zoom || 10); // 2019-08-28 tiles.mappyplace.com supports zooms < 15
