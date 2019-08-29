@@ -46,8 +46,9 @@ define([
 	}, this));},
     /**
 	 * 2019-08-28
+	 * @used-by https://github.com/inkifi/map/blob/0.0.9/view/frontend/templates/create/article.phtml#L4-L6
 	 */
 	zoomChange(view, ev) {this.zoom(math.round(math.minmax(
 		this.zoom() - 0.3 * (2 * $(ev.currentTarget).index() - 1
-	), 1, 15), 3));}
+	), 1, 14.999), 3));}
 }));

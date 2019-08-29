@@ -28,4 +28,6 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 	// https://docs.mapbox.com/mapbox-gl-js/api/#map#setcenter
 	// https://docs.mapbox.com/mapbox-gl-js/api/#lnglatlike
 	_m.pos.subscribe(v => map.setCenter([v.lng, v.lat]));
+	// 2019-08-28 https://docs.mapbox.com/mapbox-gl-js/api/#setzoom
+	_m.zoom.subscribe(v => map.setZoom(v));
 });
