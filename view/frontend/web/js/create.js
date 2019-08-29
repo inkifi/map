@@ -2,10 +2,9 @@
 define([
 	'uiComponent', 'Inkifi_Map/js/create/model'
 	,'jquery'
-	,'Df_Core/my/math'
 	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
-], (_p, _m, $, math) => _p.extend(_m).extend({
+], (_p, _m, $) => _p.extend(_m).extend({
 	initialize() {
 		this._super();
 		(() => {
@@ -48,7 +47,7 @@ define([
 	 * 2019-08-28
 	 * @used-by https://github.com/inkifi/map/blob/0.0.9/view/frontend/templates/create/article.phtml#L4-L6
 	 */
-	zoomChange(view, ev) {this.zoom(math.round(math.minmax(
+	zoomChange(view, ev) {this.zoom(_.round(_.clamp(
 		this.zoom() - 0.3 * (2 * $(ev.currentTarget).index() - 1
 	), 1, 14.999), 3));}
 }));
