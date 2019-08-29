@@ -1,66 +1,20 @@
 <!-- 2019-08-27 I added `style='display:none'` to prevent images flickering before the carousel's initialization. -->
 <div class='ikf-cities' style='display:none'>
 	<?=
-		df_cc_n(df_map_k(function($c, array $q) {return df_tag('a',
-			['href' => df_url(df_route('Inkifi_Map', 'create'), ['_query' => $q])]
-			,df_tag('img', ['src' => df_asset_url("Inkifi_Map::i/index/map/$c.jpg")])
-		);}, [
-			'new-york' => [
-				'divider' => 'USA'
-				,'header' => 'New York'
-				,'latitude' => 40.7127281
-				,'longitude' => -74.0060152
-				,'style' => 'Contrast'
-				,'zoom' => 10.7
-			]
-			,'singapore' => [
-				'divider' => 'Singapore'
-				,'header' => 'Singapore'
-				,'latitude' => 1.3201292618318443
-				,'longitude' => 103.85151551993842
-				,'style' => 'Sierra'
-				,'zoom' => 10.4
-			]
-			,'copenhagen' => [
-				'divider' => 'Denmark'
-				,'header' => 'Copenhagen'
-				,'latitude' => 55.6867243
-				,'longitude' => 12.5700724
-				,'style' => 'Bauhaus'
-				,'zoom' => 10.1
-			]
-			,'paris' => [
-				'divider' => 'France'
-				,'header' => 'Paris'
-				,'latitude' => 48.8566969
-				,'longitude' => 2.3514616
-				,'style' => 'Contrast'
-				,'zoom' => 10.4
-			]
-			,'lisbon' => [
-				'divider' => 'Portugal'
-				,'header' => 'Lisbon'
-				,'latitude' => 38.7077507
-				,'longitude' => -9.1365919
-				,'style' => 'Seaside'
-				,'zoom' => 10.1
-			]
-			,'london' => [
-				'divider' => 'United Kingdom'
-				,'header' => 'London'
-				,'latitude' => 51.48797126261674
-				,'longitude' => -0.07491848003348663
-				,'style' => 'Contrast'
-				,'zoom' => 9.8
-			]
-			,'amsterdam' => [
-				'divider' => 'Netherlands'
-				,'header' => 'Amsterdam'
-				,'latitude' => 52.3745403
-				,'longitude' => 4.8979755
-				,'style' => 'Sierra'
-				,'zoom' => 10.4
-			]
-		]));
+		df_cc_n(df_map_k(
+			function($c, array $q) {return df_tag('a',
+				['href' => df_url(df_route('Inkifi_Map', 'create'), ['_query' => $q])]
+				,df_tag('img', ['src' => df_asset_url("Inkifi_Map::i/index/map/$c.jpg")])
+			);}
+			,df_map(function($v) {return array_combine(['latitude', 'longitude', 'style', 'zoom'], $v);}, [
+				'new-york' => [40.713, -74.006, 'Contrast', 10.7]
+				,'singapore' => [1.320, 103.852, 'Sierra', 10.4]
+				,'copenhagen' => [55.687, 12.570, 'Bauhaus', 10.1]
+				,'paris' => [48.857, 2.351, 'Contrast', 10.4]
+				,'lisbon' => [38.708, -9.137, 'Seaside', 10.1]
+				,'london' => [51.488, -0.075, 'Contrast', 9.8]
+				,'amsterdam' => [ 52.375, 4.898, 'Sierra', 10.4]
+			])
+		));
 	?>
 </div>
