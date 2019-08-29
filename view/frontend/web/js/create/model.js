@@ -4,7 +4,7 @@ define([
 	,'Df_Core/thirdParty/URI/URI', 'Inkifi_Map/js/create/lib/geocode'
 ], (df, _ , ko, URI, geocode) => ({
 	_init() {
-		var _this = this;
+		const _this = this;
 		this.h1 = ko.observable();
 		this.h2 = ko.observable();
 		this.h3 = ko.observable();
@@ -14,7 +14,7 @@ define([
 			geocode(v.lat, v.lng).then(r => {_this.h1(r.city); _this.h2(r.country);});
 		});
 		this.pos((() => {
-			var q = _this.q();
+			const q = _this.q();
 			// 2019-08-29 `parseFloat` vs `Number`: https://stackoverflow.com/a/13676265
 			return _.zipObject(['lat', 'lng'],
 				q.latitude && q.longitude ? [Number(q.latitude), Number(q.longitude)] : [51.488, -0.0750])
@@ -39,11 +39,11 @@ define([
 	/**
 	 * 2019-08-29
 	 * @used-by _init()
-	 * @param {String} k
-	 * @param {String} v
+	 * @param {String|Object} k
+	 * @param {?String} v
 	 */
 	updateURL(k, v) {
-		var u = URI(location.href);
+		const u = URI(location.href);
 		// 2019-08-29 http://medialize.github.io/URI.js/docs.html#search-remove
 		u.removeSearch(k).addSearch(k, v);
 		// 2019-08-29 https://stackoverflow.com/questions/12832317
