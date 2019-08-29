@@ -10,14 +10,15 @@ define([
 		this.h3 = ko.observable();
 		this.pos = ko.observable();
 		this.pos.subscribe(v => {
-			_this.h3(`${Number(v.lat).toFixed(3)}°N/${Number(v.lng).toFixed(3)}°E`);
+			_this.h3(`${v.lat.toFixed(3)}°N/${v.lng.toFixed(3)}°E`);
 			geocode(v.lat, v.lng).then(r => {_this.h1(r.city); _this.h2(r.country);});
 		});
 		this.pos((() => {
 			var q = _this.q();
+			// 2019-08-29 `parseFloat` vs `Number`: https://stackoverflow.com/a/13676265
 			return q.latitude && q.longitude
-				? {lat: q.latitude, lng: q.longitude}
-				: {lat: 51.487971262617, lng: -0.074918480033487}
+				? {lat: Number(q.latitude), lng: Number(q.longitude)}
+				: {lat: 51.488, lng: -0.0750}
 			;
 		})());
 		this.zoom = ko.observable(this.q().zoom || 10); // 2019-08-28 tiles.mappyplace.com supports zooms < 15
