@@ -9,12 +9,12 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 	// https://docs.mapbox.com/mapbox-gl-js/overview/#quickstart
 	// https://docs.mapbox.com/mapbox-gl-js/api/#accesstoken
 	mapbox.accessToken = 'pk.eyJ1IjoiZG1pdHJ5LWZlZHl1ayIsImEiOiJjanpwM2xzMmQwODl0M2Rtc3pzN2xvcXE1In0.1WSzOsyJSEzIPxAI1s-Rug';
-	var pos = _m.pos();
+	const pos = _m.pos();
 	// 2019-08-23
 	// https://docs.mapbox.com/mapbox-gl-js/api/#map
 	// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L111-L129
 	// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L269-L271
-	var map = new mapbox.Map({
+	const map = new mapbox.Map({
 		container: $('.ikf-map-4').get(0)
 		,center: [pos.lng, pos.lat]
 		// 2019-08-23
