@@ -21,13 +21,7 @@ define([
 			;
 		})());
 		this.zoom = ko.observable(this.q().zoom || 10); // 2019-08-28 tiles.mappyplace.com supports zooms < 15
-		this.zoom.subscribe(v => {
-			var u = URI(location.href);
-			// 2019-08-29 http://medialize.github.io/URI.js/docs.html#search-remove
-			u.removeSearch('zoom').addSearch('zoom', v);
-			// 2019-08-29 https://stackoverflow.com/questions/12832317
-			history.replaceState({} , document.title, u.toString());
-		});
+		this.zoom.subscribe(v => _this.updateURL('zoom', v));
 		return this;
 	},
 	/**
@@ -38,7 +32,21 @@ define([
 	 * https://github.com/mage2pro/core/blob/5.0.5/Core/view/base/web/thirdParty/URI/URI.js#L633-L668
 	 * It returns an object hash. The hash is empty if the URL does not contain the `?...` part.
 	 * 2019-08-29 http://medialize.github.io/URI.js/docs.html#static-parseQuery
+	 * @used-by _init()
 	 * @returns {Object}
 	 */
-	q: _.memoize(() => URI.parseQuery(location.search), () => location.search)
+	q: _.memoize(() => URI.parseQuery(location.search), () => location.search),
+	/**
+	 * 2019-08-29
+	 * @used-by _init()
+	 * @param {String} k
+	 * @param {String} v
+	 */
+	updateURL(k, v) {
+		var u = URI(location.href);
+		// 2019-08-29 http://medialize.github.io/URI.js/docs.html#search-remove
+		u.removeSearch(k).addSearch(k, v);
+		// 2019-08-29 https://stackoverflow.com/questions/12832317
+		history.replaceState({} , document.title, u.toString());
+	}
 })._init()); // 2019-08-26 https://stackoverflow.com/a/4616273
