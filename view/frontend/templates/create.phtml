@@ -6,10 +6,21 @@
 	]]);
 	echo df_js_c($c = 'Inkifi_Map/js/create');
 ?>
-<div class='ikf-main' data-bind="scope: '<?= $c ?>'">
-	<section class='ikf-editor'>
-		<?= df_block_output(null, 'Inkifi_Map::create/article.phtml') ?>
-		<?= df_block_output(null, 'Inkifi_Map::create/form.phtml') ?>
-	</section>
+<div class='ikf-main'>
+<!-- 2019-08-30
+1) The `scope` binding destroys all previously set jQuery event bindings:
+	ko.utils.arrayForEach(el.childNodes, ko.cleanNode);
+https://github.com/magento/magento2/blob/2.3.2/app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/scope.js#L32
+So we can not bind jQuery event handlers in the compontent's `initialize()` method,
+and we use the `afterRender` function instead.
+2) `afterRender` can not share the same DOM element with `scope`:
+it should be set on a descendant DOM element.
+3) The `afterRender='onRender'` syntax does not work. -->
+	<div data-bind="scope: '<?= $c ?>'">
+		<section class='ikf-editor' data-bind='afterRender: onRender'>
+			<?= df_block_output(null, 'Inkifi_Map::create/article.phtml') ?>
+			<?= df_block_output(null, 'Inkifi_Map::create/form.phtml') ?>
+		</section>
+	</div>
 	<?= df_block_output(null, 'Inkifi_Map::common/section/reviews.phtml') ?>
 </div>
