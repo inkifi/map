@@ -44,7 +44,12 @@ I use `value` instead of `textInput` to prevent live updates: https://stackoverf
 						<?= df_cc_n(df_map(function($v) {return
 							df_tag('div', [],
 								df_tag('label', [], [
-									df_tag('input', ['name' => 'size', 'type' => 'radio', 'value' => $v])
+									df_tag('input', [
+										'data-bind' => 'checked: size'
+										,'name' => 'size'
+										,'type' => 'radio'
+										,'value' => $v
+									])
 									,df_tag('span', [], $v)
 									,df_tag('div')
 								])

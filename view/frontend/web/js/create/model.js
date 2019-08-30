@@ -80,6 +80,7 @@ define([
 				}
 			});
 		});
+		this.size = ko.observable(this.q().size || '12×16in');
 		return this;
 	},
 	/**
