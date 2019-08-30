@@ -16,12 +16,23 @@ define([
 		this.canGeoCode = ko.observable(true);
 		this.pos = ko.observable();
 		this.zoom = ko.observable(this.q().zoom || 10); // 2019-08-28 tiles.mappyplace.com supports zooms < 15
+		var geoLocation;
+		const updateH1ByZoom = () => {
+			const l = geoLocation;
+			const z = _this.zoom();
+			if (l && z) {
+				const fCity = v => v !== 'Palma' ? v : 'Palma de Mallorca';
+				const h1 = z < 8 && l.state ? l.state : (
+					z < 10 && l.county ? l.county : (
+						l.city ? fCity(l.city) : l.town || l.village || l.suburb || l.hamlet
+					)
+				);
+				h1 || console.log(JSON.stringify(l));
+				_this.h1(h1);
+			}
+		};
 		(() => {
-			// 2019-08-29
-			// «Get previous value of an observable in subscribe of same observable»
-			// https://stackoverflow.com/questions/12822954
 			var vr, vg;
-			//_this.pos.subscribe(v => {v0 = v;}, null, 'beforeChange');
 			_this.pos.subscribe(v => {
 				if (0.01 < lib.dist(v, vr)) {
 					vr = v;
@@ -33,9 +44,13 @@ define([
 					const vgd = lib.dist(v, vg);
 					//console.log(vgd);
 					if (0.01 < vgd) {
-						//console.log('geocode');
+						console.log('geocode');
 						vg = v;
-						geocode(v.lat, v.lng, _this.zoom()).then(r => {_this.h1(r.h1); _this.h2(r.h2);});
+						geocode(v.lat, v.lng).then(r => {
+							geoLocation = r;
+							updateH1ByZoom();
+							_this.h2(r.country !== 'PRC' ? r.country : 'China');
+						});
 					}
 				}
 			});
@@ -47,7 +62,10 @@ define([
 				q.latitude && q.longitude ? [Number(q.latitude), Number(q.longitude)] : [51.488, -0.075])
 			;
 		})());
-		this.zoom.subscribe(v => _this.updateURL('zoom', v));
+		this.zoom.subscribe(v => {
+			_this.updateURL('zoom', v);
+			updateH1ByZoom();
+		});
 		return this;
 	},
 	/**
