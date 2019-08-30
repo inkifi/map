@@ -8,11 +8,11 @@ require(['jquery', 'ko'], ($, ko) => {
 		var init = h.init;
 		h.init = function(e) {init.apply(h, arguments); inputChange(e);};
 	})();
-	ko.bindingHandlers.ikfChange = {
-		init(e, valueAccessor, allBindingsAccessor) {
-			allBindingsAccessor().textInput.subscribe(v => $(e).toggleClass(c, '' !== v));
-		}
-	};
+	ko.bindingHandlers.ikfChange = {init(e, nu, aF) {
+		const a = aF(); const $e = $(e);
+		// 2019-08-30 We work with the `value` and `textInput` bindings.
+		(a.value || a.textInput).subscribe(v => $e.toggleClass(c, '' !== v));
+	}};
 	require(['domReady!'], () => {
 		$('input', $('.inkifi-map-index-index, .inkifi-map-create-index'))
 			.each((i, e) => inputChange(e)).on('change paste keyup', inputChange)

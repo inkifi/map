@@ -8,6 +8,10 @@ define([
 		this.h1 = ko.observable();
 		this.h2 = ko.observable();
 		this.h3 = ko.observable();
+		this.locationS = ko.observable();
+		this.locationS.subscribe(v => {
+			console.log(`location: ${v}`);
+		});
 		/**
 		 * 2019-08-30
 		 * @used-by _init()

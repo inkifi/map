@@ -6,7 +6,10 @@
 			<div class='ikf-label'>Location</div>
 			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
 				<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-					<input type='text'/>
+					<!--<input data-bind='ikfChange, textInput: locationS' name='locationS' type='text'/>-->
+<!-- 2019-08-30
+I use `value` instead of `textInput` to prevent live updates: https://stackoverflow.com/a/26889303 -->
+					<input data-bind='ikfChange, value: locationS' name='locationS' type='text'/>
 					<div class='ikf-placeholder'>Enter city of place</div>
 				</div>
 				<?= df_block_output(null, 'Inkifi_Map::create/form/location.phtml') ?>
