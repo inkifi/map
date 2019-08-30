@@ -1,11 +1,11 @@
 // 2019-08-26
 define([
-	'df', 'df-lodash', 'ko'
+	'df', 'df-lodash', 'jquery', 'ko'
 	,'Df_Core/thirdParty/URI/URI'
 	,'Inkifi_Map/js/create/lib'
 	,'Inkifi_Map/js/create/lib/geocodeReverse'
 	,`https://maps.googleapis.com/maps/api/js?key=${window.inkifiMap.keys.google}&libraries=places&language=en`
-], (df, _ , ko, URI, lib, geocodeReverse) => ({
+], (df, _ , $, ko, URI, lib, geocodeReverse) => ({
 	_init() {
 		const _this = this;
 		this.h1 = ko.observable();
@@ -80,7 +80,32 @@ define([
 				}
 			});
 		});
-		this.size = ko.observable(this.q().size || '12×16in');
+		(() => {
+			const $map = $('.ikf-map-1');
+			const $pencil = $map.children('.ikf-pencil');
+			const classes = {
+				'12×16in': '3x4'
+				,'18×24in': '3x4'
+				,'20×28in': '5x7'
+				,'24×36in': '2x3'
+				,'28×40in': '7x10'
+			};
+			_this.size = ko.observable();
+			_this.size.subscribe(v => {
+				_this.updateURL('size', v);
+				// 2019-08-30 «jQuery removeClass wildcard» https://stackoverflow.com/a/2644364
+				$map
+					.attr('class', (i, c) => c.replace(/(^|\s)ikf-ratio-\S+/g, ''))
+					.addClass(`ikf-ratio-${classes[v]}`)
+				;
+				$pencil
+					.attr('class', (i, c) => c.replace(/(^|\s)ikf-size-\S+/g, ''))
+					.addClass(`ikf-size-${v.replace('in', '').replace('×', 'x')}`)
+				;
+			});
+			_this.size(_this.q().size || '12×16in');
+			$map.removeAttr('style');
+		})();
 		return this;
 	},
 	/**
