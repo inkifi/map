@@ -4,7 +4,7 @@ define([
 	,'Df_Core/thirdParty/URI/URI'
 	,'Inkifi_Map/js/create/lib'
 	,'Inkifi_Map/js/create/lib/geocodeReverse'
-	,'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVgDqY_AagImI5k26N5TifjDjvwUZWbZo&libraries=places&language=en'
+	,`https://maps.googleapis.com/maps/api/js?key=${window.inkifiMap.keys.google}&libraries=places&language=en`
 ], (df, _ , ko, URI, lib, geocodeReverse) => ({
 	_init() {
 		const _this = this;

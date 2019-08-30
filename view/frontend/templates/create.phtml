@@ -1,4 +1,11 @@
-<?= df_js_c($c = 'Inkifi_Map/js/create') ?>
+<?php
+	use Inkifi\Map\Settings as S;
+	$s = S::s(); /** @var S $s */
+	echo df_js_data('inkifiMap', ['keys' => [
+		'google' => $s->keyGoogle(), 'mapBox' => $s->keyMapBox(), 'openCage' => $s->keyOpenCage()
+	]]);
+	echo df_js_c($c = 'Inkifi_Map/js/create');
+?>
 <div class='ikf-main' data-bind="scope: '<?= $c ?>'">
 	<section class='ikf-editor'>
 		<?= df_block_output(null, 'Inkifi_Map::create/article.phtml') ?>

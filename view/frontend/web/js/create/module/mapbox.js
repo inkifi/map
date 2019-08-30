@@ -8,7 +8,7 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 	// 2019-08-23
 	// https://docs.mapbox.com/mapbox-gl-js/overview/#quickstart
 	// https://docs.mapbox.com/mapbox-gl-js/api/#accesstoken
-	mapbox.accessToken = 'pk.eyJ1IjoiZG1pdHJ5LWZlZHl1ayIsImEiOiJjanpwM2xzMmQwODl0M2Rtc3pzN2xvcXE1In0.1WSzOsyJSEzIPxAI1s-Rug';
+	mapbox.accessToken = window.inkifiMap.keys.mapBox;
 	const pos = _m.pos();
 	// 2019-08-23
 	// https://docs.mapbox.com/mapbox-gl-js/api#map
