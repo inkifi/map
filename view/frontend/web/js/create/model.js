@@ -1,17 +1,16 @@
 // 2019-08-26
 define([
 	'df', 'df-lodash', 'ko'
-	,'Df_Core/thirdParty/URI/URI', 'Inkifi_Map/js/create/lib', 'Inkifi_Map/js/create/lib/geocodeR'
-], (df, _ , ko, URI, lib, geocodeR) => ({
+	,'Df_Core/thirdParty/URI/URI'
+	,'Inkifi_Map/js/create/lib'
+	,'Inkifi_Map/js/create/lib/geocodeReverse'
+	,'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVgDqY_AagImI5k26N5TifjDjvwUZWbZo&libraries=places&language=en'
+], (df, _ , ko, URI, lib, geocodeReverse) => ({
 	_init() {
 		const _this = this;
 		this.h1 = ko.observable();
 		this.h2 = ko.observable();
 		this.h3 = ko.observable();
-		this.locationS = ko.observable();
-		this.locationS.subscribe(v => {
-			console.log(`location: ${v}`);
-		});
 		/**
 		 * 2019-08-30
 		 * @used-by _init()
@@ -50,7 +49,7 @@ define([
 					if (0.01 < vgd) {
 						console.log('geocode');
 						vg = v;
-						geocodeR(v.lat, v.lng).then(r => {
+						geocodeReverse(v.lat, v.lng).then(r => {
 							geoLocation = r;
 							updateH1ByZoom();
 							_this.h2(r.country !== 'PRC' ? r.country : 'China');
@@ -69,6 +68,17 @@ define([
 		this.zoom.subscribe(v => {
 			_this.updateURL('zoom', v);
 			updateH1ByZoom();
+		});
+		const geocoder = new google.maps.Geocoder();
+		this.locationS = ko.observable();
+		this.locationS.subscribe(v => {
+			geocoder.geocode({address: v}, r => {
+				if (r && r[0]) {
+					console.log(r[0]);
+					const l = _.get(r[0], 'geometry.location');
+					_this.pos({lat: l.lat(), lng: l.lng()});
+				}
+			});
 		});
 		return this;
 	},
