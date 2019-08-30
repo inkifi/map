@@ -11,7 +11,9 @@ define(['df-lodash'], _ => {
 		fetch(`${URL}?q=${lat}+${lng}&key=${KEY}&language=en&limit=1`).then(r => r.json()).then(r => {
 			const c = _.get(r, 'results[0].components');
 			if (c) {
-				const h1 = c.city || c.town || c.village || c.suburb || c.hamlet;
+				const h1 = zoom < 8 ? c.state : (
+					zoom < 10 ? c.county : c.c.city || c.town || c.village || c.suburb || c.hamlet
+				);
 				h1 || console.log(JSON.stringify(c));
 				resolve({h1: fCity(h1), h2: fCountry(c.country)});
 			}
