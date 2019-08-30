@@ -25,14 +25,23 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 		,zoom: _m.zoom() // 2019-08-28 tiles.mappyplace.com supports zooms < 15
 	});
 	var dragging = false;
+	var zooming = false;
 	// 2019-08-25
 	// https://docs.mapbox.com/mapbox-gl-js/api#setcenter
 	// https://docs.mapbox.com/mapbox-gl-js/api#lnglatlike
 	_m.pos.subscribe(v => dragging || map.setCenter([v.lng, v.lat]));
 	// 2019-08-28 https://docs.mapbox.com/mapbox-gl-js/api#setzoom
-	_m.zoom.subscribe(v => map.setZoom(v));
+	_m.zoom.subscribe(v => zooming || map.setZoom(v));
 	// 2019-08-30 https://docs.mapbox.com/mapbox-gl-js/api/#map.event:drag
 	map.on('drag', v => {_m.canGeoCode(false); dragging = true; _m.pos(v.target.getCenter());});
 	// 2019-08-30 https://docs.mapbox.com/mapbox-gl-js/api/#map.event:dragend
 	map.on('dragend', v => {_m.canGeoCode(true); dragging = false; _m.pos(v.target.getCenter());});
+	// 2019-08-30 https://docs.mapbox.com/mapbox-gl-js/api/#map.event:zoom
+	map.on('zoom', v => {
+		try {
+			zooming = true;
+			_m.zoom(_.round(v.target.getZoom(), 3));
+		}
+		finally {zooming = false;}
+	});
 });
