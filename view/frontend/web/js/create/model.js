@@ -27,7 +27,7 @@ define([
 				const fCity = v => v !== 'Palma' ? v : 'Palma de Mallorca';
 				const h1 = z < 8 && l.state ? l.state : (
 					z < 10 && l.county ? l.county : (
-						l.city ? fCity(l.city) : l.town || l.village || l.suburb || l.hamlet
+						l.city ? fCity(l.city) : l.town || l.village || l.suburb || l.hamlet || l.county || l.state
 					)
 				);
 				h1 || console.log(JSON.stringify(l));
@@ -74,7 +74,7 @@ define([
 		this.locationS.subscribe(v => {
 			geocoder.geocode({address: v}, r => {
 				if (r && r[0]) {
-					console.log(r[0]);
+					//console.log(r[0]);
 					const l = _.get(r[0], 'geometry.location');
 					_this.pos({lat: l.lat(), lng: l.lng()});
 				}

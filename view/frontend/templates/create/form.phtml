@@ -12,7 +12,8 @@ I use `value` instead of `textInput` to prevent live updates: https://stackoverf
 					<input data-bind='ikfChange, value: locationS' name='locationS' type='text'/>
 					<div class='ikf-placeholder'>Enter city of place</div>
 				</div>
-				<?= df_block_output(null, 'Inkifi_Map::create/form/location.phtml') ?>
+<!-- 2019-08-30 The button below does not have any sense. -->
+				<?php /*echo df_block_output(null, 'Inkifi_Map::create/form/location.phtml')*/ ?>
 			</div>
 		</section>
 		<section> <!-- 2019-08-06 Original: `div.b-input.b-input--hidden-mobile` -->
