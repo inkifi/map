@@ -81,30 +81,15 @@ define([
 			});
 		});
 		(() => {
-			const $map = $('.ikf-map-1');
-			const $pencil = $map.children('.ikf-pencil');
-			const classes = {
-				'12×16in': '3x4'
-				,'18×24in': '3x4'
-				,'20×28in': '5x7'
-				,'24×36in': '2x3'
-				,'28×40in': '7x10'
-			};
+			const classes = {'12×16in': '3x4', '18×24in': '3x4', '20×28in': '5x7', '24×36in': '2x3', '28×40in': '7x10'};
 			_this.size = ko.observable();
-			_this.size.subscribe(v => {
-				_this.updateURL('size', v);
-				// 2019-08-30 «jQuery removeClass wildcard» https://stackoverflow.com/a/2644364
-				$map
-					.attr('class', (i, c) => c.replace(/(^|\s)ikf-ratio-\S+/g, ''))
-					.addClass(`ikf-ratio-${classes[v]}`)
-				;
-				$pencil
-					.attr('class', (i, c) => c.replace(/(^|\s)ikf-size-\S+/g, ''))
-					.addClass(`ikf-size-${v.replace('in', '').replace('×', 'x')}`)
-				;
-			});
+			_this.size.subscribe(v => _this.updateURL('size', v));
 			_this.size(_this.q().size || '12×16in');
-			$map.removeAttr('style');
+			_this.mapC = ko.pureComputed(() => `ikf-map-1 ikf-ratio-${classes[_this.size()]}`);
+			_this.pencilC = ko.pureComputed(() =>
+				`ikf-pencil ikf-size-${_this.size().replace('in', '').replace('×', 'x')}`)
+			;
+			$('.ikf-map-1').removeAttr('style');
 		})();
 		return this;
 	},
