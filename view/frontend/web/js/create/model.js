@@ -1,8 +1,8 @@
 // 2019-08-26
 define([
 	'df', 'df-lodash', 'ko'
-	,'Df_Core/thirdParty/URI/URI', 'Inkifi_Map/js/create/lib', 'Inkifi_Map/js/create/lib/geocode'
-], (df, _ , ko, URI, lib, geocode) => ({
+	,'Df_Core/thirdParty/URI/URI', 'Inkifi_Map/js/create/lib', 'Inkifi_Map/js/create/lib/geocodeR'
+], (df, _ , ko, URI, lib, geocodeR) => ({
 	_init() {
 		const _this = this;
 		this.h1 = ko.observable();
@@ -50,7 +50,7 @@ define([
 					if (0.01 < vgd) {
 						console.log('geocode');
 						vg = v;
-						geocode(v.lat, v.lng).then(r => {
+						geocodeR(v.lat, v.lng).then(r => {
 							geoLocation = r;
 							updateH1ByZoom();
 							_this.h2(r.country !== 'PRC' ? r.country : 'China');
