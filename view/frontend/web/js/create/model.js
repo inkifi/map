@@ -1,20 +1,45 @@
 // 2019-08-26
 define([
 	'df', 'df-lodash', 'ko'
-	,'Df_Core/thirdParty/URI/URI', 'Inkifi_Map/js/create/lib/geocode'
-], (df, _ , ko, URI, geocode) => ({
+	,'Df_Core/thirdParty/URI/URI', 'Inkifi_Map/js/create/lib', 'Inkifi_Map/js/create/lib/geocode'
+], (df, _ , ko, URI, lib, geocode) => ({
 	_init() {
 		const _this = this;
 		this.h1 = ko.observable();
 		this.h2 = ko.observable();
 		this.h3 = ko.observable();
+		/**
+		 * 2019-08-30
+		 * @used-by _init()
+		 * @used-by Inkifi_Map::create/module/mapbox
+		 */
+		this.canGeoCode = ko.observable(true);
 		this.pos = ko.observable();
-		this.pos.subscribe(v => {
-			_this.h3(`${v.lat.toFixed(3)}°N/${v.lng.toFixed(3)}°E`);
-			geocode(v.lat, v.lng).then(r => {_this.h1(r.city); _this.h2(r.country);});
-			// 2019-08-29 `_.round()` truncates trailing zeros in contrast to `toFixed()`
-			_this.updateURL({latitude: _.round(v.lat, 3), longitude: _.round(v.lng, 3)});
-		});
+		this.zoom = ko.observable(this.q().zoom || 10); // 2019-08-28 tiles.mappyplace.com supports zooms < 15
+		(() => {
+			// 2019-08-29
+			// «Get previous value of an observable in subscribe of same observable»
+			// https://stackoverflow.com/questions/12822954
+			var vr, vg;
+			//_this.pos.subscribe(v => {v0 = v;}, null, 'beforeChange');
+			_this.pos.subscribe(v => {
+				if (0.01 < lib.dist(v, vr)) {
+					vr = v;
+					_this.h3(`${v.lat.toFixed(3)}°N/${v.lng.toFixed(3)}°E`);
+					// 2019-08-29 `_.round()` truncates trailing zeros in contrast to `toFixed()`
+					_this.updateURL({latitude: _.round(v.lat, 3), longitude: _.round(v.lng, 3)});
+				}
+				if (_this.canGeoCode()) {
+					const vgd = lib.dist(v, vg);
+					//console.log(vgd);
+					if (0.01 < vgd) {
+						//console.log('geocode');
+						vg = v;
+						geocode(v.lat, v.lng, _this.zoom()).then(r => {_this.h1(r.h1); _this.h2(r.h2);});
+					}
+				}
+			});
+		})();
 		this.pos((() => {
 			const q = _this.q();
 			// 2019-08-29 `parseFloat` vs `Number`: https://stackoverflow.com/a/13676265
@@ -22,7 +47,6 @@ define([
 				q.latitude && q.longitude ? [Number(q.latitude), Number(q.longitude)] : [51.488, -0.075])
 			;
 		})());
-		this.zoom = ko.observable(this.q().zoom || 10); // 2019-08-28 tiles.mappyplace.com supports zooms < 15
 		this.zoom.subscribe(v => _this.updateURL('zoom', v));
 		return this;
 	},

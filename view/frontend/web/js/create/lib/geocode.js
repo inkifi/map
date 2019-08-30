@@ -7,11 +7,13 @@ define(['df-lodash'], _ => {
 	// 2019-08-14
 	// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 	// https://caniuse.com/#search=fetch	
-	return async(lat, lng) => new Promise(resolve =>
-		fetch(`${URL}?q=${lat}+${lng}&key=${KEY}&language=en`).then(r => r.json()).then(r => {
+	return async(lat, lng, zoom) => new Promise(resolve =>
+		fetch(`${URL}?q=${lat}+${lng}&key=${KEY}&language=en&limit=1`).then(r => r.json()).then(r => {
 			const c = _.get(r, 'results[0].components');
 			if (c) {
-				resolve({city: fCity(c.city), country: fCountry(c.country), state: c.state});
+				const h1 = c.city || c.town || c.village || c.suburb || c.hamlet;
+				h1 || console.log(JSON.stringify(c));
+				resolve({h1: fCity(h1), h2: fCountry(c.country)});
 			}
 		})
 	);
