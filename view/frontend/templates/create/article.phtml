@@ -10,7 +10,8 @@
 2019-08-04 Original: `div#preview` 
 2019-08-31
 It seems that the `ikf-map-1` class should be preserved statically here
-because of `$('.ikf-map-1').removeAttr('style');` in `model` -->
+because of `$('.ikf-map-1').removeAttr('style');` in `model`:
+https://github.com/inkifi/map/blob/0.1.3/view/frontend/web/js/create/model.js#L98 -->
 	<div class='ikf-map-1' data-bind='attr: {class: mapC}' style='display: none'>
 		<div data-bind='attr: {class: pencilC}'></div>
 		<div class='ikf-map-2'>  <!-- 2019-08-04 Original: `div.b-editor-map__map-wrap` -->
