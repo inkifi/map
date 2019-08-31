@@ -1,4 +1,9 @@
-// 2019-08-25
+/**
+ * 2019-08-25
+ * 2019-08-31
+ * This module is always executed after `model` because this module requires `model`.
+ * This order is important because this module relies on the `model` proper initialization.
+ */
 require(['jquery', 'Inkifi_Map/js/create/model'
 	// 2019-08-23
 	// mappyplace.com uses the version 0.53.1 (2019-02-28) of the Mapbox GL JS library:
