@@ -34,7 +34,7 @@ final class HTML {
 	 * @param string[] $vv
 	 * @return string
 	 */
-	static function tiles($type, array $vv) {return
+	static function tiles($type, array $vv) {return df_tag('div', 'ikf-row', df_tag('div', 'ikf-tiles',
 		df_cc_n(df_map(function($v) use($type) {$uc = ucfirst($v); return
 			df_tag('div', [],
 				df_tag('label', [], [
@@ -59,5 +59,5 @@ final class HTML {
 				])
 			)
 		;}, $vv))
-	;}
+	));}
 }
