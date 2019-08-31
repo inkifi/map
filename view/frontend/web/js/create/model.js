@@ -69,17 +69,19 @@ define([
 			_this.updateURL('zoom', v);
 			updateH1ByZoom();
 		});
-		const geocoder = new google.maps.Geocoder();
-		this.locationS = ko.observable();
-		this.locationS.subscribe(v => {
-			geocoder.geocode({address: v}, r => {
-				if (r && r[0]) {
-					//console.log(r[0]);
-					const l = _.get(r[0], 'geometry.location');
-					_this.pos({lat: l.lat(), lng: l.lng()});
-				}
+		(() => {
+			const geocoder = new google.maps.Geocoder();
+			_this.locationS = ko.observable();
+			_this.locationS.subscribe(v => {
+				geocoder.geocode({address: v}, r => {
+					if (r && r[0]) {
+						//console.log(r[0]);
+						const l = _.get(r[0], 'geometry.location');
+						_this.pos({lat: l.lat(), lng: l.lng()});
+					}
+				});
 			});
-		});
+		})();
 		(() => {
 			const classes = {'12×16in': '3x4', '18×24in': '3x4', '20×28in': '5x7', '24×36in': '2x3', '28×40in': '7x10'};
 			_this.size = ko.observable();
