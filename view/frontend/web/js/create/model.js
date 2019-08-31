@@ -93,9 +93,7 @@ define([
 				'ikf-map-1', _this.orientation().toLowerCase(), `ikf-ratio-${classes[_this.size()]}`
 			].join(' '));
 			_this.pencilC = ko.computed(() => [
-				'ikf-pencil'
-				,_this.orientation().toLowerCase()
-				,`ikf-size-${_this.size().replace('in', '').replace('×', 'x')}`
+				'ikf-pencil', `ikf-size-${_this.size().replace('in', '').replace('×', 'x')}`
 			].join(' '));
 			$('.ikf-map-1').removeAttr('style');
 		})();

@@ -1,0 +1,35 @@
+// 2019-08-31
+> .ikf-map-1.landscape {
+	width: 100%;
+	@media (min-width: 576px) {width: 480px;}
+	@media (min-width: 1025px) {max-width: 80%; width: 720px;}
+	&.ikf-ratio-2x3 {height: 63vw; max-height: 480px; max-width: 640px; width: 84vw;}
+	&.ikf-ratio-3x4 {height: 63vw; max-height: 480px; max-width: 640px; width: 84vw;}
+	&.ikf-ratio-5x7 {height: 60vw; max-height: 480px; max-width: 672px; width: 84vw;}
+	&.ikf-ratio-7x10 {height: 63vw; max-height: 490px; max-width: 700px; width: 90vw;}
+	> .ikf-label {
+		background-color: #ffffff;
+		bottom: 0;
+		left: 0;
+		padding: 5px;
+		position: absolute;
+		right: inherit;
+		text-align: left;
+		@media (min-width: 576px) {min-height: 80px; min-width: 170px;}
+		@media (min-width: 1025px) {padding: 12px; min-height: 120px; min-width: 280px;}
+		> h3 {font-size: 6px; @media (min-width: 576px) {font-size: 12px;}}
+		h1, h2 {font-size: 10px; line-height: 0.9; @media (min-width: 576px) {font-size: 20px;}}
+	}
+	> .ikf-pencil {
+		left: 0;
+		margin: 0 auto;
+		right: 0;
+		top: calc(~'100% + 32px');
+		transform: rotate(-90deg) translate(80px, 0);
+		&.ikf-size-12x16 {transform: matrix(0, -1.45, 1.45, 0, 0, -103);}
+		&.ikf-size-18x24 {transform: matrix(0, -0.96, 0.96, 0, 0, -103);}
+		&.ikf-size-20x28 {transform: matrix(0, -0.85, 0.85, 0, 0, -103);}
+		&.ikf-size-24x36 {transform: matrix(0, -0.7, 0.7, 0, 0, -103);}
+		&.ikf-size-28x40 {transform: matrix(0, -0.65, 0.65, 0, 0, -103);}
+	}
+}
