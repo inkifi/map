@@ -4,7 +4,7 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd"
 >
 	<router id='standard'>
-		<route id='Inkifi_Map' frontName='maps'>
+		<route id='Inkifi_Map' frontName='map'>
 			<module name='Inkifi_Map'/>
 		</route>
 	</router>
