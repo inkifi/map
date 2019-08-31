@@ -24,6 +24,10 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 		,style: 'https://tiles.mappyplace.com/styles/Contrast/style.json'
 		,zoom: _m.zoom() // 2019-08-28 tiles.mappyplace.com supports zooms < 15
 	});
+	// 2019-08-31 https://docs.mapbox.com/mapbox-gl-js/api/#resize
+	map.on('load', () => map.resize()); // 2019-08-31 It is needed for the landscape orientation.
+	_m.orientation.subscribe(() => map.resize());
+	_m.size.subscribe(() => map.resize());	
 	var dragging = false;
 	var zooming = false;
 	// 2019-08-25
