@@ -15,6 +15,7 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 	// https://docs.mapbox.com/mapbox-gl-js/api/#accesstoken
 	mapbox.accessToken = window.inkifiMap.keys.mapBox;
 	const pos = _m.pos();
+	const style = v => `https://tiles.mappyplace.com/styles/${v}/style.json`;
 	// 2019-08-23
 	// https://docs.mapbox.com/mapbox-gl-js/api#map
 	// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L111-L129
@@ -26,21 +27,21 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/config.example.json#L8
 		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L34-L35
 		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L56-L62
-		,style: `https://tiles.mappyplace.com/styles/${_m.style()}/style.json`
+		,style: style(_m.style())
 		,zoom: _m.zoom() // 2019-08-28 tiles.mappyplace.com supports zooms < 15
 	});
 	// 2019-08-31 https://docs.mapbox.com/mapbox-gl-js/api/#resize
 	map.on('load', () => map.resize()); // 2019-08-31 It is needed for the landscape orientation.
 	_m.orientation.subscribe(() => map.resize());
-	_m.size.subscribe(() => map.resize());	
+	_m.size.subscribe(() => map.resize());
 	var dragging = false;
 	var zooming = false;
 	// 2019-08-25
 	// https://docs.mapbox.com/mapbox-gl-js/api#setcenter
 	// https://docs.mapbox.com/mapbox-gl-js/api#lnglatlike
 	_m.pos.subscribe(v => dragging || map.setCenter([v.lng, v.lat]));
-	// 2019-08-28 https://docs.mapbox.com/mapbox-gl-js/api#setzoom
-	_m.zoom.subscribe(v => zooming || map.setZoom(v));
+	_m.zoom.subscribe(v => zooming || map.setZoom(v)); // 2019-08-28 https://docs.mapbox.com/mapbox-gl-js/api#setzoom
+	_m.style.subscribe(v => map.setStyle(style(v))); // 2019-08-31 https://docs.mapbox.com/mapbox-gl-js/api/#map#setstyle
 	// 2019-08-30 https://docs.mapbox.com/mapbox-gl-js/api/#map.event:drag
 	map.on('drag', v => {_m.canGeoCode(false); dragging = true; _m.pos(v.target.getCenter());});
 	// 2019-08-30 https://docs.mapbox.com/mapbox-gl-js/api/#map.event:dragend

@@ -44,7 +44,9 @@ I use `value` instead of `textInput` to prevent live updates: https://stackoverf
 		<section> <!-- 2019-08-06 Original: `div.b-input.b-input--hidden-mobile` -->
 			<!-- 2019-08-06 Original: `div.b-input__label.b-input__label--hidden-mobile` -->
 			<div class='ikf-label'>Style</div>
-			<?= HTML::tiles('style', ['contrast', 'twilight', 'bauhaus', 'sierra', 'spot']) ?>
+			<?= HTML::tiles('style', [
+				'contrast', 'twilight', 'bauhaus', 'sierra', 'seaside' => 'spot'
+			]) ?>
 		</section>
 		<section> <!-- 2019-08-06 Original: `div.b-input.b-input--hidden-mobile` -->
 			<!-- 2019-08-06 Original: `div.b-input__label.b-input__label--hidden-mobile` -->
