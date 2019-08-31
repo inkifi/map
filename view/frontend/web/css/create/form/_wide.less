@@ -24,7 +24,10 @@
 		> .ikf-row {
 			margin-bottom: 12px; position: relative;
 			&:last-child {margin-bottom: 0;}
-			> button.ikf-location {
+			// 2019-08-31
+			// I replaced `button` with `div` to prevent the `click` handling on the `Enter` key press.
+			> div.ikf-location {
+				cursor: pointer;
 				position: absolute;
 				right: 13px;
 				top: 50%;

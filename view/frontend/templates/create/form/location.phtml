@@ -1,3 +1,4 @@
-<button class='ikf-location' data-bind='click: locate'>
+<!-- 2019-08-31 I replaced `button` with `div` to prevent the `click` handling on the `Enter` key press. -->
+<div class='ikf-location' data-bind='click: locate'>
 	<div><?= df_block_output(null, 'Inkifi_Map::i/create/form/location.phtml') ?></div>
-</button>
+</div>

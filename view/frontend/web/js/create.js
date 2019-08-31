@@ -5,7 +5,7 @@ define([
 	,'Inkifi_Map/js/create/module/mapbox'
 	,'domReady!'
 ], (_p, _m, $) => _p.extend(_m).extend({
-	/** 2019-08-31 I define a handler to prevent the form's submision on the `Enter` key press. */
+	/** 2019-08-31 I defined a handler to prevent the form's submision on the `Enter` key press. */
 	buy() {},
     /**
 	 * 2019-08-27
