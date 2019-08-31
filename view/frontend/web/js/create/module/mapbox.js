@@ -26,7 +26,7 @@ require(['jquery', 'Inkifi_Map/js/create/model'
 		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/config.example.json#L8
 		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L34-L35
 		// https://github.com/dmitry-fedyuk/inkifi-mappyplace/blob/2019-07-02/src/components/pages/Editor.js#L56-L62
-		,style: 'https://tiles.mappyplace.com/styles/Contrast/style.json'
+		,style: `https://tiles.mappyplace.com/styles/${_m.style()}/style.json`
 		,zoom: _m.zoom() // 2019-08-28 tiles.mappyplace.com supports zooms < 15
 	});
 	// 2019-08-31 https://docs.mapbox.com/mapbox-gl-js/api/#resize
