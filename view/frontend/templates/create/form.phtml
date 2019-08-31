@@ -6,10 +6,10 @@
 			<div class='ikf-label'>Location</div>
 			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
 				<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-					<!--<input data-bind='ikfChange, textInput: locationS' name='locationS' type='text'/>-->
+					<!--<input data-bind='dfHasValue, textInput: locationS' name='locationS' type='text'/>-->
 <!-- 2019-08-30
 I use `value` instead of `textInput` to prevent live updates: https://stackoverflow.com/a/26889303 -->
-					<input data-bind='ikfChange, value: locationS' name='locationS' type='text'/>
+					<input data-bind='dfHasValue, value: locationS' name='locationS' type='text'/>
 					<div class='ikf-placeholder'>Enter city of place</div>
 				</div>
 <!-- 2019-08-30 The button below does not have any sense. -->
@@ -20,17 +20,17 @@ I use `value` instead of `textInput` to prevent live updates: https://stackoverf
 			<!-- 2019-08-06 Original: `div.b-input__label.b-input__label--hidden-mobile` -->
 			<div class='ikf-label'>Labels</div>
 			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-				<input data-bind='ikfChange, textInput: h1' name='h1' type='text'/>
+				<input data-bind='dfHasValue, textInput: h1' name='h1' type='text'/>
 				<div class='ikf-placeholder'>Header</div>
 			</div>
 			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-				<input data-bind='ikfChange, textInput: h2' name='h2' type='text'/>
+				<input data-bind='dfHasValue, textInput: h2' name='h2' type='text'/>
 				<div class='ikf-placeholder'>Divider</div>
 			</div>
 			<div class='ikf-row'>
 <!-- 2019-08-06 Original: `div.b-input__input-row`
 2019-08-27 https://knockoutjs.com/documentation/textinput-binding.html -->
-				<input data-bind='ikfChange, textInput: h3' name='h3' type='text'/>
+				<input data-bind='dfHasValue, textInput: h3' name='h3' type='text'/>
 				<div class='ikf-placeholder'>Tag line</div>
 				<?= df_block_output(null, 'Inkifi_Map::create/form/location.phtml') ?>
 			</div>

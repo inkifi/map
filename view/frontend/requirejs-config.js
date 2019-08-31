@@ -1,1 +1,1 @@
-var config = {deps: ['Inkifi_Map/js/bootstrap']};
+var config = {deps: ['dfHasValue']};
