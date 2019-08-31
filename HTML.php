@@ -3,6 +3,31 @@ namespace Inkifi\Map;
 // 2019-08-08
 final class HTML {
 	/**
+	 * 2019-08-31
+	 * @used-by vendor/inkifi/map/view/frontend/templates/create/form.phtml
+	 * @param string $name
+	 * @param string[] $vv
+	 * @return string
+	 */
+	static function tabs($name, array $vv) {return df_tag('div', 'ikf-row',
+		df_tag('div', [],
+			df_tag('div', 'ikf-tabs',
+				df_cc_n(df_map(function($v) use($name) {return
+					df_tag('div', [],
+						df_tag('label', [], [
+							df_tag('input', [
+								'data-bind' => "checked: $name", 'name' => $name, 'type' => 'radio', 'value' => $v
+							])
+							,df_tag('span', [], $v)
+							,df_tag('div')
+						])
+					)
+				;}, $vv))
+			)
+		)
+	);}
+
+	/**
 	 * 2019-08-08
 	 * @used-by vendor/inkifi/map/view/frontend/templates/create/form.phtml
 	 * @param string $type

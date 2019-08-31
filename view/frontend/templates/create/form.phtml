@@ -38,46 +38,8 @@ I use `value` instead of `textInput` to prevent live updates: https://stackoverf
 		<section> <!-- 2019-08-06 Original: `div.b-input.b-input--hidden-mobile` -->
 			<!-- 2019-08-06 Original: `div.b-input__label.b-input__label--hidden-mobile` -->
 			<div class='ikf-label'>Size</div>
-			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-				<div> <!-- 2019-08-06 Original: `div.b-radio-select` -->
-					<div class='ikf-tabs'> <!-- 2019-08-06 Original: `div.b-radio-select__list` -->
-						<?= df_cc_n(df_map(function($v) {return
-							df_tag('div', [],
-								df_tag('label', [], [
-									df_tag('input', [
-										'data-bind' => 'checked: size'
-										,'name' => 'size'
-										,'type' => 'radio'
-										,'value' => $v
-									])
-									,df_tag('span', [], $v)
-									,df_tag('div')
-								])
-							)
-						;}, ['12×16in', '18×24in', '20×28in', '24×36in', '28×40in'])) ?>
-					</div>
-				</div>
-			</div>
-			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-				<div> <!-- 2019-08-06 Original: `div.b-radio-select` -->
-					<div class='ikf-tabs'> <!-- 2019-08-06 Original: `div.b-radio-select__list` -->
-						<?= df_cc_n(df_map(function($v) {return
-							df_tag('div', [],
-								df_tag('label', [], [
-									df_tag('input', [
-										'data-bind' => 'checked: orientation'
-										,'name' => 'orientation'
-										,'type' => 'radio'
-										,'value' => $v
-									])
-									,df_tag('span', [], $v)
-									,df_tag('div')
-								])
-							)
-						;}, ['Portrait', 'Landscape'])) ?>
-					</div>
-				</div>
-			</div>
+			<?= HTML::tabs('size', ['12×16in', '18×24in', '20×28in', '24×36in', '28×40in'])
+				. HTML::tabs('orientation', ['Portrait', 'Landscape']) ?>
 		</section>
 		<section> <!-- 2019-08-06 Original: `div.b-input.b-input--hidden-mobile` -->
 			<!-- 2019-08-06 Original: `div.b-input__label.b-input__label--hidden-mobile` -->
