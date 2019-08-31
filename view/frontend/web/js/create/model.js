@@ -97,6 +97,11 @@ define([
 			].join(' '));
 			$('.ikf-map-1').removeAttr('style');
 		})();
+		_this.style = ko.observable();
+		_this.style.subscribe(v => _this.updateURL('style', v));
+		_this.style(_this.q().style || 'Contrast');
+		_this.color = ko.observable();
+		_this.color.subscribe(v => _this.updateURL('color', v));
 		return this;
 	},
 	/**
