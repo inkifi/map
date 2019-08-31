@@ -81,14 +81,22 @@ define([
 			}));
 		})();
 		(() => {
+			const defaultOrientation = 'Portrait';
+			_this.orientation = ko.observable();
+			_this.orientation.subscribe(v => _this.updateURL('orientation', v));
+			_this.orientation(_this.q().orientation || defaultOrientation);
 			const classes = {'12×16in': '3x4', '18×24in': '3x4', '20×28in': '5x7', '24×36in': '2x3', '28×40in': '7x10'};
 			_this.size = ko.observable();
 			_this.size.subscribe(v => _this.updateURL('size', v));
 			_this.size(_this.q().size || '12×16in');
-			_this.mapC = ko.pureComputed(() => `ikf-map-1 ikf-ratio-${classes[_this.size()]}`);
-			_this.pencilC = ko.pureComputed(() =>
-				`ikf-pencil ikf-size-${_this.size().replace('in', '').replace('×', 'x')}`)
-			;
+			_this.mapC = ko.computed(() => [
+				'ikf-map-1', _this.orientation().toLowerCase(), `ikf-ratio-${classes[_this.size()]}`
+			].join(' '));
+			_this.pencilC = ko.computed(() => [
+				'ikf-pencil'
+				,_this.orientation().toLowerCase()
+				,`ikf-size-${_this.size().replace('in', '').replace('×', 'x')}`
+			].join(' '));
 			$('.ikf-map-1').removeAttr('style');
 		})();
 		return this;
