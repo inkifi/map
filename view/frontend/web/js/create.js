@@ -1,9 +1,6 @@
 // 2019-08-26
 define([
-	'uiComponent', 'Inkifi_Map/js/create/model'
-	,'jquery'
-	,'Inkifi_Map/js/create/module/mapbox'
-	,'domReady!'
+	'uiComponent', 'Inkifi_Map/js/create/model', 'jquery', 'Inkifi_Map/js/create/module/mapbox'
 ], (_p, _m, $) => _p.extend(_m).extend({
 	/** 2019-08-31 I defined a handler to prevent the form's submision on the `Enter` key press. */
 	buy() {},
