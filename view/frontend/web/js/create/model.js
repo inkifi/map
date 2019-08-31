@@ -100,6 +100,7 @@ define([
 		_this.style = ko.observable();
 		_this.style.subscribe(v => _this.updateURL('style', v));
 		_this.style(_this.q().style || 'Contrast');
+		_this.labelC = ko.computed(() => ['ikf-label', _this.style().toLowerCase()].join(' '));
 		_this.color = ko.observable();
 		_this.color.subscribe(v => _this.updateURL('color', v));
 		return this;
