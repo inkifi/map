@@ -26,7 +26,7 @@ define([
 			if (l && z) {
 				const fCity = v => v !== 'Palma' ? v : 'Palma de Mallorca';
 				const h1 = z < 8 && l.state ? l.state : (
-					z < 10 && l.county ? l.county : (
+					z < 9.8 && l.county ? l.county : (
 						l.city ? fCity(l.city) : l.town || l.village || l.suburb || l.hamlet || l.county || l.state
 					)
 				);
