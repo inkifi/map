@@ -139,7 +139,8 @@ I use `value` instead of `textInput` to prevent live updates: https://stackoverf
 				<a href='javascript:void(0)'>Frame</a>
 			</nav>
 		</div>
-		<button>
+<!-- 2019-08-31 I define a handler to prevent the form's submision on the `Enter` key press. -->
+		<button data-bind='click: buy'>
 			<div>Buy poster</div>
 			<div>£25</div>
 		</button>
