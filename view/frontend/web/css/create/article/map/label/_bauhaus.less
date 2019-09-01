@@ -18,15 +18,15 @@
 			box-shadow: none; padding: 5px; width: 117px;
 		}
 		h1 {
-			font-family: 'Josefin Sans';
-			font-size: 10px;
+			// 2019-09-01
+			// This one-line declaration sets `line-height: normal`
+			// instead of our generic line height for <h1>.
+			font: 10px 'Josefin Sans';
 			@media screen and (min-width: 576px) {font-size: 18px;}
 			@media only screen and (max-device-width: 778px) and (orientation: landscape) {font-size: 10px;}
 		}
 		h2 {
-			font-family: 'EB Garamond';
-			font-size: 8px;
-			font-style: italic;
+			font: italic 8px 'EB Garamond';
 			margin-bottom: 5px;
 			position: relative;
 			@media screen and (min-width: 576px) {font-size: 12px;}
@@ -42,7 +42,7 @@
 			}
 		}
 		h3 {
-			font: 8px 'EB Garamond', Helvetica, Arial, sans-serif;
+			font: 8px 'EB Garamond';
 			letter-spacing: 0.08em;
 			@media screen and (min-width: 576px) {font-size: 10px;}
 		}
