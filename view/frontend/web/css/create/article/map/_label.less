@@ -1,5 +1,11 @@
 // 2019-08-05
 > .ikf-label {
+	// 2019-09-01
+	// All styles except «Contrast» shows <h3> after <h1> and <h2>.
+	// «Contrast» shows <h3> before <h1> and <h2>.
+	// So my HTML contains 2 identical <h3> tags: one before <h1> and <h2>, and another after <h1> and <h2>.
+	// I hide the first one for all styles except «Contrast», and I hide the last one for «Contrast».
+	> div > h3:first-of-type {display: none;}
 	@import 'label/_bauhaus';
 	@import 'label/_contrast';
 	@import 'label/_seaside';

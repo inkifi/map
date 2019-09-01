@@ -14,6 +14,13 @@
 	@media (min-width: 576px) {min-height: 117px; padding: 9px 12px 9px;}
 	@media (min-width: 1025px) {min-height: 120px;}
 	> h3 {
+		// 2019-09-01
+		// All styles except «Contrast» shows <h3> after <h1> and <h2>.
+		// «Contrast» shows <h3> before <h1> and <h2>.
+		// So my HTML contains 2 identical <h3> tags: one before <h1> and <h2>, and another after <h1> and <h2>.
+		// I hide the first one for all styles except «Contrast», and I hide the last one for «Contrast».
+		&:first-of-type {display: initial;}
+		&:last-of-type {display: none;}
 		font-size: 8px; font-weight: 300; text-transform: uppercase;
 		@media (min-width: 576px) {font-size: 12px;}
 	}
