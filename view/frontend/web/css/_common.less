@@ -1,16 +1,28 @@
 /**
  * 2019-07-16
  * 2019-09-01
- * 1) @todo All these fonts except «Prompt» are required only by the map editor.
+ * @todo All these fonts except «Prompt» are required only by the map editor.
  * So we can load them dynamically:
  * https://stackoverflow.com/a/20351108
  * https://stackoverflow.com/a/16553688
  * https://developers.google.com/fonts/docs/webfont_loader
  * My URL to Google Fonts selector: https://fonts.google.com/?query=Nothing+You+Could+Do&selection.family=Alfa+Slab+One|EB+Garamond:400,400i|Josefin+Sans:400,700|Nothing+You+Could+Do|Prompt:200,300,400,500,600,700|ZCOOL+QingKe+HuangYou&selection.subset=chinese-simplified,cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,thai,vietnamese
- * 2) I have placed the `&display=swap` part to the URL's end to overcome a Less compiler bug
- * (otherwise the Less compiler adds the `.less` suffix to the URL for an unknown reason).
  */
-@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|EB+Garamond:400,400i|Josefin+Sans:400,700|Nothing+You+Could+Do|Prompt:200,300,400,500,600,700|ZCOOL+QingKe+HuangYou&subset=chinese-simplified,cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,thai,vietnamese&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Alfa+Slab+One|EB+Garamond:400,400i|Nothing+You+Could+Do|Prompt:200,300,400,500,600,700|ZCOOL+QingKe+HuangYou&display=swap);
+// 2019-09-01
+// The «Josefin Sans» font does not work being loaded from Google for an unknown reason.
+// @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+@fontsPath: '../Inkifi_Map/i/create/map/fonts/';
+@font-face {
+	font-family: 'Josefin Sans';
+	src:
+		local('Josefin Sans'), local('JosefinSans')
+		,url('@{fontsPath}JosefinSans/.woff') format('woff')
+		,url('@{fontsPath}JosefinSans/.woff2') format('woff2')
+	;
+	font-weight: 400;
+	font-style: normal;
+}
 .inkifi-map-index-index, .inkifi-map-create-index {
 	color: black;
 	font-family: Prompt, Helvetica, Arial, sans-serif;
