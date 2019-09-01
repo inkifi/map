@@ -1,25 +1,50 @@
-// 2019-08-31
-&.bauhaus > div {
-	background: #fff;
-	bottom: 0;
-	display: flex;
-	flex-direction: column;
-	flex: 1 1 30%;
-	justify-content: space-between;
+// 2019-09-01
+&.bauhaus {
+	bottom: 14px; @media screen and (min-width: 576px) {bottom: 31px;}
 	left: 0;
-	padding: 6px 8px 8px;
 	position: absolute;
 	right: 0;
 	text-align: center;
-	@media (min-width: 576px) {min-height: 117px; padding: 9px 12px 9px;}
-	@media (min-width: 1025px) {min-height: 120px;}
-	> h3 {
-		font-size: 8px; font-weight: 300; text-transform: uppercase;
-		@media (min-width: 576px) {font-size: 12px;}
+	> div {
+		background-color: #ffffff;
+		display: inline-block;
+		margin: 0 auto;
+		max-width: 100%;
+		padding: 8px 6px 4px;
+		position: relative;
+		text-align: center;
+		@media screen and (min-width: 576px) {  min-width: 160px; padding: 13px 10px 11px;}
+		@media only screen and (max-device-width: 778px) and (orientation: landscape) {
+			box-shadow: none; padding: 5px; width: 117px;
+		}
+		h1 {
+			// 2019-09-01
+			// The long declaration «'Josefin Sans', Helvetica, Arial, sans-serif»
+			// does not work here for an unknown reason.
+			font: 10px 'Josefin Sans';
+			@media screen and (min-width: 576px) {font-size: 18px;}
+			@media only screen and (max-device-width: 778px) and (orientation: landscape) {font-size: 10px;}
+		}
+		h2 {
+			font: italic 8px 'EB Garamond', Helvetica, Arial, sans-serif;
+			margin-bottom: 5px;
+			position: relative;
+			@media screen and (min-width: 576px) {font-size: 12px;}
+			@media only screen and (max-device-width: 778px) and (orientation: landscape) {font-size: 5px;}
+			&:after, &:before {
+				background-color: #000000;
+				content: '';
+				display: inline-block;
+				height: 1px;
+				margin: 0 5px;
+				vertical-align: middle;
+				width: 10px;
+			}
+		}
+		h3 {
+			font: 8px 'EB Garamond', Helvetica, Arial, sans-serif;
+			letter-spacing: 0.08em;
+			@media screen and (min-width: 576px) {font-size: 10px;}
+		}
 	}
-	h1, h2 {
-		font-size: 14px; font-weight: 700; line-height: 1.5; text-transform: uppercase;
-		@media (min-width: 576px) {font-size: 20px;}
-	}
-	h2 {font-weight: 200;}
 }
