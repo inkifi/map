@@ -1,25 +1,26 @@
-// 2019-08-31
-&.seaside > div {
-	background: #fff;
-	bottom: 0;
-	display: flex;
-	flex-direction: column;
-	flex: 1 1 30%;
-	justify-content: space-between;
+// 2019-09-02
+&.seaside {
+	background-image: linear-gradient(-180deg, #40BA87 0%, rgba(64, 186, 135, 0) 100%);
+	display: block;
 	left: 0;
-	padding: 6px 8px 8px;
+	min-height: 50%;
 	position: absolute;
-	right: 0;
-	text-align: center;
-	@media (min-width: 576px) {min-height: 117px; padding: 9px 12px 9px;}
-	@media (min-width: 1025px) {min-height: 120px;}
-	> h3 {
-		font-size: 8px; font-weight: 300; text-transform: uppercase;
-		@media (min-width: 576px) {font-size: 12px;}
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	> div {
+		min-height: 80px; padding: 18px 20px 20px;
+		@media (max-width: 767px) {min-height: auto; padding: 9px 10px 10px;}
+		h1, h2, h3 {
+			color: #ffffff;
+			display: block;
+			font-family: 'ZCOOL QingKe HuangYou';
+			font-size: 20px;
+			font-weight: normal;
+			letter-spacing: 1px;
+			line-height: 20px;
+			text-transform: uppercase;
+			@media (max-width: 767px) {font-size: 10px; line-height: 10px;}
+		}
 	}
-	h1, h2 {
-		font-size: 14px; font-weight: 700; line-height: 1.5; text-transform: uppercase;
-		@media (min-width: 576px) {font-size: 20px;}
-	}
-	h2 {font-weight: 200;}
 }
