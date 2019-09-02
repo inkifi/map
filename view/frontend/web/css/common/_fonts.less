@@ -13,23 +13,17 @@
 // The «Josefin Sans» font does not work being loaded from Google for an unknown reason.
 // @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 @fontsPath: '../Inkifi_Map/i/create/map/fonts/';
-@font-face {
-	font-family: 'Josefin Sans';
-	font-style: normal;
-	font-weight: 400;
-	src:
-		local('Josefin Sans'), local('JosefinSans')
-		,url('@{fontsPath}JosefinSans/.woff') format('woff')
-		,url('@{fontsPath}JosefinSans/.woff2') format('woff2')
-	;
+.ifk-font(@name, @weight, @folder, @file, @local1, @local2) {
+	@font-face {
+		font-family: @name;
+		font-style: normal;
+		font-weight: @weight;
+		src:
+			local(@local1), local(@local2)
+			,url('@{fontsPath}@{folder}/@{file}.woff') format('woff')
+			,url('@{fontsPath}@{folder}/@{file}.woff2') format('woff2')
+		;
+	}
 }
-@font-face {
-	font-family: 'Josefin Sans';
-	font-style: normal;
-	font-weight: bold;
-	src:
-		local('Josefin Sans Bold'), local('JosefinSans-Bold')
-		,url('@{fontsPath}JosefinSans/bold.woff') format('woff')
-		,url('@{fontsPath}JosefinSans/bold.woff2') format('woff2')
-	;
-}
+.ifk-font('Josefin Sans', 400, 'JosefinSans', '', 'Josefin Sans', 'JosefinSans');
+.ifk-font('Josefin Sans', bold, 'JosefinSans', 'bold', 'Josefin Sans Bold', 'JosefinSans-Bold');
