@@ -80,16 +80,22 @@ define([
 				}
 			}));
 		})();
-		this.color = ko.observable();
-		this.color.subscribe(v => _this.updateURL('color', v));
-		this.color(this.q().color);
-		this.frame = ko.observable();
-		this.frame.subscribe(v => {
-			_this.updateURL('frame', v);
-			if ('Frame' !== v) {
-				_this.color(null);
-			}
-		});
+		(() => {
+			var prevColor;
+			_this.color = ko.observable();
+			_this.color.subscribe(v => {
+				_this.updateURL('color', v);
+				if (v) {
+					prevColor = v;					
+				}
+			});
+			_this.color(_this.q().color);
+			_this.frame = ko.observable();
+			_this.frame.subscribe(v => {
+				_this.updateURL('frame', v);
+				_this.color('Frame' === v ? prevColor : null);
+			});
+		})();
 		this.frame(this.q().frame || 'Poster');
 		(() => {
 			const defaultOrientation = 'Portrait';
