@@ -12,7 +12,24 @@
 	&.landscape > .ikf-pencil {}
 }
 &.ikf-color-white {
-	> .ikf-map-2:before {}
+	> .ikf-map-2:before {
+		background-color: #fdfdfd;
+		border-image-outset: 0;
+		border-image-repeat: stretch;
+		border-image-slice: 30;
+		border-image-source: url('../Inkifi_Map/i/create/map/color/white-portrait.svg');
+		border-image-width: 30px;
+		border-style: solid;
+		border-width: 10px;
+		content: '';
+		display: block;
+		height: calc(~'100% + 40px');
+		left: -30px;
+		position: absolute;
+		top: -30px;
+		width: calc(~'100% + 40px');
+		z-index: 0;
+	}
 	&.landscape > .ikf-map-2:before {}
 	> .ikf-pencil {}
 	&.landscape > .ikf-pencil {}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="740px" height="500px" viewBox="0 0 740 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="maps" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Frame_black_horizontal" fill-rule="nonzero">
+            <g id="frame_black_hor">
+                <g id="Group" transform="translate(0.000000, -0.000000)">
+                    <polygon id="Rectangle" fill="#2C2C2C" points="0 1.36024525e-12 740 1.3580248e-12 730 10 10 10"></polygon>
+                    <polygon id="Rectangle" fill="#3D3D3D" points="740 8.52651283e-14 740 500 730 490 730 10"></polygon>
+                    <polygon id="Rectangle" fill="#3D3D3D" points="-5.32907052e-15 -2.84217094e-14 10 10 10 490 -5.32907052e-15 500"></polygon>
+                    <polygon id="Rectangle" fill="#252525" points="2.84217094e-13 500 10 490 730 490 740 500"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
