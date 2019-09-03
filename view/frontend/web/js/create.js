@@ -22,16 +22,6 @@ define([
 	 */
 	onRender() {
 		(() => {
-			const $colors = $('input[name="color"]');
-			const $frames = $('input[name="frame"]');
-			const f = v => {$colors.prop('disabled', 'frame' !== v);};
-			// 2019-08-27
-			// The arrow function syntax breaks `this` in jQuery event handlers:
-			// https://stackoverflow.com/questions/27670401
-			$frames.change(function() {f(this.value);});
-			f($frames.filter(':checked').val());
-		})();
-		(() => {
 			const $sections = $('.ikf-sidebar-wide > section');
 			const $aa = $('.ikf-sidebar-sticky nav > a');
 			const c = 'ikf-active';
