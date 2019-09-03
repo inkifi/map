@@ -82,6 +82,7 @@ define([
 		})();
 		this.color = ko.observable();
 		this.color.subscribe(v => _this.updateURL('color', v));
+		this.color(this.q().color);
 		this.frame = ko.observable();
 		this.frame.subscribe(v => {
 			_this.updateURL('frame', v);
