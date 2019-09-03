@@ -25,18 +25,19 @@ define([
 			const $sections = $('.ikf-sidebar-wide > section');
 			const $aa = $('.ikf-sidebar-sticky nav > a');
 			const c = 'ikf-active';
+			const f = ($a) => {
+				$aa.removeClass(c);
+				$a.addClass(c);
+				$sections.removeClass(c).eq($a.index()).addClass(c);
+				if (1 === $aa.length - $a.index()) {
+					$sections.last().addClass(c);
+				}
+			};
 			// 2019-08-27
 			// The arrow function syntax breaks `this` in jQuery event handlers:
 			// https://stackoverflow.com/questions/27670401
-			$aa.click(function() {
-				const $this = $(this);
-				$aa.removeClass(c);
-				$this.addClass(c);
-				$sections.removeClass(c).eq($this.index()).addClass(c);
-				if (1 === $aa.length - $this.index()) {
-					$sections.last().addClass(c);
-				}
-			});
+			$aa.click(function() {f($(this));});
+			f($aa.first());
 		})();
 	},
     /**
