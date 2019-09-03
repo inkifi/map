@@ -3,7 +3,7 @@
 	<?=
 		df_cc_n(df_map_k(
 			function($c, array $q) {return df_tag('a',
-				['href' => df_url(df_route('Inkifi_Map', 'create'), ['_query' => $q])]
+				['href' => ikf_map_url_create($q)]
 				,df_tag('img', ['src' => df_asset_url("Inkifi_Map::i/index/map/$c.jpg")])
 			);}
 			,df_map(function($v) {return array_combine(['latitude', 'longitude', 'style', 'zoom'], $v);}, [
