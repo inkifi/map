@@ -80,6 +80,16 @@ define([
 				}
 			}));
 		})();
+		this.color = ko.observable();
+		this.color.subscribe(v => _this.updateURL('color', v));
+		this.frame = ko.observable();
+		this.frame.subscribe(v => {
+			_this.updateURL('frame', v);
+			if ('Frame' !== v) {
+				_this.color(null);
+			}
+		});
+		this.frame(this.q().frame || 'Poster');
 		(() => {
 			const defaultOrientation = 'Portrait';
 			_this.orientation = ko.observable();
@@ -97,15 +107,10 @@ define([
 			].join(' '));
 			$('.ikf-map-1').removeAttr('style');
 		})();
-		_this.style = ko.observable();
-		_this.style.subscribe(v => _this.updateURL('style', v));
-		_this.style(_this.q().style || 'Contrast');
-		_this.labelC = ko.computed(() => ['ikf-label', _this.style().toLowerCase()].join(' '));
-		_this.color = ko.observable();
-		_this.color.subscribe(v => _this.updateURL('color', v));
-		_this.frame = ko.observable();
-		_this.frame.subscribe(v => _this.updateURL('frame', v));
-		_this.frame(_this.q().frame || 'Poster');
+		this.style = ko.observable();
+		this.style.subscribe(v => _this.updateURL('style', v));
+		this.style(this.q().style || 'Contrast');
+		this.labelC = ko.computed(() => ['ikf-label', _this.style().toLowerCase()].join(' '));
 		return this;
 	},
 	/**
@@ -129,7 +134,12 @@ define([
 	updateURL(k, v) {
 		const u = URI(location.href);
 		// 2019-08-29 http://medialize.github.io/URI.js/docs.html#search-remove
-		const f = (v, k) => u.removeSearch(k).addSearch(k, v);
+		const f = (v, k) => {
+			u.removeSearch(k);
+			if (v) {
+				u.addSearch(k, v);
+			}
+		};
 		!_.isObject(k) ? f(v, k) : _.map(k, f);
 		// 2019-08-29 https://stackoverflow.com/questions/12832317
 		history.replaceState({} , document.title, u.toString());
