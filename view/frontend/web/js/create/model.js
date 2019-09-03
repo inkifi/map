@@ -103,6 +103,9 @@ define([
 		_this.labelC = ko.computed(() => ['ikf-label', _this.style().toLowerCase()].join(' '));
 		_this.color = ko.observable();
 		_this.color.subscribe(v => _this.updateURL('color', v));
+		_this.frame = ko.observable();
+		_this.frame.subscribe(v => _this.updateURL('frame', v));
+		_this.frame(_this.q().frame || 'Poster');
 		return this;
 	},
 	/**

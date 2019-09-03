@@ -51,35 +51,9 @@ I use `value` instead of `textInput` to prevent live updates: https://stackoverf
 		<section> <!-- 2019-08-06 Original: `div.b-input.b-input--hidden-mobile` -->
 			<!-- 2019-08-06 Original: `div.b-input__label.b-input__label--hidden-mobile` -->
 			<div class='ikf-label'>Frame</div>
-			<div class='ikf-row'> <!-- 2019-08-06 Original: `div.b-input__input-row` -->
-				<div> <!-- 2019-08-06 Original: `div.b-radio-select` -->
-					<div class='ikf-tabs'> <!-- 2019-08-06 Original: `div.b-radio-select__list` -->
-						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
-							<label>
-								<input name='frame' type='radio' value='poster'/>
-								<span>Paper poster</span>
-								<div></div>
-							</label>
-						</div>
-						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
-							<label>
-								<input name='frame' type='radio' value='canvas'/>
-								<span>Canvas</span>
-								<span>+£30</span>
-								<div></div>
-							</label>
-						</div>
-						<div> <!-- 2019-08-06 Original: `div.b-radio-select__item` -->
-							<label>
-								<input name='frame' type='radio' value='frame'/>
-								<span>Poster + frame</span>
-								<span>+£30</span>
-								<div></div>
-							</label>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?= HTML::tabs('frame', [
+				'Poster' => 'Paper poster', 'Canvas' => ['Canvas', '+£30'], 'Frame' => ['Poster + frame', '+£30']
+			]) ?>
 		</section>
 		<section> <!-- 2019-08-06 Original: `div.b-input.b-input--hidden-mobile` -->
 			<?= HTML::tiles('color', ['natural', 'black', 'white']) ?>

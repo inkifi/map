@@ -9,23 +9,20 @@ final class HTML {
 	 * @param string[] $vv
 	 * @return string
 	 */
-	static function tabs($name, array $vv) {return df_tag('div', 'ikf-row',
-		df_tag('div', [],
-			df_tag('div', 'ikf-tabs',
-				df_cc_n(df_map(function($v) use($name) {return
-					df_tag('div', [],
-						df_tag('label', [], [
-							df_tag('input', [
-								'data-bind' => "checked: $name", 'name' => $name, 'type' => 'radio', 'value' => $v
-							])
-							,df_tag('span', [], $v)
-							,df_tag('div')
-						])
-					)
-				;}, $vv))
-			)
-		)
-	);}
+	static function tabs($name, array $vv) {return df_tag('div', 'ikf-row', df_tag('div', [],
+		df_tag('div', 'ikf-tabs', df_cc_n(df_map_k($vv, function($v, $l) use($name) {
+			$v = is_int($v) ? $l : $v;
+			return df_tag('div', [],
+				df_tag('label', [], [
+					df_tag('input', [
+						'data-bind' => "checked: $name", 'name' => $name, 'type' => 'radio', 'value' => $v
+					])
+					,df_cc_n(df_map(df_array($l), function($l) {return df_tag('span', [], $l);}))
+					,df_tag('div')
+				])
+			);
+		})))
+	));}
 
 	/**
 	 * 2019-08-08

@@ -5,6 +5,7 @@ A city map printing module for [inkifi.com](https://inkifi.com) (Magento 2).
 bin/magento maintenance:enable
 rm -rf composer.lock
 composer clear-cache
+composer update mage2pro/core
 composer require inkifi/map:*
 bin/magento setup:upgrade
 bin/magento cache:clean
@@ -26,6 +27,7 @@ bin/magento cache:enable
 bin/magento maintenance:enable
 rm -rf composer.lock
 composer clear-cache
+composer update mage2pro/core
 composer update inkifi/map
 bin/magento setup:upgrade
 bin/magento cache:clean
