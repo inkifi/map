@@ -75,12 +75,13 @@
 				padding-right: 30px;
 				position: relative;
 				@media (min-width: 1025px) {margin-left: 10%;}
+				@more: '../Inkifi_Map/i/common/more/';
 				&:focus, &:hover {
 					color: black;
-					> div.ikf-img {background-image: url('../Inkifi_Map/i/common/more/green.png');}
+					> div.ikf-img {background-image: url('@{more}green.png');}
 				}
 				> div.ikf-img {
-					background: url('../Inkifi_Map/i/common/more/yellow.png') center no-repeat;
+					background: url('@{more}yellow.png') center no-repeat;
 					display: block;
 					height: 65px;
 					position: absolute;
