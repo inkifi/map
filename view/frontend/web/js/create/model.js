@@ -81,19 +81,19 @@ define([
 			}));
 		})();
 		(() => {
-			var prevColor;
+			var prev;
 			_this.color = ko.observable();
 			_this.color.subscribe(v => {
 				_this.updateURL('color', v);
 				if (v) {
-					prevColor = v;					
+					prev = v;
 				}
 			});
 			_this.color(_this.q().color);
 			_this.frame = ko.observable();
 			_this.frame.subscribe(v => {
 				_this.updateURL('frame', v);
-				_this.color('Frame' === v ? prevColor : null);
+				_this.color('Frame' === v ? prev : null);
 			});
 		})();
 		this.frame(this.q().frame || 'Poster');
