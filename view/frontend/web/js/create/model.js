@@ -100,7 +100,10 @@ define([
 			_this.size.subscribe(v => _this.updateURL('size', v));
 			_this.size(_this.q().size || '12×16in');
 			_this.mapC = ko.computed(() => [
-				'ikf-map-1', _this.orientation().toLowerCase(), `ikf-ratio-${classes[_this.size()]}`
+				'ikf-map-1'
+				,_this.orientation().toLowerCase()
+				,`ikf-ratio-${classes[_this.size()]}`
+				,!_this.color() ? null : `ikf-color-${_this.color().toLowerCase()}`
 			].join(' '));
 			_this.pencilC = ko.computed(() => [
 				'ikf-pencil', `ikf-size-${_this.size().replace('in', '').replace('×', 'x')}`
