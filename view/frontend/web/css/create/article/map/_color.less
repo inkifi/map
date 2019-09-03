@@ -7,10 +7,20 @@
 	&.landscape > .ikf-pencil {}
 }
 &.ikf-color-natural {
-	> .ikf-map-2:before {}
-	&.landscape > .ikf-map-2:before {}
-	> .ikf-pencil {}
-	&.landscape > .ikf-pencil {}
+	> .ikf-map-2:before {
+		background-color: #fdfdfd;
+		border: 10px solid #e7d5c5;
+		content: '';
+		display: block;
+		height: calc(~'100% + 40px');
+		left: -30px;
+		position: absolute;
+		top: -30px;
+		width: calc(~'100% + 40px');
+		z-index: 0;
+	}
+	> .ikf-pencil {left: calc(~'100% + 48px');}
+	&.landscape > .ikf-pencil {left: 0; top: calc(~'100% + 48px');}
 }
 &.ikf-color-white {
 	> .ikf-map-2:before {
