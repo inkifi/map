@@ -62,11 +62,9 @@ I use `value` instead of `textInput` to prevent live updates: https://stackoverf
 	<div class='ikf-sidebar-sticky'> <!-- 2019-08-06 Original: `div.b-sidebar__sticky` -->
 		<div> <!-- 2019-08-06 Original: `div.b-sidebar__mobile-nav` -->
 			<nav> <!-- 2019-08-06 Original: `div.b-sidebar-nav` -->
-				<a href='javascript:void(0)'>Location</a>
-				<a href='javascript:void(0)'>Labels</a>
-				<a href='javascript:void(0)'>Size</a>
-				<a href='javascript:void(0)'>Style</a>
-				<a href='javascript:void(0)'>Frame</a>
+				<?= df_cc_n(array_map(function($l) {return df_tag_a(
+					$l, 'javascript:void(0)'
+				);}, ['Location', 'Labels', 'Size', 'Style', 'Frame'])) ?>
 			</nav>
 		</div>
 <!-- 2019-08-31
