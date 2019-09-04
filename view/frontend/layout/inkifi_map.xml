@@ -20,7 +20,86 @@
 				before='-'
 				class='Magento\Framework\View\Element\Template'
 				template='Inkifi_Map::common/header.phtml'
-			/>
+			>
+				<block
+					class='Magento\Customer\Block\CustomerData'
+					name='ikf_map_customer_data'
+					template='Magento_Customer::js/customer-data.phtml'
+				/>
+				<block
+					class='Magento\Checkout\Block\Cart\Sidebar'
+					name='ikf_map_minicart'
+					template='Inkifi_Map::common/header/cart.phtml'
+				>
+					<arguments>
+						<argument name='jsLayout' xsi:type='array'>
+							<item name='types' xsi:type='array'/>
+							<item name='components' xsi:type='array'>
+								<item name='minicart_content' xsi:type='array'>
+									<item name='component' xsi:type='string'>Magento_Checkout/js/view/minicart</item>
+									<item name='config' xsi:type='array'>
+										<item name='itemRenderer' xsi:type='array'>
+											<item name='default' xsi:type='string'>defaultRenderer</item>
+											<item name='simple' xsi:type='string'>defaultRenderer</item>
+											<item name='virtual' xsi:type='string'>defaultRenderer</item>
+										</item>										
+										<item name='template' xsi:type='string'
+										>Magento_Checkout/minicart/content</item>
+									</item>
+									<item name='children' xsi:type='array'>
+									<item name='item.renderer' xsi:type='array'>
+										<item name='component' xsi:type='string'>uiComponent</item>
+										<item name='config' xsi:type='array'>
+											<item name='displayArea' xsi:type='string'>defaultRenderer</item>
+											<item name='template' xsi:type='string'
+											>Magento_Checkout/minicart/item/default</item>
+										</item>
+										<item name='children' xsi:type='array'>
+											<item name='item.image' xsi:type='array'>
+												<item name='component' xsi:type='string'
+												>Magento_Catalog/js/view/image</item>
+												<item name='config' xsi:type='array'>
+													<item name='template' xsi:type='string'
+													>Magento_Catalog/product/image</item>
+													<item name='displayArea' xsi:type='string'>itemImage</item>
+												</item>
+											</item>
+										</item>
+									</item>										
+										<item name='subtotal.container' xsi:type='array'>
+											<item name='component' xsi:type='string'>uiComponent</item>
+											<item name='config' xsi:type='array'>
+												<item name='displayArea' xsi:type='string'>subtotalContainer</item>
+											</item>
+											<item name='children' xsi:type='array'>
+												<item name='subtotal' xsi:type='array'>
+													<item name='component' xsi:type='string'>uiComponent</item>
+													<item name='config' xsi:type='array'>
+														<item name='template' xsi:type='string'
+														>Magento_Checkout/minicart/subtotal</item>
+													</item>
+												</item>
+											</item>
+										</item>
+										<item name='extra_info' xsi:type='array'>
+											<item name='component' xsi:type='string'>uiComponent</item>
+											<item name='config' xsi:type='array'>
+												<item name='displayArea' xsi:type='string'>extraInfo</item>
+											</item>
+										</item>
+										<item name='promotion' xsi:type='array'>
+											<item name='component' xsi:type='string'>uiComponent</item>
+											<item name='config' xsi:type='array'>
+												<item name='displayArea' xsi:type='string'>promotion</item>
+											</item>
+										</item>
+									</item>
+								</item>
+							</item>
+						</argument>
+					</arguments>
+				</block>
+			</block>
 		</referenceContainer>
 	</body>
 </page>

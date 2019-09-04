@@ -1,3 +1,7 @@
+<?php
+use Magento\Framework\View\Element\Template as B;
+/** @var B $block */ /** @var B $b */ $b = $block;
+?>
 <header class='ikf-header'>
 	<div class='ikf-logo ikf-animation'>
 		<a href='javascript:void(0)'>
@@ -18,11 +22,7 @@
 		</div>
 	</div>
 	<div class='ikf-right'>
-		<a class='ikf-cart ikf-animation' href='javascript:void(0)'>
-			<figure><?= df_block_output(null, 'Inkifi_Map::i/common/header/cart.phtml') ?></figure>
-			<span class='ikf-amount'>£0</span>
-			<span class='ikf-qty'>0</span>
-		</a>
+		<?= $b->getChildHtml('ikf_map_customer_data') . $b->getChildHtml('ikf_map_minicart') ?>
 		<div class='ikf-create'>
 			<a href='<?= ikf_map_url_create() ?>'>Create Poster</a>
 		</div>

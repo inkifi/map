@@ -1,0 +1,21 @@
+<?php
+use Magento\Checkout\Block\Cart\Sidebar as Block;
+/** @var Block $block */ /** @var Block $b */
+$b = $block;
+?>
+<a
+	class='ikf-cart ikf-animation'
+	data-bind="scope: 'minicart_content'"
+	data-block="minicart" href='<?= $b->getShoppingCartUrl(); ?>'
+>
+	<figure><?= df_block_output(null, 'Inkifi_Map::i/common/header/cart.phtml') ?></figure>
+	<span class='ikf-amount'>£0</span>
+	<span class='ikf-qty'><!-- ko text: getCartParam('summary_count') --><!-- /ko --></span>
+</a>
+<script>window.checkout = <?= \Zend_Json::encode($b->getConfig()); ?>;</script>
+<script type="text/x-magento-init">
+{
+	"[data-block='minicart']": {"Magento_Ui/js/core/app": <?= $block->getJsLayout();?>},
+	"*": {"Magento_Ui/js/block-loader": "<?= $block->getViewFileUrl('images/loader-1.gif'); ?>"}
+}
+</script>
