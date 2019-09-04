@@ -1,4 +1,14 @@
 <?php
+use Magento\Catalog\Model\Product as P;
+/**
+ * 2019-09-04
+ * @param P $p
+ * @return string
+ */
+function ikf_map_price(P $p) {return df_trim_text_right(
+	df_price_currency()->format($p->getFinalPrice(), false, 0), '.00'
+);}
+
 /**
  * 2019-09-03   
  * @used-by vendor/inkifi/map/view/frontend/templates/common/header.phtml
