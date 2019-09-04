@@ -1,0 +1,11 @@
+<?php
+use Magento\Catalog\Model\Product as P;
+$p = df_product('map'); /** @var P $p */
+?>
+<!-- 2019-08-31
+1) I defined a handler to prevent the form's submision on the `Enter` key press.
+2) I replaced `button` with `div` to prevent the `click` handling on the `Enter` key press. -->
+<div class='ikf-button' data-bind='click: buy'>
+	<div>Buy poster</div>
+	<div><?= df_price_currency()->format($p->getFinalPrice(), false, 0) ?></div>
+</div>

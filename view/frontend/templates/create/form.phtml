@@ -67,13 +67,6 @@ I use `value` instead of `textInput` to prevent live updates: https://stackoverf
 				);}, ['Location', 'Labels', 'Size', 'Style', 'Frame'])) ?>
 			</nav>
 		</div>
-<!-- 2019-08-31
-1) I defined a handler to prevent the form's submision on the `Enter` key press.
-2) I replaced `button` with `div` to prevent the `click` handling on the `Enter` key press.
--->
-		<div class='ikf-button' data-bind='click: buy'>
-			<div>Buy poster</div>
-			<div>£25</div>
-		</div>
+		<?= df_block_output(null, 'Inkifi_Map::create/form/buy.phtml') ?>
 	</div>
 </form>
