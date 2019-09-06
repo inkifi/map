@@ -8,6 +8,7 @@ composer clear-cache
 composer update mage2pro/core
 composer require inkifi/map:*
 bin/magento setup:upgrade
+rm -rf var/di var/generation generated/code && bin/magento setup:di:compile
 bin/magento cache:clean
 rm -rf pub/static/*
 bin/magento setup:static-content:deploy \
@@ -30,6 +31,7 @@ composer clear-cache
 composer update mage2pro/core
 composer update inkifi/map
 bin/magento setup:upgrade
+rm -rf var/di var/generation generated/code && bin/magento setup:di:compile
 bin/magento cache:clean
 rm -rf pub/static/*
 bin/magento setup:static-content:deploy \
