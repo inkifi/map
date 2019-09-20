@@ -1,6 +1,6 @@
 <?php
 use Magento\Catalog\Model\Product as P;
-$p = df_product('map'); /** @var P $p */
+$p = df_product_r()->get('map'); /** @var P $p */
 ?>
 <!-- 2019-08-31
 1) I defined a handler to prevent the form's submision on the `Enter` key press.
